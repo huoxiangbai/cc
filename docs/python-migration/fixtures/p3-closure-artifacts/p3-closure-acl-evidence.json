@@ -1,0 +1,12 @@
+{
+  "file": {
+    "ossUrl": "http://127.0.0.1:59302/v1/file_tool/download/closure-upload/来源.md",
+    "downloadUrl": "http://127.0.0.1:59302/v1/file_tool/download/closure-upload/来源.md",
+    "domainUrl": "http://127.0.0.1:59302/v1/file_tool/preview/closure-upload/来源.md",
+    "fileSize": 18
+  },
+  "crossVisitor": "403",
+  "forgedOwner": "403",
+  "legacy": "403",
+  "filterBypass": "403"
+}

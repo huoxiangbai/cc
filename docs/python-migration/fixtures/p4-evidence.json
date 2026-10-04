@@ -1,0 +1,133 @@
+{
+  "phase": "P4",
+  "date": "2026-10-04",
+  "permissions": "用户明确批准P0 Skill会话副本；管理HTTP仅P5",
+  "tests": {
+    "unit": {
+      "tests": "142",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "1",
+      "time": "3.950",
+      "passed": 141
+    },
+    "integration": {
+      "tests": "50",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "59.576",
+      "passed": 50
+    }
+  },
+  "java_memory_junit": 70,
+  "java_replay_frames": [
+    5,
+    2,
+    11
+  ],
+  "integration": {
+    "phase": "p4",
+    "isolation_root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p4-8zj4rb66",
+    "backend_url": "http://127.0.0.1:63114",
+    "tool_url": "http://127.0.0.1:63112",
+    "model": "fixed-upstream-test-only",
+    "mysql": "9.x local new datadir; Unix socket only",
+    "schema_tables": 33,
+    "business_db": "sqlite",
+    "public_tool_url": "http://127.0.0.1:63114",
+    "java_replay": "PASS: actual Python-written MySQL rows",
+    "exit_code": 0
+  },
+  "browser": {
+    "root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p4-uh6h0rak",
+    "production_model": false,
+    "curated_preference_in_next_request": true,
+    "steps": [
+      "原UI naming",
+      "memory persistent write",
+      "same-session continuation",
+      "reload and recent-session history",
+      "ToolSearch activates 3 tools",
+      "3 real MCP transports original.echo!",
+      "real resource read",
+      "original package_skill.py",
+      "artifact 213 bytes; CRC checked"
+    ],
+    "screenshots": [
+      "p4-memory-ui.jpg",
+      "p4-mcp-ui.jpg",
+      "p4-skill-ui.jpg"
+    ],
+    "note": "浏览器流程真实执行，模型为测试HTTP fixture；截图早于本轮最终Bash权限收窄。最终原Skill脚本与内核隔离由50项真实HTTP集成及10项Skill测试再次验证；原UI暂不预览.skill二进制，产物字节和ZIP CRC单独核验。"
+  },
+  "original_skills": {
+    "count": 31,
+    "errors": {}
+  },
+  "artifact_sha256": {
+    "java-memory-tests.log": "23771dfd85c290e83406349e0906507227341073746fdb72448a430987d07b44",
+    "unit.xml": "f1e0ff5b74453978533e8294fe2151f33ecf19889ff12d08f01084294eb84b7d",
+    "skill-admin.json": "5c2ae7b7cfdc9e459015974a129c2023d942366e900060e35b763ed11aa99728",
+    "integration.xml": "ed0721570e3e00482bf300e0a7f2e7e234e59340f8b123544acc90ac8c210de4",
+    "p4-created.skill": "51215ef05c4e0e2efd1dc899e8e6ba3c993655fb7fa488e689256604921aa6ed",
+    "java-memory.json": "9278ea6309c0059e55188b22474a47a1a406e8e33045fc988e6032e82fdd1ee5"
+  },
+  "workflow_sha256": "f1eca5939f829e26e6ea45c66a07c92d8bb9536d16a8fffb33b23bbbe667248e",
+  "unverified": [
+    "真实模型/embedding/远端语义provider（原Java可选provider实际为本地实现）",
+    "外部MCP鉴权/服务与网络部署",
+    "E2B live；Linux/Windows执行环境",
+    "真实MySQL旧库、旧USER归属可信映射及完整多模态历史副本",
+    "P5管理员HTTP/完整GenUI，未实施"
+  ],
+  "skill_final_reload_check": {
+    "passed": 10,
+    "failed": 0,
+    "note": "最后原子reload变更后复验；外层沙箱内sandbox_apply拒绝，获批本机执行后10通过"
+  },
+  "native_bash": {
+    "platform": "macOS",
+    "kernel_policy": "sandbox-exec deny-default, session-only writes; bounded runtime reads",
+    "verified": [
+      "real Python/YAML script",
+      "foreign session read denied",
+      "shared library write denied",
+      "host /etc/passwd denied",
+      "symlink scratch rejected",
+      "provider/service credentials absent"
+    ],
+    "other_platforms": "local session-copy execution fails closed; E2B live unverified",
+    "approval_review": "broad read policy rejected and never executed; narrow literal-directory semantics proven and accepted"
+  },
+  "operator_cli": {
+    "root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p4-skill-admin-a9cesrqf",
+    "operator_cli": "PASS",
+    "package_import": "PASS",
+    "reload": "PASS",
+    "duplicate_rejected": "PASS",
+    "real_http_import": "PASS",
+    "production_library_touched": false
+  },
+  "cleanup": {
+    "own_browser_tab_closed": true,
+    "serve_and_ui_exit_code": 130,
+    "own_services_stopped": true,
+    "isolation_data_preserved": true,
+    "other_services_touched": false
+  },
+  "final_checks": {
+    "local_doc_links": 824,
+    "broken_links": 0,
+    "artifact_hashes": 6,
+    "offline_wheel_sdist": "PASS",
+    "wheel_p4_modules_schema": [
+      "reactor_backend/tools/p4_schemas.json",
+      "reactor_backend/memory/working.py",
+      "reactor_backend/memory/service.py",
+      "reactor_backend/skills/manage.py",
+      "reactor_backend/mcp/runtime.py"
+    ],
+    "git_diff_check": "PASS (existing workflow CRLF warning only)"
+  }
+}

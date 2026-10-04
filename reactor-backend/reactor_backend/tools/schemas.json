@@ -1,0 +1,1729 @@
+{
+  "text_processor": {
+    "type": "function",
+    "function": {
+      "name": "text_processor",
+      "description": "Text file processor: read/write/search/replace/insert/transform/stats/diff with encoding detection.",
+      "parameters": {
+        "properties": {
+          "data": {
+            "description": "Content for write/append/insert",
+            "type": "string"
+          },
+          "encoding": {
+            "description": "Optional encoding",
+            "type": "string"
+          },
+          "file_path": {
+            "description": "Text file path under workspace",
+            "type": "string"
+          },
+          "operation": {
+            "description": "read|write|search|replace|insert|append|prepend|transform|extract|split|join|stats|diff|detect_encoding",
+            "type": "string"
+          },
+          "pattern": {
+            "description": "Regex for search/replace/extract",
+            "type": "string"
+          },
+          "replacement": {
+            "description": "Replacement for replace",
+            "type": "string"
+          },
+          "transform_type": {
+            "description": "For transform: upper|lower|title|trim|wrap|...",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation",
+          "file_path"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "csv_processor": {
+    "type": "function",
+    "function": {
+      "name": "csv_processor",
+      "description": "CSV/TSV processor: operation=read|query|write|stats|convert. Read rows, filter/query, write output, compute stats, or convert formats.",
+      "parameters": {
+        "properties": {
+          "columns": {
+            "description": "Comma-separated columns to keep",
+            "type": "string"
+          },
+          "delimiter": {
+            "description": "Delimiter, default auto-detect",
+            "type": "string"
+          },
+          "encoding": {
+            "description": "Encoding, default auto",
+            "type": "string"
+          },
+          "file_path": {
+            "description": "CSV/TSV file path under workspace",
+            "type": "string"
+          },
+          "limit": {
+            "description": "Max rows to return for read",
+            "type": "integer"
+          },
+          "offset": {
+            "description": "Row offset for read",
+            "type": "integer"
+          },
+          "operation": {
+            "description": "read | query | write | stats | convert",
+            "type": "string"
+          },
+          "output_path": {
+            "description": "Output path for write/convert",
+            "type": "string"
+          },
+          "query": {
+            "description": "Simple filter expression for query",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "data_transform": {
+    "type": "function",
+    "function": {
+      "name": "data_transform",
+      "description": "Transform tabular data: rename columns, cast types, map values, derive columns, string upper/lower/strip. Pass transformations=[{type, ...}] (operations is accepted as alias).",
+      "parameters": {
+        "properties": {
+          "data": {
+            "items": {
+              "description": "Row object",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "operations": {
+            "description": "Alias of transformations",
+            "items": {
+              "description": "Transform operation",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "output_format": {
+            "description": "records | dict",
+            "type": "string"
+          },
+          "source_path": {
+            "description": "Input file path under workspace",
+            "type": "string"
+          },
+          "transformations": {
+            "description": "Transform ops: rename, cast, map_values, derive, select, reorder, drop, string_transform, ...",
+            "items": {
+              "description": "Transform operation",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  "deep_search": {
+    "type": "function",
+    "function": {
+      "name": "deep_search",
+      "description": "这是一个搜索工具，可以搜索各种互联网知识",
+      "parameters": {
+        "properties": {
+          "query": {
+            "description": "需要搜索的全部内容及描述",
+            "type": "string"
+          },
+          "reportFileName": {
+            "description": "最终研究报告文件名称，必填且不超过20个字符（含扩展名），例如：新能源汽车行业报告.md",
+            "maxLength": 20,
+            "type": "string"
+          }
+        },
+        "required": [
+          "query",
+          "reportFileName"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "WebSearch": {
+    "type": "function",
+    "function": {
+      "name": "WebSearch",
+      "description": "Search the web for up-to-date information beyond the model knowledge cutoff.\nPrefer Grok or GPT native web search when available; otherwise Exa/Tavily/Brave.\nReturns titles, URLs and snippets. After answering, include a Sources section with markdown links.\n\nCRITICAL:\n- Use the current period (2026-10) in queries for recent docs/events\n- Prefer this for current events / latest docs; use deep_search for multi-hop research if available\n\nDomain filtering:\n- allowed_domains: only include these domains\n- blocked_domains: exclude these domains\n- Do not set both at once\n",
+      "parameters": {
+        "properties": {
+          "allowed_domains": {
+            "description": "Only include search results from these domains",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "blocked_domains": {
+            "description": "Never include search results from these domains",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "query": {
+            "description": "The search query to use",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "WebFetch": {
+    "type": "function",
+    "function": {
+      "name": "WebFetch",
+      "description": "IMPORTANT: WebFetch WILL FAIL for authenticated or private URLs. Prefer specialized MCP tools for GitHub/Confluence/etc.\n\nFetches content from a URL and processes it with a prompt using a secondary model.\n- Inputs: url (required), prompt (required — what to extract/analyze)\n- HTTP is upgraded to HTTPS\n- HTML is converted to plain text/markdown-like content\n- Cross-host redirects are NOT followed automatically; the tool returns redirect info for a new call\n- Results may be summarized if the page is very large\n- Read-only; does not write files\n",
+      "parameters": {
+        "properties": {
+          "prompt": {
+            "description": "The prompt to run on the fetched content (what to extract or analyze)",
+            "type": "string"
+          },
+          "url": {
+            "description": "The URL to fetch content from (http/https)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "prompt"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "twitter": {
+    "type": "function",
+    "function": {
+      "name": "twitter",
+      "description": "Read authenticated Twitter/X content. Use operation=search|tweet|thread|article|feed|timeline|user_posts. Read-only; credentials are configured in reactor-tool environment variables.",
+      "parameters": {
+        "properties": {
+          "limit": {
+            "description": "Maximum number of list results.",
+            "maximum": 50,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "operation": {
+            "description": "Read operation.",
+            "enum": [
+              "search",
+              "tweet",
+              "thread",
+              "article",
+              "feed",
+              "timeline",
+              "user_posts"
+            ],
+            "type": "string"
+          },
+          "query": {
+            "description": "Search query for operation=search.",
+            "type": "string"
+          },
+          "tweet_id": {
+            "description": "Tweet ID or x.com URL for tweet/thread/article.",
+            "type": "string"
+          },
+          "username": {
+            "description": "Username for operation=timeline or user_posts.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "reddit": {
+    "type": "function",
+    "function": {
+      "name": "reddit",
+      "description": "Read authenticated Reddit content. Use operation=search|subreddit|popular|read|user_posts. Read-only; posting, voting, saving, and browser-cookie access are unavailable.",
+      "parameters": {
+        "properties": {
+          "limit": {
+            "description": "Maximum number of results/comments.",
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "operation": {
+            "description": "Read operation.",
+            "enum": [
+              "search",
+              "subreddit",
+              "popular",
+              "read",
+              "user_posts"
+            ],
+            "type": "string"
+          },
+          "post_id": {
+            "description": "Reddit post ID or URL for operation=read.",
+            "type": "string"
+          },
+          "query": {
+            "description": "Search query for operation=search.",
+            "type": "string"
+          },
+          "sort": {
+            "description": "Sort mode.",
+            "enum": [
+              "relevance",
+              "hot",
+              "new",
+              "top",
+              "rising",
+              "controversial",
+              "best"
+            ],
+            "type": "string"
+          },
+          "subreddit": {
+            "description": "Subreddit name, with or without the r/ prefix.",
+            "type": "string"
+          },
+          "time_filter": {
+            "description": "Search time filter.",
+            "enum": [
+              "hour",
+              "day",
+              "week",
+              "month",
+              "year",
+              "all"
+            ],
+            "type": "string"
+          },
+          "username": {
+            "description": "Username for operation=user_posts.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "xueqiu": {
+    "type": "function",
+    "function": {
+      "name": "xueqiu",
+      "description": "Read authenticated Xueqiu stock quotes and community data. Use operation=quote|search|hot_posts|hot_stocks. No trading, portfolio mutation, or account writes are supported.",
+      "parameters": {
+        "properties": {
+          "limit": {
+            "description": "Maximum number of results.",
+            "maximum": 50,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "operation": {
+            "description": "Read operation.",
+            "enum": [
+              "quote",
+              "search",
+              "hot_posts",
+              "hot_stocks"
+            ],
+            "type": "string"
+          },
+          "query": {
+            "description": "Stock code or name for operation=search.",
+            "type": "string"
+          },
+          "stock_type": {
+            "description": "Hot-stock ranking type, commonly 10 or 12.",
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "symbol": {
+            "description": "Stock symbol such as SH600519 or SZ000858 for quote.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "multimodalagent_tool": {
+    "type": "function",
+    "function": {
+      "name": "multimodalagent_tool",
+      "description": "本工具用于查询与用户相关的知识，作为在线知识的补充。支持文本和图像等多模态数据检索，能够高效访问和获取用户专属的知识信息。",
+      "parameters": {
+        "properties": {
+          "question": {
+            "description": "查询所需要的question，需要在知识库中进行检索的检索短语或句子。",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "data_analysis": {
+    "type": "function",
+    "function": {
+      "name": "data_analysis",
+      "description": "这是一个数据分析工具，可以查询并分析数据",
+      "parameters": {
+        "properties": {
+          "businessKnowledge": {
+            "description": "businessKnowledge",
+            "type": "string"
+          },
+          "reportFileName": {
+            "description": "最终分析报告文件名称，必填且不超过20个字符（含扩展名），例如：销售趋势分析报告.md",
+            "maxLength": 20,
+            "type": "string"
+          },
+          "task": {
+            "description": "task",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task",
+          "businessKnowledge",
+          "reportFileName"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "code_interpreter": {
+    "type": "function",
+    "function": {
+      "name": "code_interpreter",
+      "description": "这是一个Code interpreter工具，可以写Python代码\n\n- 严禁用此工具进行处理从非表格文件中提取表格、抽取数据、抽取指标等任务。\n\n- 严禁处理纯文本文件，例如 .txt, .md , .html 等文件的直接处理。如果需要对这些文件分析，则应该先通过读取这些文件内容，保存成 .csv 文件格式的数据表后再进行处理。\n\n- 如果上下文中有.xlsx 、.csv 等Excel表格文件需要处理分析，可以直接使用此工具读取 .xlsx 、.csv 等Excel表格文件进行分析处理\n",
+      "parameters": {
+        "properties": {
+          "fileName": {
+            "description": "最终代码解释器报告文件名称，必填且不超过20个字符（含扩展名），例如：销售趋势分析报告.md",
+            "maxLength": 20,
+            "type": "string"
+          },
+          "task": {
+            "description": "任务的描述，不仅包括提供任务目标、任务的相关要求，还包括详细的完成任务需要的细节信息。详细是指不仅包含上下文中提及的所有与任务的相关内容，同时，包括：用户提供的业务名词、业务背景、数据等相关内容，确保这是一个易于理解、步骤明确、且能完成完整任务的描述。完整任务的定义是所有依赖项都在这里写清楚，明确无歧义，信息无丢失，基于上下文已有的数据进行。禁止编造数据，写出来的程序是基于上下文已有的数据进行。",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task",
+          "fileName"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "code_execution": {
+    "type": "function",
+    "function": {
+      "name": "code_execution",
+      "description": "直接在受控 Python 沙箱执行源码。用于计算、数据处理、图表及用户可下载文件生成。\n沙箱 cwd 为当前会话工作区（与 bash 相同）。用 Path / open / savefig 等相对路径读写即可，例如 Path('chinagt-shanghai-fire-report/index.html').read_text(encoding='utf-8')；plt.savefig('chart.png')；df.to_excel('结果.xlsx')。\n本次新增或修改的工作区文件会自动采集上传，前端可预览/下载。\n禁止写死宿主绝对路径。fileNames 仅用于 http(s) URL 或工作区外绝对路径。",
+      "parameters": {
+        "properties": {
+          "fileNames": {
+            "description": "可选。仅填 http(s) URL 或工作区外绝对路径，系统会下载到会话工作区。工作区已有文件不要填这里，源码里用相对路径 Path/open 直接读。",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "files": {
+            "description": "写入工作区的小型文本或 Base64 文件",
+            "items": {
+              "description": "工作区文件条目",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "importTier": {
+            "enum": [
+              "stdlib",
+              "extended",
+              "unrestricted"
+            ],
+            "type": "string"
+          },
+          "inputs": {
+            "description": "注入 Python 全局变量的 JSON 对象",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "memoryBytes": {
+            "description": "可选内存上限（字节）",
+            "type": "integer"
+          },
+          "resetWorkspace": {
+            "type": "boolean"
+          },
+          "source": {
+            "description": "完整 Python 源码。cwd 为会话工作区；生成文件用相对路径，例如 Path('chart.png')、plt.savefig('chart.png')。禁止硬编码 skilloutput/盘符绝对路径。",
+            "type": "string"
+          },
+          "timeoutSeconds": {
+            "maximum": 600,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "workspaceFile": {
+            "description": "工作区内已有 Python 源码文件，提供时优先执行它",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "bash": {
+    "type": "function",
+    "function": {
+      "name": "bash",
+      "description": "在远端沙箱执行 shell（reactor-tool /v1/tool/bash；与 code_execution 相同 CODE_SANDBOX_BACKEND：local 或 e2b）。只物化命令里出现的 skills/<name>；脚本若还要用其它 skill，必须把那些路径也写进同一条 command，未引用的包沙箱里不存在。命令含 skills/ 时进入 skill 沙箱（此后本会话 bash 保持该沙箱）。命令示例：python skills/<name>/scripts/xxx.py。沙箱内对 skills/** 的修改会回写全局 skill 库（注册表本轮不刷新）。路径：无前缀=会话工作区相对路径，skills/=技能库；不要用宿主绝对路径。默认超时 120s，上限 600s。",
+      "parameters": {
+        "properties": {
+          "command": {
+            "description": "要执行的 shell 命令（沙箱 cwd 为会话工作区）",
+            "type": "string"
+          },
+          "timeout_sec": {
+            "description": "超时秒数，默认 120，上限 600",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "command"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "chart_generator": {
+    "type": "function",
+    "function": {
+      "name": "chart_generator",
+      "description": "Generate professional charts (bar, line, pie, scatter, heatmap, radar, area, histogram, horizontal_bar) with themes presentation|report|dashboard|minimal. Saves PNG/SVG/PDF image file.",
+      "parameters": {
+        "properties": {
+          "chart_type": {
+            "description": "bar|line|pie|scatter|heatmap|radar|area|histogram|horizontal_bar",
+            "type": "string"
+          },
+          "data": {
+            "description": "Chart data: categories, series, values, labels, x/y, matrix, row_labels",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "fileName": {
+            "description": "Alias of output_path",
+            "type": "string"
+          },
+          "output_format": {
+            "description": "png | svg | pdf",
+            "type": "string"
+          },
+          "output_path": {
+            "description": "Output file name, e.g. sales.png",
+            "type": "string"
+          },
+          "show_legend": {
+            "description": "Show legend",
+            "type": "boolean"
+          },
+          "stacked": {
+            "description": "Stack bars/areas",
+            "type": "boolean"
+          },
+          "theme": {
+            "description": "presentation | report | dashboard | minimal",
+            "type": "string"
+          },
+          "title": {
+            "description": "Chart title",
+            "type": "string"
+          },
+          "x_label": {
+            "description": "X-axis label",
+            "type": "string"
+          },
+          "y_label": {
+            "description": "Y-axis label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "chart_type",
+          "data"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "checklist_generate": {
+    "type": "function",
+    "function": {
+      "name": "checklist_generate",
+      "description": "Generate a status-tracked checklist and export to Markdown, JSON, HTML, PDF, or DOCX. Supports grouped/flat items with status, priority, assignee, due date, notes and nested sub-items.",
+      "parameters": {
+        "properties": {
+          "description": {
+            "description": "Checklist description.",
+            "type": "string"
+          },
+          "fileName": {
+            "description": "Alias of output_path.",
+            "type": "string"
+          },
+          "format": {
+            "description": "markdown | json | html | pdf | docx.",
+            "type": "string"
+          },
+          "groups": {
+            "description": "Grouped items: [{name, description, items:[...]}].",
+            "items": {
+              "description": "Checklist group",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "items": {
+            "description": "Flat list of items.",
+            "items": {
+              "description": "Checklist item: text, status, priority, assignee, due_date, notes, sub_items.",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "output_path": {
+            "description": "Output file name, e.g. checklist.md / checklist.pdf.",
+            "type": "string"
+          },
+          "theme": {
+            "description": "Theme for HTML/PDF/DOCX.",
+            "type": "string"
+          },
+          "title": {
+            "description": "Checklist title.",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  "citation_extractor": {
+    "type": "function",
+    "function": {
+      "name": "citation_extractor",
+      "description": "Extract reference/bibliography list from an academic PDF (marker, full text, DOI/URL when detected).",
+      "parameters": {
+        "properties": {
+          "file_path": {
+            "description": "Path to the PDF file under workspace",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "data_aggregate": {
+    "type": "function",
+    "function": {
+      "name": "data_aggregate",
+      "description": "Aggregate tabular data: operation=groupby|pivot|describe|value_counts|rolling. Supports sum/avg/count/min/max and pivot tables. Input via data (records), source_path, or artifact.",
+      "parameters": {
+        "properties": {
+          "aggregations": {
+            "description": "column -> sum|mean|avg|count|min|max|...",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "data": {
+            "description": "Inline list of row objects",
+            "items": {
+              "description": "Row object",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "group_by": {
+            "description": "Group-by columns",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "operation": {
+            "description": "groupby | pivot | describe | value_counts | rolling",
+            "type": "string"
+          },
+          "output_format": {
+            "description": "records | dict",
+            "type": "string"
+          },
+          "pivot_aggfunc": {
+            "description": "Pivot agg: sum|mean|count|min|max|...",
+            "type": "string"
+          },
+          "pivot_columns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "pivot_index": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "pivot_values": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "source_path": {
+            "description": "CSV/JSON/JSONL/Parquet path under workspace",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "data_clean": {
+    "type": "function",
+    "function": {
+      "name": "data_clean",
+      "description": "Clean tabular data: dedupe, fill/drop missing, trim whitespace, normalize types. For fill_missing with a literal value, pass fill_value (not value). Input via data / source_path / artifact.",
+      "parameters": {
+        "properties": {
+          "data": {
+            "description": "Inline rows",
+            "items": {
+              "description": "Row object",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "operations": {
+            "description": "Cleaning operations to apply in order",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "axis": {
+                  "default": "rows",
+                  "description": "For drop_missing: drop rows or columns",
+                  "enum": [
+                    "rows",
+                    "columns"
+                  ],
+                  "type": "string"
+                },
+                "columns": {
+                  "description": "Columns to apply the operation to; empty means all columns",
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "fill_strategy": {
+                  "default": "value",
+                  "description": "For fill_missing: strategy; value requires fill_value",
+                  "enum": [
+                    "value",
+                    "mean",
+                    "median",
+                    "mode",
+                    "ffill",
+                    "bfill"
+                  ],
+                  "type": "string"
+                },
+                "fill_value": {
+                  "description": "For fill_missing with fill_strategy=value: literal value to use; do not use value"
+                },
+                "how": {
+                  "default": "any",
+                  "description": "For drop_missing: drop if any or all values are missing",
+                  "enum": [
+                    "any",
+                    "all"
+                  ],
+                  "type": "string"
+                },
+                "keep": {
+                  "default": "first",
+                  "description": "For remove_duplicates: which duplicate to keep",
+                  "enum": [
+                    "first",
+                    "last",
+                    "none"
+                  ],
+                  "type": "string"
+                },
+                "thresh": {
+                  "description": "For drop_missing: minimum non-null values required",
+                  "type": "integer"
+                },
+                "type": {
+                  "description": "Cleaning operation type",
+                  "enum": [
+                    "remove_duplicates",
+                    "fill_missing",
+                    "drop_missing",
+                    "trim_whitespace",
+                    "normalize_types"
+                  ],
+                  "type": "string"
+                },
+                "type_map": {
+                  "additionalProperties": {
+                    "enum": [
+                      "int",
+                      "float",
+                      "str",
+                      "bool",
+                      "datetime"
+                    ],
+                    "type": "string"
+                  },
+                  "description": "For normalize_types: column to type mapping",
+                  "properties": {},
+                  "required": [],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "output_format": {
+            "description": "records | dict",
+            "type": "string"
+          },
+          "source_path": {
+            "description": "Input file path under workspace",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operations"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "data_merge": {
+    "type": "function",
+    "function": {
+      "name": "data_merge",
+      "description": "Merge/join tabular datasets: operation=merge|concat, how=inner|outer|left|right|cross. Provide left_data/right_data or left_artifact/right_artifact or datasets list.",
+      "parameters": {
+        "properties": {
+          "axis": {
+            "description": "concat axis: rows | columns",
+            "type": "string"
+          },
+          "datasets": {
+            "description": "Datasets for concat",
+            "items": {
+              "description": "Dataset",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "how": {
+            "description": "inner | outer | left | right | cross",
+            "type": "string"
+          },
+          "left_data": {
+            "items": {
+              "description": "Left row",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "left_on": {
+            "description": "Left join keys",
+            "type": "string"
+          },
+          "on": {
+            "description": "Join key column(s)",
+            "type": "string"
+          },
+          "operation": {
+            "description": "merge | concat",
+            "type": "string"
+          },
+          "right_data": {
+            "items": {
+              "description": "Right row",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "right_on": {
+            "description": "Right join keys",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  "data_validate": {
+    "type": "function",
+    "function": {
+      "name": "data_validate",
+      "description": "Validate tabular data against schema/rules: types, ranges, required fields, regex patterns, uniqueness. Returns validation report (not a transformed table).",
+      "parameters": {
+        "properties": {
+          "data": {
+            "items": {
+              "description": "Row object",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "rules": {
+            "description": "Extra validation rules",
+            "items": {
+              "description": "Validation rule",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "schema": {
+            "description": "Column schema rules",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "source_path": {
+            "description": "Input file path under workspace",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  "document_generate": {
+    "type": "function",
+    "function": {
+      "name": "document_generate",
+      "description": "Generate a professional document (PDF, DOCX, HTML, or Markdown) from markdown content. Supports headings, tables, images, task lists, code blocks, quotes, LaTeX math, footnotes, definition lists, callouts, chart/metrics/checklist blocks, TOC, cover, headers/footers, watermark, page setup, encryption, merging, and themes. For charts, put a document chart JSON object inside a ```chart fence: {\"type\":\"chart\",\"chart_type\":\"bar|line|pie|scatter|area|barh\",\"title\":\"...\",\"categories\":[\"...\"],\"series\":[{\"name\":\"...\",\"values\":[1,2]}]}. Do not use ECharts option JSON such as xAxis/yAxis/series.data/title.text; it is rendered as code, not a chart. Chinese/CJK text is font-safe.",
+      "parameters": {
+        "properties": {
+          "author": {
+            "description": "Author.",
+            "type": "string"
+          },
+          "blocks": {
+            "description": "Typed content blocks, appended after content when both are given: heading{text,level}, paragraph{text,alignment}, list{ordered,items}, table{columns,rows,align,caption,style,total_row,zebra,widths,number_format}, image{path|url|file_id|base64_data,caption,width_pct}, code{code,language}, quote{text,attribution}, callout{variant,title,text}, chart{chart_type,categories,series,title}, metrics{items}, checklist{title,groups|items}, divider, page_break, spacer{height_pt}, toc, math{latex,caption}, definition_list{items}, footnotes{items}, columns{columns,widths,gap_pt}.",
+            "items": {
+              "description": "Typed content block",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "content": {
+            "description": "Markdown body (preferred). Supports GFM tables, task lists, images, blockquotes, LaTeX math, footnotes, definition lists, YAML front matter, ```chart/```metrics/```checklist JSON fences, ::: callout, [TOC], and \\newpage. For a chart, use {type:'chart', chart_type:'bar|line|pie|scatter|area|barh', title:'...', categories:['...'], series:[{name:'...', values:[1,2]}]}; never use ECharts xAxis/yAxis/series.data JSON.",
+            "type": "string"
+          },
+          "cover": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "description": "Cover object",
+                "properties": {},
+                "required": [],
+                "type": "object"
+              }
+            ],
+            "description": "true for a cover page, or an object with title, subtitle, author, date, organization, and logo_path."
+          },
+          "date": {
+            "description": "Date string on cover.",
+            "type": "string"
+          },
+          "encryption": {
+            "description": "PDF password protection: user_password and optional owner_password.",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "fileName": {
+            "description": "Alias of output_path for Reactor file naming.",
+            "type": "string"
+          },
+          "footer": {
+            "description": "Running page footer: text, show_page_number, alignment.",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "format": {
+            "description": "Output format: pdf | docx | html | markdown. Defaults from output_path extension, else pdf.",
+            "type": "string"
+          },
+          "header": {
+            "description": "Running page header: text, show_page_number, alignment. PDF text supports {page}, {pages}, {title}, {author}, {date}, and {section}.",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "justify": {
+            "description": "Justify body text for formal reports.",
+            "type": "boolean"
+          },
+          "keywords": {
+            "description": "Keyword metadata.",
+            "items": {
+              "description": "Keyword.",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "merge_sources": {
+            "description": "Existing PDF paths appended after the generated content (PDF only).",
+            "items": {
+              "description": "PDF path.",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "numbered_figures": {
+            "description": "Auto-number table, image, and chart captions.",
+            "type": "boolean"
+          },
+          "numbered_headings": {
+            "description": "Number headings 1 / 1.1 / 1.1.1 (PDF).",
+            "type": "boolean"
+          },
+          "output_path": {
+            "description": "Output file name, e.g. report.pdf / memo.docx. Extension decides format if format omitted.",
+            "type": "string"
+          },
+          "page": {
+            "description": "Page setup: size (A4, LETTER, LEGAL, A3, A5), orientation, and point-based margins.",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "section_pages": {
+            "description": "Start every H1 section on a new page.",
+            "type": "boolean"
+          },
+          "subject": {
+            "description": "Subject metadata.",
+            "type": "string"
+          },
+          "subtitle": {
+            "description": "Subtitle under title.",
+            "type": "string"
+          },
+          "theme": {
+            "description": "Theme name, e.g. professional.",
+            "type": "string"
+          },
+          "title": {
+            "description": "Document title (metadata + cover).",
+            "type": "string"
+          },
+          "toc": {
+            "description": "Include table of contents.",
+            "type": "boolean"
+          },
+          "watermark": {
+            "description": "PDF watermark: text, color, opacity, angle, font_size.",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          }
+        },
+        "required": [
+          "output_path"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "document_template": {
+    "type": "function",
+    "function": {
+      "name": "document_template",
+      "description": "Manage reusable document/deck templates. action=save|list|get|delete|preview|generate. save stores markdown content or slides with Jinja2 {{variables}}; generate instantiates with values and renders PDF/DOCX/HTML/MD or PPTX.",
+      "parameters": {
+        "properties": {
+          "action": {
+            "description": "save | list | get | delete | preview | generate",
+            "type": "string"
+          },
+          "content": {
+            "description": "Document markdown body with Jinja2 placeholders",
+            "type": "string"
+          },
+          "defaults": {
+            "description": "Extra generate defaults (toc, cover, header, ...)",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "description": {
+            "description": "One-line description for list",
+            "type": "string"
+          },
+          "format": {
+            "description": "generate document: pdf|docx|html|markdown",
+            "type": "string"
+          },
+          "kind": {
+            "description": "document | deck",
+            "type": "string"
+          },
+          "name": {
+            "description": "Template name (required except list)",
+            "type": "string"
+          },
+          "output_path": {
+            "description": "generate: output file name e.g. report.pdf / deck.pptx",
+            "type": "string"
+          },
+          "overwrite": {
+            "description": "save: replace existing template, default true",
+            "type": "boolean"
+          },
+          "slides": {
+            "description": "Deck slides list (objects with Jinja2 text fields)",
+            "items": {
+              "description": "Deck slide",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "theme": {
+            "description": "Theme name (built-in or theme_designer)",
+            "type": "string"
+          },
+          "values": {
+            "description": "Variable values for preview/generate",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "variables": {
+            "description": "Declared variables [{name,description,default,required}]",
+            "items": {
+              "description": "Variable declaration",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "excel_generator": {
+    "type": "function",
+    "function": {
+      "name": "excel_generator",
+      "description": "Create Excel .xlsx files with multiple sheets, headers, formulas, charts, freeze panes, auto-filter, data validation, cell styles and conditional formatting. Use when the user needs a real spreadsheet file.",
+      "parameters": {
+        "properties": {
+          "fileName": {
+            "description": "Alias of output_path.",
+            "type": "string"
+          },
+          "output_path": {
+            "description": "Output file name, e.g. data.xlsx.",
+            "type": "string"
+          },
+          "preset": {
+            "description": "Optional preset, e.g. financial.",
+            "type": "string"
+          },
+          "sheets": {
+            "description": "Array of sheet definitions (required).",
+            "items": {
+              "description": "Sheet definition: name, headers, data (2D array), formulas, charts, styles, etc.",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "workbook_properties": {
+            "description": "Workbook metadata: title/author/subject/company.",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          }
+        },
+        "required": [
+          "sheets"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "excel_reader": {
+    "type": "function",
+    "function": {
+      "name": "excel_reader",
+      "description": "Read Excel .xlsx/.xlsm: sheet by name/index, optional cell_range, output_format=records|dict|list.",
+      "parameters": {
+        "properties": {
+          "cell_range": {
+            "description": "Optional range e.g. A1:D10",
+            "type": "string"
+          },
+          "file_path": {
+            "description": "Path to .xlsx/.xlsm under workspace",
+            "type": "string"
+          },
+          "has_header": {
+            "description": "First row is header, default true",
+            "type": "boolean"
+          },
+          "output_format": {
+            "description": "records | dict | list, default records",
+            "type": "string"
+          },
+          "sheet_index": {
+            "description": "0-based sheet index if name omitted",
+            "type": "integer"
+          },
+          "sheet_name": {
+            "description": "Sheet name (preferred)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "html_processor": {
+    "type": "function",
+    "function": {
+      "name": "html_processor",
+      "description": "HTML processor: operation=read|extract_links|extract_tables|extract_metadata|convert. Extract text/links/tables/meta or convert to markdown/plain_text.",
+      "parameters": {
+        "properties": {
+          "file_path": {
+            "description": "HTML file path under workspace",
+            "type": "string"
+          },
+          "operation": {
+            "description": "read | extract_links | extract_tables | extract_metadata | convert",
+            "type": "string"
+          },
+          "output_format": {
+            "description": "For convert: markdown | plain_text",
+            "type": "string"
+          },
+          "output_path": {
+            "description": "Output path for convert",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation",
+          "file_path"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "image_ocr": {
+    "type": "function",
+    "function": {
+      "name": "image_ocr",
+      "description": "Extract text from an image (PNG/JPG/WEBP/...) via cloud OCR. Pass workspace file_path. Optional lang=ch|en|ch_en or custom prompt. Backend selected by reactor-tool OCR_TYPE (vlm-ocr / deepseek-ocr / paddleocr-vl).",
+      "parameters": {
+        "properties": {
+          "file_path": {
+            "description": "Image path under workspace (png/jpg/jpeg/bmp/webp/tiff/gif)",
+            "type": "string"
+          },
+          "lang": {
+            "description": "Optional language hint: ch | en | ch_en",
+            "type": "string"
+          },
+          "prompt": {
+            "description": "Optional custom OCR instruction (VLM backends)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "markdown_processor": {
+    "type": "function",
+    "function": {
+      "name": "markdown_processor",
+      "description": "Markdown processor: read/write/create/append/section edit/merge/convert/format/template. Use for structured markdown authoring and TOC/link extraction.",
+      "parameters": {
+        "properties": {
+          "content": {
+            "description": "Markdown content for write/append/create",
+            "type": "string"
+          },
+          "file_path": {
+            "description": "Markdown path (read/write target)",
+            "type": "string"
+          },
+          "format": {
+            "description": "convert target: html | plain_text",
+            "type": "string"
+          },
+          "heading": {
+            "description": "Section heading for insert/replace",
+            "type": "string"
+          },
+          "operation": {
+            "description": "read|write|create|append|prepend|insert_section|replace_section|merge|convert|format|template",
+            "type": "string"
+          },
+          "output_path": {
+            "description": "Optional output path",
+            "type": "string"
+          },
+          "title": {
+            "description": "Title for create/template",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "pdf_reader": {
+    "type": "function",
+    "function": {
+      "name": "pdf_reader",
+      "description": "PDF toolkit: operation=read|extract_tables|extract_images|extract_links|search|page_info|outline|convert_to_images|split|merge|extract_pages|metadata. Prefer read for text; use pdf_structure for academic outline.",
+      "parameters": {
+        "properties": {
+          "end_page": {
+            "description": "1-based end page",
+            "type": "integer"
+          },
+          "file_path": {
+            "description": "PDF path under workspace",
+            "type": "string"
+          },
+          "max_chars": {
+            "description": "Max characters for read, default 200000",
+            "type": "integer"
+          },
+          "operation": {
+            "description": "read|extract_tables|extract_images|extract_links|search|page_info|outline|convert_to_images|split|merge|extract_pages|metadata (default read)",
+            "type": "string"
+          },
+          "output_dir": {
+            "description": "Output directory for split/images",
+            "type": "string"
+          },
+          "output_path": {
+            "description": "Output path for merge/extract_pages/convert",
+            "type": "string"
+          },
+          "query": {
+            "description": "Search query for search operation",
+            "type": "string"
+          },
+          "start_page": {
+            "description": "1-based start page",
+            "type": "integer"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  "pdf_structure": {
+    "type": "function",
+    "function": {
+      "name": "pdf_structure",
+      "description": "Analyze PDF structure: page count, title, outline/bookmarks, heuristic section headings, figures/tables. Use before summarizing academic papers.",
+      "parameters": {
+        "properties": {
+          "file_path": {
+            "description": "Path to the PDF file under workspace",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "slides_generate": {
+    "type": "function",
+    "function": {
+      "name": "slides_generate",
+      "description": "Generate a professional PPTX presentation. Each slide picks a layout and carries markdown body text. CJK/Chinese fonts are set explicitly so text never falls back to Latin-only faces. Use when the user asks for PowerPoint / PPT / 幻灯片 / 演示文稿.",
+      "parameters": {
+        "properties": {
+          "aspect": {
+            "description": "Aspect ratio, default 16:9.",
+            "type": "string"
+          },
+          "author": {
+            "description": "Author.",
+            "type": "string"
+          },
+          "fileName": {
+            "description": "Alias of output_path.",
+            "type": "string"
+          },
+          "output_path": {
+            "description": "Output file name, e.g. deck.pptx.",
+            "type": "string"
+          },
+          "slides": {
+            "description": "Non-empty array of slide objects.",
+            "items": {
+              "description": "One slide: layout, title, body markdown, optional image/chart/quote fields.",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "subtitle": {
+            "description": "Deck subtitle.",
+            "type": "string"
+          },
+          "theme": {
+            "description": "Theme, default executive_light.",
+            "type": "string"
+          },
+          "title": {
+            "description": "Deck title (auto title slide when first slide is not layout=title).",
+            "type": "string"
+          }
+        },
+        "required": [
+          "slides"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "sql_query": {
+    "type": "function",
+    "function": {
+      "name": "sql_query",
+      "description": "Read-only SQL SELECT on tabular data (JOIN/WHERE/GROUP BY/ORDER BY/aggregates). Provide query + tables map or data/source_path (registered as table 'data'). Destructive SQL is rejected.",
+      "parameters": {
+        "properties": {
+          "data": {
+            "items": {
+              "description": "Row object",
+              "properties": {},
+              "required": [],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "explain": {
+            "description": "If true, only explain query without executing",
+            "type": "boolean"
+          },
+          "limit": {
+            "description": "Max result rows (default 1000)",
+            "type": "integer"
+          },
+          "output_format": {
+            "description": "records | dict",
+            "type": "string"
+          },
+          "query": {
+            "description": "SELECT-only SQL query",
+            "type": "string"
+          },
+          "source_path": {
+            "description": "Single table file path (alias table name: data)",
+            "type": "string"
+          },
+          "tables": {
+            "description": "name -> records|artifact|path",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "template_filler": {
+    "type": "function",
+    "function": {
+      "name": "template_filler",
+      "description": "Fill templates using Jinja2 with variable substitution, conditionals, loops and filters. template_source: string | file | url.",
+      "parameters": {
+        "properties": {
+          "fileName": {
+            "description": "Alias of output_path.",
+            "type": "string"
+          },
+          "output_format": {
+            "description": "text | html | json | yaml | markdown.",
+            "type": "string"
+          },
+          "output_path": {
+            "description": "Optional output file name.",
+            "type": "string"
+          },
+          "strict_mode": {
+            "description": "Raise on undefined variables. Default false.",
+            "type": "boolean"
+          },
+          "template_path": {
+            "description": "Template file path when source=file.",
+            "type": "string"
+          },
+          "template_source": {
+            "description": "Source type: string | file | url. Default string.",
+            "type": "string"
+          },
+          "template_string": {
+            "description": "Template content when source=string.",
+            "type": "string"
+          },
+          "template_url": {
+            "description": "Template URL when source=url.",
+            "type": "string"
+          },
+          "variables": {
+            "description": "Template variables object.",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  "theme_designer": {
+    "type": "function",
+    "function": {
+      "name": "theme_designer",
+      "description": "Design custom themes for document_generate / slides_generate. action=create|save|list|get|delete. create derives a contrast-checked theme from primary brand color; saved themes are selectable via the theme parameter.",
+      "parameters": {
+        "properties": {
+          "accent": {
+            "description": "create: optional accent #RRGGBB",
+            "type": "string"
+          },
+          "action": {
+            "description": "create | save | list | get | delete",
+            "type": "string"
+          },
+          "body_font": {
+            "description": "create: body font name",
+            "type": "string"
+          },
+          "dry_run": {
+            "description": "create/save: return payload without persisting",
+            "type": "boolean"
+          },
+          "east_asia_font": {
+            "description": "create: CJK font e.g. Microsoft YaHei",
+            "type": "string"
+          },
+          "heading_font": {
+            "description": "create: heading font name",
+            "type": "string"
+          },
+          "kind": {
+            "description": "document | deck",
+            "type": "string"
+          },
+          "mode": {
+            "description": "create: light | dark",
+            "type": "string"
+          },
+          "name": {
+            "description": "Theme name (required except list)",
+            "type": "string"
+          },
+          "overrides": {
+            "description": "create: deep-merge overrides",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "payload": {
+            "description": "save: explicit theme payload",
+            "properties": {},
+            "required": [],
+            "type": "object"
+          },
+          "primary": {
+            "description": "create: brand primary color #RRGGBB",
+            "type": "string"
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "word_reader": {
+    "type": "function",
+    "function": {
+      "name": "word_reader",
+      "description": "Read Word documents (.docx/.docm structure; legacy .doc plain text). Extract paragraphs, headings, tables, optional headers/footers.",
+      "parameters": {
+        "properties": {
+          "extract_headers": {
+            "description": "Extract headers/footers, default false",
+            "type": "boolean"
+          },
+          "extract_tables": {
+            "description": "Extract tables, default true",
+            "type": "boolean"
+          },
+          "file_path": {
+            "description": "Path to .docx/.docm/.doc under workspace",
+            "type": "string"
+          },
+          "preserve_structure": {
+            "description": "Preserve structure, default true",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "type": "object"
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-failure-baseline-6noo3c79",
+  "results": [
+    {
+      "file": "test_code_interpreter_permissions.py",
+      "baseline_exit": 1,
+      "baseline_failed": [
+        "tests.test_code_interpreter_permissions.CodeInterpreterPermissionPolicyTest::test_analysis_profile_should_allow_build_output_path_helper",
+        "tests.test_code_interpreter_permissions.CodeInterpreterPermissionPolicyTest::test_analysis_profile_should_allow_pathlib_import_with_safe_output_path",
+        "tests.test_code_interpreter_permissions.CodeInterpreterPermissionPolicyTest::test_analysis_profile_should_block_pathlib_write_outside_output_dir",
+        "tests.test_code_interpreter_permissions.CodeInterpreterPermissionPolicyTest::test_analysis_profile_should_block_write_outside_output_dir",
+        "tests.test_code_interpreter_permissions.CodeInterpreterPermissionPolicyTest::test_workspace_profile_should_allow_workspace_local_write"
+      ],
+      "current_failed": [
+        "tests.test_code_interpreter_permissions.CodeInterpreterPermissionPolicyTest::test_analysis_profile_should_allow_build_output_path_helper",
+        "tests.test_code_interpreter_permissions.CodeInterpreterPermissionPolicyTest::test_analysis_profile_should_allow_pathlib_import_with_safe_output_path",
+        "tests.test_code_interpreter_permissions.CodeInterpreterPermissionPolicyTest::test_analysis_profile_should_block_pathlib_write_outside_output_dir",
+        "tests.test_code_interpreter_permissions.CodeInterpreterPermissionPolicyTest::test_analysis_profile_should_block_write_outside_output_dir",
+        "tests.test_code_interpreter_permissions.CodeInterpreterPermissionPolicyTest::test_workspace_profile_should_allow_workspace_local_write"
+      ],
+      "same_failures": true,
+      "baseline_log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-failure-baseline-6noo3c79/test_code_interpreter_permissions/baseline.log",
+      "current_log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_code_interpreter_permissions/test.log"
+    },
+    {
+      "file": "test_code_interpreter_runtime_guard.py",
+      "baseline_exit": 1,
+      "baseline_failed": [
+        "tests.test_code_interpreter_runtime_guard.CodeInterpreterRuntimeGuardTest::test_guard_should_normalize_relative_output_write_for_pathlib"
+      ],
+      "current_failed": [
+        "tests.test_code_interpreter_runtime_guard.CodeInterpreterRuntimeGuardTest::test_guard_should_normalize_relative_output_write_for_pathlib"
+      ],
+      "same_failures": true,
+      "baseline_log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-failure-baseline-6noo3c79/test_code_interpreter_runtime_guard/baseline.log",
+      "current_log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_code_interpreter_runtime_guard/test.log"
+    },
+    {
+      "file": "test_e2b_sandbox_backend.py",
+      "baseline_exit": 1,
+      "baseline_failed": [
+        "tests.test_e2b_sandbox_backend.E2BSandboxBackendTest::test_e2b_keeps_kernel_state_across_executes",
+        "tests.test_e2b_sandbox_backend.E2BSandboxBackendTest::test_executor_facade_routes_to_e2b_and_downloads_outputs",
+        "tests.test_e2b_sandbox_backend.E2BSandboxBackendTest::test_executor_passes_configured_proxy_to_sandbox_factory",
+        "tests.test_e2b_sandbox_backend.E2BSandboxBackendTest::test_injects_file_and_main_name",
+        "tests.test_e2b_sandbox_backend.E2BSandboxBackendTest::test_uploads_local_input_files"
+      ],
+      "current_failed": [
+        "tests.test_e2b_sandbox_backend.E2BSandboxBackendTest::test_e2b_keeps_kernel_state_across_executes",
+        "tests.test_e2b_sandbox_backend.E2BSandboxBackendTest::test_executor_facade_routes_to_e2b_and_downloads_outputs",
+        "tests.test_e2b_sandbox_backend.E2BSandboxBackendTest::test_executor_passes_configured_proxy_to_sandbox_factory",
+        "tests.test_e2b_sandbox_backend.E2BSandboxBackendTest::test_injects_file_and_main_name",
+        "tests.test_e2b_sandbox_backend.E2BSandboxBackendTest::test_uploads_local_input_files"
+      ],
+      "same_failures": true,
+      "baseline_log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-failure-baseline-6noo3c79/test_e2b_sandbox_backend/baseline.log",
+      "current_log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_e2b_sandbox_backend/test.log"
+    },
+    {
+      "file": "test_mrag_api.py",
+      "baseline_exit": 1,
+      "baseline_failed": [
+        "tests.test_mrag_api.MragApiTest::test_should_return_explicit_failure_chunk_when_upstream_error"
+      ],
+      "current_failed": [
+        "tests.test_mrag_api.MragApiTest::test_should_return_explicit_failure_chunk_when_upstream_error"
+      ],
+      "same_failures": true,
+      "baseline_log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-failure-baseline-6noo3c79/test_mrag_api/baseline.log",
+      "current_log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_api/test.log"
+    },
+    {
+      "file": "test_mrag_document_processor.py",
+      "baseline_exit": 1,
+      "baseline_failed": [
+        "tests.test_mrag_document_processor.DocumentProcessorPersistenceTest::test_should_list_nested_image_files_without_returning_directories"
+      ],
+      "current_failed": [
+        "tests.test_mrag_document_processor.DocumentProcessorPersistenceTest::test_should_list_nested_image_files_without_returning_directories"
+      ],
+      "same_failures": true,
+      "baseline_log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-failure-baseline-6noo3c79/test_mrag_document_processor/baseline.log",
+      "current_log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_document_processor/test.log"
+    }
+  ]
+}

@@ -1,0 +1,500 @@
+{
+  "actual-mapper-h2-cas": {
+    "cancel-resuming-rows": 0,
+    "duplicate-claim-rows": 0,
+    "expired-answer-rows": 1,
+    "final-status": "FAILED",
+    "first-claim-rows": 1,
+    "foreign-answer-rows": 0,
+    "late-failure-overwrites-answered-rows": 1,
+    "mark-answered-rows": 1
+  },
+  "h2": {
+    "accepts-file": false,
+    "accepts-memory": true,
+    "accepts-tcp": false,
+    "adapter": {
+      "columns": [
+        "ID",
+        "AMOUNT",
+        "TITLE"
+      ],
+      "rows": [
+        {
+          "AMOUNT": 1.23,
+          "ID": 9007199254740993,
+          "TITLE": "中文"
+        }
+      ],
+      "size": 1,
+      "sql": "select id,amount,title from p0_sample"
+    },
+    "catalog": "org.wwz.ai.infrastructure.dataquery.jdbc.catalog.h2.H2SqlCatalog",
+    "row": {
+      "amount": "1.2300",
+      "id": 9007199254740993,
+      "title": "中文"
+    },
+    "spi-driver": "org.h2.Driver"
+  },
+  "history": {
+    "detail": {
+      "body": "{\"code\":\"0000\",\"info\":\"成功\",\"data\":{\"sessionId\":\"session-history-p0\",\"title\":\"中文历史\",\"status\":\"SUCCESS\",\"deepThink\":false,\"runCount\":1,\"finishedRunCount\":1,\"failedRunCount\":0,\"startedAt\":\"2026-10-02T22:00:00\",\"lastActiveAt\":\"2026-10-02T22:00:03\",\"runs\":[{\"requestId\":\"req-history-p0\",\"status\":\"SUCCESS\",\"queryText\":\"中文历史\",\"finalSummaryText\":\"history summary\",\"startedAt\":\"2026-10-02T22:00:00\",\"finishedAt\":\"2026-10-02T22:00:03\",\"contextUsage\":null,\"replayFrames\":[{\"status\":\"success\",\"response\":null,\"responseAll\":null,\"finished\":true,\"useTimes\":0,\"useTokens\":0,\"resultMap\":{\"agentType\":\"history\",\"multiAgent\":{},\"eventData\":{\"taskId\":\"33117304-58ee-445d-9687-0d54754a41fe\",\"taskOrder\":1,\"messageType\":\"task\",\"messageOrder\":1,\"messageId\":\"req-history-p0-tool-1:tool_result\",\"artifactRefs\":[{\"resourceKey\":\"oss://report-p0.md\",\"name\":\"report-p0.md\",\"previewUrl\":\"https://file.example.com/preview/report-p0.md\",\"downloadUrl\":\"https://file.example.com/download/report-p0.md\",\"fileName\":\"report-p0.md\",\"relativePath\":\"report-p0.md\",\"originFileName\":\"report-p0.md\",\"mimeType\":null,\"size\":null,\"missing\":false}],\"resultMap\":{\"requestId\":\"req-history-p0\",\"messageId\":\"req-history-p0-tool-1:tool_result\",\"messageTime\":\"1790949602000\",\"messageType\":\"tool_result\",\"isFinal\":true,\"finish\":false,\"toolResult\":{\"toolName\":\"file_tool\",\"toolParam\":{\"requestId\":\"req-history-p0\"},\"toolResult\":\"done\",\"toolCallId\":\"req-history-p0-tool-1\"}}}},\"responseType\":null,\"traceId\":null,\"reqId\":\"req-history-p0\",\"encrypted\":false,\"query\":null,\"messages\":null,\"packageType\":null,\"errorMsg\":null,\"eventSeq\":0,\"retryMs\":null},{\"status\":\"success\",\"response\":null,\"responseAll\":null,\"finished\":true,\"useTimes\":0,\"useTokens\":0,\"resultMap\":{\"agentType\":\"history\",\"multiAgent\":{},\"eventData\":{\"taskId\":\"33117304-58ee-445d-9687-0d54754a41fe\",\"taskOrder\":2,\"messageType\":\"task\",\"messageOrder\":1,\"messageId\":\"req-history-p0:summary\",\"resultMap\":{\"requestId\":\"req-history-p0\",\"messageId\":\"req-history-p0:summary\",\"messageTime\":\"1790949603000\",\"messageType\":\"result\",\"isFinal\":true,\"finish\":true,\"result\":\"history summary\",\"taskSummary\":\"history summary\"}}},\"responseType\":null,\"traceId\":null,\"reqId\":\"req-history-p0\",\"encrypted\":false,\"query\":null,\"messages\":null,\"packageType\":null,\"errorMsg\":null,\"eventSeq\":0,\"retryMs\":null}]}]}}",
+      "contentType": "application/json",
+      "status": 200
+    },
+    "list": {
+      "body": "{\"code\":\"0000\",\"info\":\"成功\",\"data\":[{\"sessionId\":\"session-history-p0\",\"title\":\"中文历史\",\"status\":\"SUCCESS\",\"latestQueryText\":\"中文历史\",\"runCount\":1,\"finishedRunCount\":1,\"failedRunCount\":0,\"startedAt\":\"2026-10-02T22:00:00\",\"lastActiveAt\":\"2026-10-02T22:00:03\"}]}",
+      "contentType": "application/json",
+      "status": 200
+    }
+  },
+  "hitl": {
+    "approval-observation": [
+      {
+        "base64Image": null,
+        "content": "plan",
+        "originMessageKey": null,
+        "reasoningContent": null,
+        "role": "ASSISTANT",
+        "toolCallId": null,
+        "toolCalls": [
+          {
+            "function": {
+              "arguments": "{}",
+              "name": "ExitPlanMode"
+            },
+            "id": "call-p0",
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "base64Image": null,
+        "content": "{\"tool\":\"ExitPlanMode\",\"ok\":true,\"approved\":true,\"approvalId\":\"pa-p0\",\"message\":\"User has approved your plan. You can now start coding.\\nStart with updating your todo list (TaskCreate / TodoWrite) if applicable.\\nRestored mode=default.\\n\\n## Approved Plan:\\n\\n## plan\\n\",\"restoredMode\":\"default\",\"plan\":\"## plan\"}",
+        "originMessageKey": null,
+        "reasoningContent": null,
+        "role": "TOOL",
+        "toolCallId": "call-p0",
+        "toolCalls": null
+      }
+    ],
+    "duplicate-answer": {
+      "accepted": true,
+      "idempotent": true,
+      "message": "答案已存在，请连接 resume SSE 继续",
+      "questionId": "q-p0",
+      "resumeRequestId": "resume-p0",
+      "status": "RESUME_PENDING"
+    },
+    "expired-answer-accepted": {
+      "accepted": true,
+      "idempotent": false,
+      "message": "答案已提交，请连接 resume SSE 继续执行",
+      "questionId": "q-p0",
+      "resumeRequestId": "resume_53909d7fb25c42bd9a1279697af96f3e",
+      "sessionId": "session-p0",
+      "status": "RESUME_PENDING"
+    },
+    "expired-answer-repeat": {
+      "accepted": true,
+      "idempotent": true,
+      "message": "答案已存在，请连接 resume SSE 继续",
+      "questionId": "q-p0",
+      "resumeRequestId": "resume_53909d7fb25c42bd9a1279697af96f3e",
+      "status": "RESUME_PENDING"
+    },
+    "foreign-answer": {
+      "accepted": false,
+      "message": "无权回答该问题",
+      "questionId": "q-p0"
+    },
+    "foreign-stop-accepted": {
+      "firstCancel": true,
+      "message": "已请求停止",
+      "requestId": "req-foreign",
+      "sessionId": null,
+      "stopped": true
+    },
+    "missing-identity-answer": {
+      "accepted": true,
+      "idempotent": true,
+      "message": "答案已存在，请连接 resume SSE 继续",
+      "questionId": "q-p0",
+      "resumeRequestId": "resume-p0",
+      "status": "RESUME_PENDING"
+    }
+  },
+  "http": {
+    "data-all-models": {
+      "body": "{\"code\":200,\"data\":[]}",
+      "contentType": "application/json",
+      "status": 200
+    },
+    "data-preview-missing-param": {
+      "body": "",
+      "contentType": null,
+      "status": 400
+    },
+    "follow-empty-id": {
+      "body": "data:{\"status\":\"success\",\"response\":\"\",\"responseAll\":\"\",\"finished\":true,\"useTimes\":0,\"useTokens\":0,\"resultMap\":null,\"responseType\":\"text\",\"traceId\":null,\"reqId\":\"\",\"encrypted\":false,\"query\":null,\"messages\":null,\"packageType\":\"follow_idle\",\"errorMsg\":null,\"eventSeq\":0,\"retryMs\":null}\n\n",
+      "contentType": "text/event-stream;charset=UTF-8",
+      "status": 200
+    },
+    "genui-invalid": {
+      "body": "{\"code\":\"400\",\"info\":\"tree must be an object\"}",
+      "contentType": "application/json",
+      "status": 400
+    },
+    "health": {
+      "body": "ok",
+      "contentType": "text/event-stream;charset=UTF-8",
+      "status": 200
+    },
+    "inject-empty-id": {
+      "body": "{\"code\":\"0002\",\"info\":\"requestId 不能为空\",\"data\":null}",
+      "contentType": "application/json",
+      "status": 200
+    },
+    "inject-empty-text": {
+      "body": "{\"code\":\"0002\",\"info\":\"text 不能为空\",\"data\":null}",
+      "contentType": "application/json",
+      "status": 200
+    },
+    "query-empty-body": {
+      "body": "",
+      "contentType": null,
+      "status": 400
+    },
+    "query-malformed": {
+      "body": "",
+      "contentType": null,
+      "status": 400
+    },
+    "query-sse": {
+      "body": "data:{\"status\":\"success\",\"response\":\"\",\"responseAll\":\"\",\"finished\":false,\"useTimes\":0,\"useTokens\":0,\"resultMap\":null,\"responseType\":\"text\",\"traceId\":null,\"reqId\":\"req-p0\",\"encrypted\":false,\"query\":null,\"messages\":null,\"packageType\":\"heartbeat\",\"errorMsg\":null,\"eventSeq\":0,\"retryMs\":null}\n\ndata:{\"status\":\"success\",\"response\":\"\",\"responseAll\":\"\",\"finished\":false,\"useTimes\":0,\"useTokens\":0,\"resultMap\":null,\"responseType\":\"text\",\"traceId\":null,\"reqId\":\"req-p0\",\"encrypted\":false,\"query\":null,\"messages\":null,\"packageType\":\"follow_pending\",\"errorMsg\":null,\"eventSeq\":0,\"retryMs\":800}\n\ndata:{\"status\":\"success\",\"response\":\"\",\"responseAll\":\"\",\"finished\":true,\"useTimes\":0,\"useTokens\":0,\"resultMap\":null,\"responseType\":\"text\",\"traceId\":null,\"reqId\":\"req-p0\",\"encrypted\":false,\"query\":null,\"messages\":null,\"packageType\":\"follow_idle\",\"errorMsg\":null,\"eventSeq\":0,\"retryMs\":null}\n\n",
+      "contentType": "text/event-stream;charset=UTF-8",
+      "status": 200
+    },
+    "stop-empty-id": {
+      "body": "{\"code\":\"0002\",\"info\":\"requestId 不能为空\",\"data\":null}",
+      "contentType": "application/json",
+      "status": 200
+    },
+    "unknown-route": {
+      "body": "",
+      "contentType": null,
+      "status": 404
+    }
+  },
+  "serialization": {
+    "follow-pending": {
+      "encrypted": false,
+      "errorMsg": null,
+      "eventSeq": 0,
+      "finished": false,
+      "messages": null,
+      "packageType": "follow_pending",
+      "query": null,
+      "reqId": "req-p0",
+      "response": "",
+      "responseAll": "",
+      "responseType": "text",
+      "resultMap": null,
+      "retryMs": 800,
+      "status": "success",
+      "traceId": null,
+      "useTimes": 0,
+      "useTokens": 0
+    },
+    "genui-invalid": {
+      "base64Image": null,
+      "errorMsg": "emit_ui_tree validation failed: unsupported kind: UnsafeComponent; call list_ui_components",
+      "failed": true,
+      "imageMimeType": null,
+      "llmData": {
+        "message": "emit_ui_tree validation failed: unsupported kind: UnsafeComponent; call list_ui_components",
+        "type": "tool_error"
+      },
+      "llmObservation": null,
+      "structuredOutput": null,
+      "toolResult": "emit_ui_tree validation failed: unsupported kind: UnsafeComponent; call list_ui_components"
+    },
+    "genui-patch": {
+      "canvas_id": "canvas-p0",
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/root/props/content",
+          "value": "updated"
+        }
+      ],
+      "seq": 1
+    },
+    "genui-tree": {
+      "base64Image": null,
+      "errorMsg": null,
+      "failed": false,
+      "imageMimeType": null,
+      "llmData": {
+        "canvasId": "canvas-p0",
+        "message": "GenUI tree emitted successfully. Prefer emit_ui_patch for small updates.",
+        "ok": true,
+        "salvaged": false,
+        "tool": "emit_ui_tree",
+        "tree": {
+          "root": {
+            "children": [],
+            "kind": "Stat",
+            "nodeId": "n-p0",
+            "props": {
+              "label": "中文 baseline",
+              "value": "42"
+            }
+          },
+          "schemaVersion": "1"
+        }
+      },
+      "llmObservation": null,
+      "structuredOutput": {
+        "canvasId": "canvas-p0",
+        "salvaged": false,
+        "toolName": "emit_ui_tree",
+        "tree": {
+          "root": {
+            "children": [],
+            "kind": "Stat",
+            "nodeId": "n-p0",
+            "props": {
+              "label": "中文 baseline",
+              "value": "42"
+            }
+          },
+          "schemaVersion": "1"
+        }
+      },
+      "toolResult": null
+    },
+    "gpt-builder": {
+      "encrypted": false,
+      "errorMsg": null,
+      "eventSeq": 0,
+      "finished": false,
+      "messages": null,
+      "packageType": null,
+      "query": null,
+      "reqId": null,
+      "response": null,
+      "responseAll": null,
+      "responseType": null,
+      "resultMap": null,
+      "retryMs": null,
+      "status": null,
+      "traceId": null,
+      "useTimes": 0,
+      "useTokens": 0
+    },
+    "gpt-default": {
+      "encrypted": false,
+      "errorMsg": null,
+      "eventSeq": 0,
+      "finished": false,
+      "messages": null,
+      "packageType": "result",
+      "query": null,
+      "reqId": null,
+      "response": "",
+      "responseAll": "",
+      "responseType": "markdown",
+      "resultMap": null,
+      "retryMs": null,
+      "status": null,
+      "traceId": null,
+      "useTimes": 0,
+      "useTokens": 0
+    },
+    "heartbeat": {
+      "encrypted": false,
+      "errorMsg": null,
+      "eventSeq": 0,
+      "finished": false,
+      "messages": null,
+      "packageType": "heartbeat",
+      "query": null,
+      "reqId": "req-p0",
+      "response": "",
+      "responseAll": "",
+      "responseType": "text",
+      "resultMap": null,
+      "retryMs": null,
+      "status": "success",
+      "traceId": null,
+      "useTimes": 0,
+      "useTokens": 0
+    },
+    "local-time": "2026-10-02T22:00:00",
+    "normalized--1": {
+      "deepThink": -1,
+      "forcePlanMode": null,
+      "model": null,
+      "outputStyle": null,
+      "query": "中文",
+      "requestId": " req-p0 ",
+      "sessionFiles": null,
+      "sessionId": "session-p0",
+      "thinking": null,
+      "thinkingEffort": null,
+      "traceId": "reactorsession-p0: req-p0 ",
+      "user": "reactor"
+    },
+    "normalized-0": {
+      "deepThink": 0,
+      "forcePlanMode": null,
+      "model": null,
+      "outputStyle": null,
+      "query": "中文",
+      "requestId": " req-p0 ",
+      "sessionFiles": null,
+      "sessionId": "session-p0",
+      "thinking": null,
+      "thinkingEffort": null,
+      "traceId": "reactorsession-p0: req-p0 ",
+      "user": "reactor"
+    },
+    "normalized-1": {
+      "deepThink": 1,
+      "forcePlanMode": null,
+      "model": null,
+      "outputStyle": null,
+      "query": "中文",
+      "requestId": " req-p0 ",
+      "sessionFiles": null,
+      "sessionId": "session-p0",
+      "thinking": null,
+      "thinkingEffort": null,
+      "traceId": "reactorsession-p0: req-p0 ",
+      "user": "reactor"
+    },
+    "normalized-defaults": {
+      "deepThink": 0,
+      "forcePlanMode": null,
+      "model": null,
+      "outputStyle": null,
+      "query": null,
+      "requestId": "req-p0",
+      "sessionFiles": null,
+      "sessionId": "session-p0",
+      "thinking": null,
+      "thinkingEffort": null,
+      "traceId": "reactorsession-p0:req-p0",
+      "user": "reactor"
+    },
+    "request--1": {
+      "agentType": 3,
+      "basePrompt": "",
+      "erp": "reactor",
+      "forcePlanMode": false,
+      "historyDialogue": null,
+      "isStream": true,
+      "messages": null,
+      "model": null,
+      "outputStyle": null,
+      "query": "中文",
+      "requestId": "req-p0",
+      "resumeApprovalId": null,
+      "resumeContextJson": null,
+      "resumeQuestionId": null,
+      "sessionFiles": null,
+      "sessionId": "session-p0",
+      "sopPrompt": "",
+      "thinking": null,
+      "thinkingEffort": null,
+      "visitorId": "visitor-p0",
+      "workingMemoryMessages": null
+    },
+    "request-0": {
+      "agentType": 5,
+      "basePrompt": "p0-base-prompt",
+      "erp": "reactor",
+      "forcePlanMode": false,
+      "historyDialogue": null,
+      "isStream": true,
+      "messages": null,
+      "model": null,
+      "outputStyle": null,
+      "query": "中文",
+      "requestId": "req-p0",
+      "resumeApprovalId": null,
+      "resumeContextJson": null,
+      "resumeQuestionId": null,
+      "sessionFiles": null,
+      "sessionId": "session-p0",
+      "sopPrompt": "",
+      "thinking": null,
+      "thinkingEffort": null,
+      "visitorId": "visitor-p0",
+      "workingMemoryMessages": null
+    },
+    "request-1": {
+      "agentType": 3,
+      "basePrompt": "",
+      "erp": "reactor",
+      "forcePlanMode": false,
+      "historyDialogue": null,
+      "isStream": true,
+      "messages": null,
+      "model": null,
+      "outputStyle": null,
+      "query": "中文",
+      "requestId": "req-p0",
+      "resumeApprovalId": null,
+      "resumeContextJson": null,
+      "resumeQuestionId": null,
+      "sessionFiles": null,
+      "sessionId": "session-p0",
+      "sopPrompt": "",
+      "thinking": null,
+      "thinkingEffort": null,
+      "visitorId": "visitor-p0",
+      "workingMemoryMessages": null
+    },
+    "tool-data": {
+      "base64Image": null,
+      "errorMsg": null,
+      "failed": false,
+      "imageMimeType": null,
+      "llmData": {
+        "decimal": 1.23,
+        "ok": true,
+        "runId": 9007199254740993,
+        "tool": "test_tool"
+      },
+      "llmObservation": null,
+      "structuredOutput": null,
+      "toolResult": null
+    },
+    "tool-error": {
+      "base64Image": null,
+      "errorMsg": "timeout",
+      "failed": true,
+      "imageMimeType": null,
+      "llmData": {
+        "message": "timeout",
+        "type": "tool_error"
+      },
+      "llmObservation": null,
+      "structuredOutput": null,
+      "toolResult": "timeout"
+    },
+    "tool-text": {
+      "base64Image": null,
+      "errorMsg": null,
+      "failed": false,
+      "imageMimeType": null,
+      "llmData": "中文\nresult",
+      "llmObservation": "中文\nresult",
+      "structuredOutput": null,
+      "toolResult": "中文\nresult"
+    }
+  }
+}

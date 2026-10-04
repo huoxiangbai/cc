@@ -1,0 +1,22 @@
+{
+  "root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p4-uh6h0rak",
+  "production_model": false,
+  "curated_preference_in_next_request": true,
+  "steps": [
+    "原UI naming",
+    "memory persistent write",
+    "same-session continuation",
+    "reload and recent-session history",
+    "ToolSearch activates 3 tools",
+    "3 real MCP transports original.echo!",
+    "real resource read",
+    "original package_skill.py",
+    "artifact 213 bytes; CRC checked"
+  ],
+  "screenshots": [
+    "p4-memory-ui.jpg",
+    "p4-mcp-ui.jpg",
+    "p4-skill-ui.jpg"
+  ],
+  "note": "浏览器流程真实执行，模型为测试HTTP fixture；截图早于本轮最终Bash权限收窄。最终原Skill脚本与内核隔离由50项真实HTTP集成及10项Skill测试再次验证；原UI暂不预览.skill二进制，产物字节和ZIP CRC单独核验。"
+}

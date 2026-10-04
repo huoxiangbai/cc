@@ -1,0 +1,77 @@
+{
+  "branch": "migration/python-p0",
+  "captureEntry": "tests/python_migration/java/CaptureBaseline.java",
+  "compareEntry": "tests/python_migration/compare.py",
+  "date": "2026-10-02 Asia/Shanghai",
+  "environment": {
+    "h2": "2.3.232, new in-memory databases only",
+    "java": "21.0.12",
+    "maven": "3.9.11 offline",
+    "mockitoAgent": "5.14.2",
+    "python": "3.12.13 project .venv, stdlib only"
+  },
+  "files": {
+    "initial-test-results.json": {
+      "evidence": "V initial failure retained, not final acceptance",
+      "sha256": "7866ccf739aab7713233859a4acffd19993de47916565ffe1c64029095c5d935"
+    },
+    "java-behavior.json": {
+      "evidence": "V: original controller/MVC/Boot default Jackson/application/state/SQL/H2; isolated DAO/upstream seams",
+      "sha256": "c719c1059911f16665692fcb6c284cce2fb119a32bca36f9978b5d4b4b979420"
+    },
+    "runtime-routes.json": {
+      "evidence": "V mapping reflection; business invocation not claimed for all routes",
+      "sha256": "f395c349ab90e99ed5271eb5236d3c1cd03dc1817e9c1d45aab9da552617107e"
+    },
+    "source-contracts.json": {
+      "evidence": "C source-derived protocols, SQL, DTO/model fields; synthetic upstream responses test-only",
+      "sha256": "d6758d9983215e98a0ed1e41f6af7c9dde6b7ebfe27c922fcf225a80044b7c54"
+    },
+    "test-results.json": {
+      "evidence": "V final allowlisted JUnit; excluded deployment test U",
+      "sha256": "50d6819d3e591ea1b37985b3799f59cbf79193e46ee65a2e6cbf6c071af832c6"
+    },
+    "tool-schemas.json": {
+      "evidence": "V Java factory/toParams under declared test profiles; real remote returns U",
+      "sha256": "1dab03263789b30444a2a4066314875717751d5319857a4fc960abbb55ee940f"
+    }
+  },
+  "gitBase": "cb6e389a5d03bee5bb56a2363d43a93e14a8cd46",
+  "normalization": {
+    "historyTaskIdPointers": [
+      "/history/detail/body/json/data/runs/0/replayFrames/0/resultMap/eventData/taskId",
+      "/history/detail/body/json/data/runs/0/replayFrames/1/resultMap/eventData/taskId"
+    ],
+    "hitlResumePointers": [
+      "/hitl/expired-answer-accepted/resumeRequestId",
+      "/hitl/expired-answer-repeat/resumeRequestId"
+    ],
+    "jsonObjectOrder": "semantic key comparison; raw text retained",
+    "rule": "only explicitly declared pointers; type/equality/references retained; other IDs/times unchanged",
+    "sse": "data JSON semantic fields, literal non-data and blank lines preserved"
+  },
+  "pythonBusinessImplemented": false,
+  "runner": "tests/python_migration/run_baseline.py",
+  "unverified": [
+    "real MySQL/SQLite old data and files",
+    "full route invocations",
+    "Nginx/TCP/Cookie/browser user workflows",
+    "external models/tools/MCP",
+    "H2 deployment selection and JVM-free compatibility",
+    "A2/A3 proposed protocol changes"
+  ],
+  "verification": {
+    "documentLocalLinks": 695,
+    "junit": {
+      "deploymentTestExcluded": 1,
+      "failures": 0,
+      "tests": 102
+    },
+    "pythonHarness": {
+      "failures": 0,
+      "tests": 9
+    },
+    "recaptureComparison": "PASS java-behavior/runtime-routes/tool-schemas",
+    "sourceDrift": "PASS"
+  }
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "sql": "SELECT category, SUM(amount) AS total FROM `sales-model` WHERE category = 'A' GROUP BY category ORDER BY total DESC",
+    "columns": [
+      {
+        "agg": null,
+        "col": "category",
+        "colType": "IDENTIFIER",
+        "dataType": "STRING",
+        "guid": "category",
+        "name": "分类",
+        "order": null
+      },
+      {
+        "agg": "SUM",
+        "col": "SUM(`amount`)",
+        "colType": "OTHER_FUNCTION",
+        "dataType": "DECIMAL",
+        "guid": "total",
+        "name": "total",
+        "order": "DESC"
+      }
+    ],
+    "filters": [
+      {
+        "col": "category",
+        "dataType": null,
+        "name": "分类",
+        "operator": null,
+        "opt": "EQUALS",
+        "optName": "等于",
+        "subFilters": null,
+        "val": "A"
+      }
+    ]
+  },
+  {
+    "sql": "SELECT category AS c, amount+1 AS increment FROM `sales-model` WHERE amount > 1 AND category IN ('A','B')",
+    "columns": [
+      {
+        "agg": null,
+        "col": "category",
+        "colType": "IDENTIFIER",
+        "dataType": "STRING",
+        "guid": "c",
+        "name": "分类",
+        "order": null
+      },
+      {
+        "agg": null,
+        "col": "`amount` + 1",
+        "colType": "PLUS",
+        "dataType": "DECIMAL",
+        "guid": "increment",
+        "name": "increment",
+        "order": null
+      }
+    ],
+    "filters": [
+      {
+        "col": "amount",
+        "dataType": null,
+        "name": "金额",
+        "operator": null,
+        "opt": "GREATER_THAN",
+        "optName": "大于",
+        "subFilters": null,
+        "val": "1"
+      },
+      {
+        "col": "category",
+        "dataType": null,
+        "name": "分类",
+        "operator": null,
+        "opt": "IN",
+        "optName": "包含",
+        "subFilters": null,
+        "val": "A,B"
+      }
+    ]
+  },
+  {
+    "sql": "SELECT * FROM `sales-model`",
+    "columns": [
+      {
+        "agg": null,
+        "col": "amount",
+        "colType": "DECIMAL",
+        "dataType": null,
+        "guid": "amount",
+        "name": "金额",
+        "order": null
+      },
+      {
+        "agg": null,
+        "col": "category",
+        "colType": "STRING",
+        "dataType": null,
+        "guid": "category",
+        "name": "分类",
+        "order": null
+      }
+    ],
+    "filters": []
+  }
+]

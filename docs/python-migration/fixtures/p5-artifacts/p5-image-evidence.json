@@ -1,0 +1,237 @@
+{
+  "history": {
+    "total": 4,
+    "list": [
+      {
+        "requestId": "p5-fallback",
+        "prompt": "fallback high resolution",
+        "mode": "images",
+        "size": "2048x1152",
+        "batchCount": 4,
+        "sourceImageCount": 0,
+        "maskImageCount": 0,
+        "usedFallback": true,
+        "createdAt": "2026-10-04T16:18:16",
+        "images": [
+          {
+            "fileName": "图片生成结果.png",
+            "ossUrl": "http://127.0.0.1:63116/v1/file_tool/download/p5-fallback/图片生成结果.png",
+            "domainUrl": "http://127.0.0.1:63116/v1/file_tool/preview/p5-fallback/图片生成结果.png",
+            "downloadUrl": "http://127.0.0.1:63116/v1/file_tool/download/p5-fallback/图片生成结果.png",
+            "previewUrl": "http://127.0.0.1:63116/v1/file_tool/preview/p5-fallback/图片生成结果.png",
+            "fileSize": 207,
+            "mimeType": "image/png"
+          }
+        ]
+      },
+      {
+        "requestId": "p5-multi",
+        "prompt": "融合参考图",
+        "mode": "edits",
+        "size": "1024x1024",
+        "batchCount": 5,
+        "sourceImageCount": 2,
+        "maskImageCount": 0,
+        "usedFallback": false,
+        "createdAt": "2026-10-04T16:18:06",
+        "images": [
+          {
+            "fileName": "图片生成结果.png",
+            "ossUrl": "http://127.0.0.1:63116/v1/file_tool/download/p5-multi/图片生成结果.png",
+            "domainUrl": "http://127.0.0.1:63116/v1/file_tool/preview/p5-multi/图片生成结果.png",
+            "downloadUrl": "http://127.0.0.1:63116/v1/file_tool/download/p5-multi/图片生成结果.png",
+            "previewUrl": "http://127.0.0.1:63116/v1/file_tool/preview/p5-multi/图片生成结果.png",
+            "fileSize": 209,
+            "mimeType": "image/png"
+          }
+        ]
+      },
+      {
+        "requestId": "p5-edit",
+        "prompt": "编辑原图",
+        "mode": "edits",
+        "size": "1024x1024",
+        "batchCount": 2,
+        "sourceImageCount": 1,
+        "maskImageCount": 1,
+        "usedFallback": false,
+        "createdAt": "2026-10-04T16:18:06",
+        "images": [
+          {
+            "fileName": "图片生成结果.png",
+            "ossUrl": "http://127.0.0.1:63116/v1/file_tool/download/p5-edit/图片生成结果.png",
+            "domainUrl": "http://127.0.0.1:63116/v1/file_tool/preview/p5-edit/图片生成结果.png",
+            "downloadUrl": "http://127.0.0.1:63116/v1/file_tool/download/p5-edit/图片生成结果.png",
+            "previewUrl": "http://127.0.0.1:63116/v1/file_tool/preview/p5-edit/图片生成结果.png",
+            "fileSize": 209,
+            "mimeType": "image/png"
+          }
+        ]
+      },
+      {
+        "requestId": "p5-images",
+        "prompt": "生成测试图片",
+        "mode": "images",
+        "size": "1024x1024",
+        "batchCount": 2,
+        "sourceImageCount": 0,
+        "maskImageCount": 0,
+        "usedFallback": false,
+        "createdAt": "2026-10-04T16:18:06",
+        "images": [
+          {
+            "fileName": "图片生成结果_1.png",
+            "ossUrl": "http://127.0.0.1:63116/v1/file_tool/download/p5-images/图片生成结果_1.png",
+            "domainUrl": "http://127.0.0.1:63116/v1/file_tool/preview/p5-images/图片生成结果_1.png",
+            "downloadUrl": "http://127.0.0.1:63116/v1/file_tool/download/p5-images/图片生成结果_1.png",
+            "previewUrl": "http://127.0.0.1:63116/v1/file_tool/preview/p5-images/图片生成结果_1.png",
+            "fileSize": 206,
+            "mimeType": "image/png"
+          },
+          {
+            "fileName": "图片生成结果_2.png",
+            "ossUrl": "http://127.0.0.1:63116/v1/file_tool/download/p5-images/图片生成结果_2.png",
+            "domainUrl": "http://127.0.0.1:63116/v1/file_tool/preview/p5-images/图片生成结果_2.png",
+            "downloadUrl": "http://127.0.0.1:63116/v1/file_tool/download/p5-images/图片生成结果_2.png",
+            "previewUrl": "http://127.0.0.1:63116/v1/file_tool/preview/p5-images/图片生成结果_2.png",
+            "fileSize": 206,
+            "mimeType": "image/png"
+          }
+        ]
+      }
+    ]
+  },
+  "providerRequests": [
+    {
+      "path": "generations",
+      "body": {
+        "model": "gpt-image-2.5-flare",
+        "prompt": "生成测试图片",
+        "n": 1,
+        "size": "1024x1024",
+        "response_format": "b64_json"
+      }
+    },
+    {
+      "path": "generations",
+      "body": {
+        "model": "gpt-image-2.5-flare",
+        "prompt": "生成测试图片",
+        "n": 1,
+        "size": "1024x1024",
+        "response_format": "b64_json"
+      }
+    },
+    {
+      "path": "edits",
+      "body": {
+        "model": "gpt-image-2.5-flare",
+        "prompt": "编辑原图",
+        "size": "1024x1024",
+        "response_format": "b64_json",
+        "n": "2"
+      },
+      "files": {
+        "image": [
+          {
+            "name": "fileNames[0].png",
+            "size": 86
+          }
+        ],
+        "image[]": [],
+        "mask": [
+          {
+            "name": "mask.png",
+            "size": 86
+          }
+        ]
+      }
+    },
+    {
+      "path": "edits",
+      "body": {
+        "model": "gpt-image-2.5-flare",
+        "prompt": "融合参考图",
+        "size": "1024x1024",
+        "response_format": "b64_json"
+      },
+      "files": {
+        "image": [],
+        "image[]": [
+          {
+            "name": "fileNames[0].png",
+            "size": 86
+          },
+          {
+            "name": "fileNames[1].png",
+            "size": 86
+          }
+        ],
+        "mask": []
+      }
+    },
+    {
+      "path": "generations",
+      "body": {
+        "model": "gpt-image-2.5-flare",
+        "prompt": "fallback high resolution",
+        "n": 1,
+        "size": "2048x1152",
+        "response_format": "b64_json"
+      }
+    },
+    {
+      "path": "generations",
+      "body": {
+        "model": "gpt-image-2.5-flare",
+        "prompt": "fallback high resolution",
+        "n": 1,
+        "size": "2048x1152",
+        "response_format": "b64_json"
+      }
+    },
+    {
+      "path": "generations",
+      "body": {
+        "model": "gpt-image-2.5-flare",
+        "prompt": "fallback high resolution",
+        "n": 1,
+        "size": "2048x1152",
+        "response_format": "b64_json"
+      }
+    },
+    {
+      "path": "chat",
+      "body": {
+        "model": "gpt-image-2.5-flare",
+        "messages": [
+          {
+            "role": "user",
+            "content": "fallback high resolution"
+          }
+        ],
+        "stream": false
+      }
+    },
+    {
+      "path": "edits",
+      "body": {
+        "model": "gpt-image-2.5-flare",
+        "prompt": "P5 agent automatic attached reference",
+        "size": "1024x1024",
+        "response_format": "b64_json",
+        "n": "1"
+      },
+      "files": {
+        "image": [
+          {
+            "name": "fileNames[0].png",
+            "size": 206
+          }
+        ],
+        "image[]": [],
+        "mask": []
+      }
+    }
+  ]
+}

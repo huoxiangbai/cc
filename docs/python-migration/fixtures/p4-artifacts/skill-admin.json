@@ -1,0 +1,9 @@
+{
+  "root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p4-skill-admin-a9cesrqf",
+  "operator_cli": "PASS",
+  "package_import": "PASS",
+  "reload": "PASS",
+  "duplicate_rejected": "PASS",
+  "real_http_import": "PASS",
+  "production_library_touched": false
+}

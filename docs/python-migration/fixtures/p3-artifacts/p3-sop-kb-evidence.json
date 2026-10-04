@@ -1,0 +1,34 @@
+{
+  "sop": {
+    "verified": "original adapter rejects missing Qdrant; CRUD live unverified",
+    "response": {
+      "detail": "缺少 Qdrant 配置：请设置 QDRANT_URL（推荐）或 QDRANT_HOST/QDRANT_PORT"
+    }
+  },
+  "kb": {
+    "kb_id": "0e5d393a939143d996eaa8f1a5cb7d68",
+    "kb_name": "P3证据库",
+    "kb_desc": "新建隔离库",
+    "chunk_type": "fixed_size",
+    "chunk_size": null,
+    "chunk_overlap_size": null,
+    "deleted": null,
+    "create_time": "2026-10-03T17:17:46.942103",
+    "modify_time": "2026-10-03T17:17:46.942106",
+    "creator": null
+  },
+  "listing": [
+    {
+      "kb_id": "0e5d393a939143d996eaa8f1a5cb7d68",
+      "kb_name": "P3证据库",
+      "kb_desc": "新建隔离库",
+      "chunk_type": "fixed_size",
+      "chunk_size": null,
+      "chunk_overlap_size": null,
+      "deleted": 0,
+      "create_time": "2026-10-03T17:17:46.942103",
+      "modify_time": "2026-10-03T17:17:46.942106",
+      "creator": null
+    }
+  ]
+}

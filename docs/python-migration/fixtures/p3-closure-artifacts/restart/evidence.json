@@ -1,0 +1,15 @@
+{
+  "newDatabase": "reactor_p2_restart_3f877b0e",
+  "processKills": 2,
+  "persistentFileOwner": true,
+  "persistentKbOwner": true,
+  "crossVisitorAfterRestart": 403,
+  "originalRunPreserved": true,
+  "toolSideEffects": 1,
+  "replayedRequests": 0,
+  "orphanRun": "FAILED/PROCESS_RESTART",
+  "orphanBackground": "failed",
+  "orphanClaim": "FAILED",
+  "completedClaim": "ANSWERED",
+  "rootReturnedBeforeCrash": "SUCCESS preserved; child failed; receipt failed; no tool replay"
+}

@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "micro_enabled": true,
+  "micro_keep_recent": 5,
+  "micro_max_chars": 8000,
+  "session_memory_enabled": false,
+  "llm_enabled": true,
+  "threshold_percent": 0.5,
+  "keep_min_tokens": 10000,
+  "keep_max_tokens": 40000,
+  "protect_first_n": 3,
+  "protect_last_n": 8,
+  "summary_target_ratio": 0.2,
+  "summary_input_max_chars": 160000,
+  "timeout_seconds": 120,
+  "max_failures": 3,
+  "audit_store_messages": true
+}

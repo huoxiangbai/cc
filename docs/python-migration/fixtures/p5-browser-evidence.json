@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-04",
+  "workbench": "original React with necessary connection/auth compatibility",
+  "flows": [
+    {
+      "flow": "GenUI tree/patch + HTML iframe button + send_message action + refresh history",
+      "root": "reactor-p5-mseel1br",
+      "evidence": [
+        "p5-artifacts/browser-history.jpg",
+        "p5-artifacts/browser-iframe-action.jpg"
+      ]
+    },
+    {
+      "flow": "Unicode nested glTF real load + actual pointer drag",
+      "root": "reactor-p5-mseel1br",
+      "evidence": [
+        "p5-artifacts/browser-3d-loaded.jpg",
+        "p5-artifacts/browser-3d-drag.jpg"
+      ]
+    },
+    {
+      "flow": "image generate + refresh history",
+      "root": "reactor-p5-mseel1br",
+      "evidence": [
+        "p5-artifacts/browser-images.jpg"
+      ]
+    },
+    {
+      "flow": "admin login + model/API create + actual TCP connection success",
+      "root": "reactor-p5-z5qh_3xa",
+      "evidence": [
+        "p5-artifacts/browser-admin-model.jpg"
+      ]
+    }
+  ],
+  "limits": [
+    "Model/image upstream is test-only fixture, actual supplier U",
+    "Binary exports/download and featured public flow verified by TCP integration; browser download capture not claimed",
+    "3D view has autorotation; pointer drag executed, image differences not exclusive proof of rotation cause"
+  ]
+}

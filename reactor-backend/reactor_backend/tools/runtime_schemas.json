@@ -1,0 +1,531 @@
+{
+  "Agent": {
+    "type": "function",
+    "function": {
+      "name": "Agent",
+      "description": "派发一个子 Agent 执行独立任务。默认阻塞等待完成后返回精简报告；run_in_background=true 时立即返回 task_id 与 agentId。后台运行中：用 TaskOutput 取结果、TaskStop 取消、SendMessage 中途指导。禁止用本工具+resume_agent_id 给还在跑的子 Agent 发指导。新任务：子 Agent 从零上下文开始，请在 prompt 中写全背景与交付要求。续跑：仅当该子 Agent 已结束或失败时，传入上次结果中的 resume_agent_id（即 agentId），带着上次工作记忆继续。若子 Agent 返回 Terminated: LLM think failed，等其结束后用同一 resume_agent_id 再派发续跑。可用 subagent_type：general-purpose — 通用多步骤调研与数据分析：Deep Search、MySQL/CSV 分析、阅读既有报告并生成交付物；需要较全工具的子任务。不确定类型时用它。。省略 subagent_type 时默认 general-purpose。不要用本工具做简单单次查询。",
+      "parameters": {
+        "properties": {
+          "description": {
+            "description": "任务短描述，3-5 个词，用于展示与日志",
+            "type": "string"
+          },
+          "prompt": {
+            "description": "交给子 Agent 的任务说明。新任务时需写全背景；resume 时写后续指令即可（会加载上次上下文）",
+            "type": "string"
+          },
+          "resume_agent_id": {
+            "description": "可选。仅用于已结束/失败的子 Agent。传入上次返回的 agentId 以唤醒并保留工作记忆。运行中请用 SendMessage，不要填本参数",
+            "type": "string"
+          },
+          "run_in_background": {
+            "description": "设为 true 时后台运行：立即返回 task_id。用 TaskOutput 等待/读取结果，SendMessage 中途指导，TaskStop 取消",
+            "type": "boolean"
+          },
+          "subagent_type": {
+            "description": "子 Agent 类型；省略则 general-purpose。可用: general-purpose",
+            "type": "string"
+          }
+        },
+        "required": [
+          "description",
+          "prompt"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "AskUserQuestion": {
+    "type": "function",
+    "function": {
+      "name": "AskUserQuestion",
+      "description": "向用户提出 1–4 个选择题以澄清需求、方案或偏好。每题 2–4 个选项；multiSelect=true 允许多选。不要用本工具问“计划可以吗？”（用 ExitPlanMode）。调用后当前 run 会结束并等待用户回答；用户提交后由 continuation run 继续。本轮必须是唯一 tool call。仅主 Agent 可用。",
+      "parameters": {
+        "properties": {
+          "questions": {
+            "description": "1–4 道题",
+            "items": {
+              "properties": {
+                "header": {
+                  "description": "短标签（≤12 字）",
+                  "type": "string"
+                },
+                "multiSelect": {
+                  "description": "是否多选，默认 false",
+                  "type": "boolean"
+                },
+                "options": {
+                  "description": "2–4 个选项；不要写 Other（前端可加自定义）",
+                  "items": {
+                    "properties": {
+                      "description": {
+                        "description": "选项说明/权衡",
+                        "type": "string"
+                      },
+                      "label": {
+                        "description": "选项短标签（1–5 词）",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "label",
+                      "description"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 4,
+                  "minItems": 2,
+                  "type": "array"
+                },
+                "question": {
+                  "description": "完整问题文本，建议以 ? 结尾",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "header",
+                "options"
+              ],
+              "type": "object"
+            },
+            "maxItems": 4,
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "questions"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "EnterPlanMode": {
+    "type": "function",
+    "function": {
+      "name": "EnterPlanMode",
+      "description": "请求进入 plan mode，用于需探索与设计的复杂任务：新功能、多方案权衡、架构改动、多文件重构、需求不清。简单修复/明确指令/纯调研不要进入。进入后应只读探索、写计划到 .reactor/plan.md；实现前用 ExitPlanMode 请求用户批准。本工具无参数。",
+      "parameters": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  "ExitPlanMode": {
+    "type": "function",
+    "function": {
+      "name": "ExitPlanMode",
+      "description": "计划写完后调用，请求用户批准并退出 plan mode。不要用 AskUserQuestion 问“计划可以吗？”——那是本工具职责。研究/搜索类任务不要调用。可选 plan 参数提交计划正文；也可事先写入 .reactor/plan.md。调用后当前 run 会结束并等待用户批准；用户提交后由 continuation run 继续。本轮必须是唯一 tool call。",
+      "parameters": {
+        "properties": {
+          "plan": {
+            "description": "可选，完整计划 Markdown 正文",
+            "type": "string"
+          },
+          "planFilePath": {
+            "description": "可选，计划文件路径",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  "TaskCreate": {
+    "type": "function",
+    "function": {
+      "name": "TaskCreate",
+      "description": "在任务列表中创建新任务。用于复杂多步工作、plan mode 跟踪实现、或用户明确要求 todo list。简单单步/纯对话不要用。subject 用祈使短句，description 写清要做什么。新建状态固定 pending。",
+      "parameters": {
+        "properties": {
+          "activeForm": {
+            "description": "可选，进行时文案（如“正在写测试”）",
+            "type": "string"
+          },
+          "description": {
+            "description": "任务详情：要做什么、验收标准",
+            "type": "string"
+          },
+          "subject": {
+            "description": "任务短标题（祈使句），如“实现登录接口”",
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject",
+          "description"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "TaskGet": {
+    "type": "function",
+    "function": {
+      "name": "TaskGet",
+      "description": "按 taskId 获取任务完整详情（description、status、依赖）。开工前应读取 description 与 blockedBy；列表摘要请用其它列表能力，本工具用于单任务深读。",
+      "parameters": {
+        "properties": {
+          "taskId": {
+            "description": "任务 ID（TaskCreate 返回的 id）",
+            "type": "string"
+          }
+        },
+        "required": [
+          "taskId"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "TaskList": {
+    "type": "function",
+    "function": {
+      "name": "TaskList",
+      "description": "列出当前会话全部任务的摘要（id、subject、status、blockedBy）。无参数。需要详情时用 TaskGet。",
+      "parameters": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  "TaskUpdate": {
+    "type": "function",
+    "function": {
+      "name": "TaskUpdate",
+      "description": "更新任务：status（pending|in_progress|completed）、subject、description、activeForm、owner。开工时设 in_progress，完成时设 completed。可选 addBlocks / addBlockedBy 维护依赖。status=deleted 可删除任务。",
+      "parameters": {
+        "properties": {
+          "activeForm": {
+            "description": "可选，进行时文案",
+            "type": "string"
+          },
+          "addBlockedBy": {
+            "description": "可选，阻塞本任务的 taskId 列表",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "addBlocks": {
+            "description": "可选，本任务阻塞的 taskId 列表",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "description": {
+            "description": "可选，新描述",
+            "type": "string"
+          },
+          "owner": {
+            "description": "可选，负责人",
+            "type": "string"
+          },
+          "status": {
+            "description": "可选：pending | in_progress | completed | deleted",
+            "type": "string"
+          },
+          "subject": {
+            "description": "可选，新标题",
+            "type": "string"
+          },
+          "taskId": {
+            "description": "任务 ID",
+            "type": "string"
+          }
+        },
+        "required": [
+          "taskId"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "TodoWrite": {
+    "type": "function",
+    "function": {
+      "name": "TodoWrite",
+      "description": "用完整 todo 列表覆盖当前会话任务清单。每项含 content（或 subject）、status（pending|in_progress|completed），可选 activeForm。复杂多步/计划获批后跟踪进度时使用；简单对话不要用。若全部为 completed，列表会被清空。细粒度增改也可用 TaskCreate / TaskUpdate。",
+      "parameters": {
+        "properties": {
+          "todos": {
+            "description": "更新后的完整 todo 列表",
+            "items": {
+              "properties": {
+                "activeForm": {
+                  "description": "可选，进行时文案",
+                  "type": "string"
+                },
+                "content": {
+                  "description": "任务内容/标题",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "可选，详情",
+                  "type": "string"
+                },
+                "status": {
+                  "description": "pending | in_progress | completed",
+                  "type": "string"
+                },
+                "subject": {
+                  "description": "可选，同 content",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "status"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "todos"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "TaskOutput": {
+    "type": "function",
+    "function": {
+      "name": "TaskOutput",
+      "description": "获取后台任务（Agent run_in_background / shell 等）的输出。block=true（默认）时等待完成或超时；timeout 为毫秒，默认 30000，最大 600000。task_id 来自 Agent 后台派发返回值。等待或查看子 Agent 结果必须用本工具，不要用 workspace_list 轮询文件。",
+      "parameters": {
+        "properties": {
+          "block": {
+            "description": "是否等待任务结束，默认 true",
+            "type": "boolean"
+          },
+          "task_id": {
+            "description": "后台任务 ID",
+            "type": "string"
+          },
+          "timeout": {
+            "description": "最大等待毫秒数，默认 30000，最大 600000",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "task_id"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "TaskStop": {
+    "type": "function",
+    "function": {
+      "name": "TaskStop",
+      "description": "按 ID 停止正在运行的后台任务（shell/agent 等）。仅在用户明确要求取消/停止，或任务 runaway/有害时使用。不要仅因已读够输出就 stop agent。task_id 与 shell_id 二选一。",
+      "parameters": {
+        "properties": {
+          "shell_id": {
+            "description": "兼容旧名 shell_id，等同 task_id",
+            "type": "string"
+          },
+          "task_id": {
+            "description": "后台任务 ID",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  "SendMessage": {
+    "type": "function",
+    "function": {
+      "name": "SendMessage",
+      "description": "向正在运行的后台子 Agent 发送中途指导。 to 填 agentId 或 task_id（后台 Agent 返回值）。 仅 run_in_background 的子 Agent 可收信；已结束请用 Agent(resume_agent_id=…)。",
+      "parameters": {
+        "properties": {
+          "message": {
+            "description": "指导内容，子 Agent 下一步会看到",
+            "type": "string"
+          },
+          "summary": {
+            "description": "可选，5-10 字摘要（展示用）",
+            "type": "string"
+          },
+          "to": {
+            "description": "目标 agentId 或后台 task_id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "to",
+          "message"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "workspace_read": {
+    "type": "function",
+    "function": {
+      "name": "workspace_read",
+      "description": "读取会话工作区内的文件。path 可为绝对路径或相对工作区根的相对路径。文本：默认从第 1 行起读取，可用 start_line/line_count 截取；若文件自上次同范围读取后未变化（含跨轮），将返回 unchanged stub，请复用更早的读取结果。图片（png/jpg/gif/webp 等）：返回短元数据，图片本体作为多模态内容供模型阅读。不要用 shell cat/head 代替本工具。\nPath contract: paths are relative to the session workspace unless they start with skills/ (skills/<name>/... is the global skill library). Never use host absolute paths.",
+      "parameters": {
+        "properties": {
+          "line_count": {
+            "description": "读取行数，默认 2000",
+            "type": "integer"
+          },
+          "path": {
+            "description": "文件路径（绝对或相对工作区根）",
+            "type": "string"
+          },
+          "start_line": {
+            "description": "起始行号，默认 1",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "workspace_write": {
+    "type": "function",
+    "function": {
+      "name": "workspace_write",
+      "description": "向会话工作区写入文本文件。会覆盖已存在文件。path 可为绝对路径或相对工作区根的相对路径。优先编辑已有文件而不是新建文档；不要用 shell echo/heredoc 代替本工具。\nPath contract: paths are relative to the session workspace unless they start with skills/ (skills/<name>/... is the global skill library). Never use host absolute paths.",
+      "parameters": {
+        "properties": {
+          "content": {
+            "description": "要写入的完整文件内容",
+            "type": "string"
+          },
+          "path": {
+            "description": "目标文件路径（绝对或相对工作区根）",
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "content"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "workspace_edit": {
+    "type": "function",
+    "function": {
+      "name": "workspace_edit",
+      "description": "对工作区文件做精确字符串替换（局部编辑）。\nUsage:\n- 编辑前必须先用 workspace_read 读取该文件；未读过会失败。\n- 从 read 结果复制文本时，不要包含行号前缀（形如 `12 | `），只保留真实文件内容。\n- old_string 必须在文件中唯一；若不唯一，请扩大上下文，或设 replace_all=true。\n- replace_all 适合重命名变量等批量替换。\n- 优先编辑已有文件；不要用本工具创建新文件（新建请用 workspace_write）。\n- old_string 与 new_string 不能相同。\nPath contract: paths are relative to the session workspace unless they start with skills/ (skills/<name>/... is the global skill library). Never use host absolute paths.",
+      "parameters": {
+        "properties": {
+          "new_string": {
+            "description": "替换后的新文本（必须与 old_string 不同）",
+            "type": "string"
+          },
+          "old_string": {
+            "description": "要被替换的原文（必须精确匹配）",
+            "type": "string"
+          },
+          "path": {
+            "description": "要修改的文件路径（绝对或相对工作区根）",
+            "type": "string"
+          },
+          "replace_all": {
+            "description": "是否替换全部匹配项，默认 false",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "path",
+          "old_string",
+          "new_string"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "workspace_list": {
+    "type": "function",
+    "function": {
+      "name": "workspace_list",
+      "description": "列出会话工作区内的文件和子目录。path 默认可为工作区根或其下目录；可用 max_depth 控制遍历深度。\nPath contract: paths are relative to the session workspace unless they start with skills/ (skills/<name>/... is the global skill library). Never use host absolute paths.",
+      "parameters": {
+        "properties": {
+          "max_depth": {
+            "description": "最大遍历深度，默认 2",
+            "type": "integer"
+          },
+          "path": {
+            "description": "目录路径（绝对或相对工作区根）；缺省为工作区根",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      }
+    }
+  },
+  "workspace_glob": {
+    "type": "function",
+    "function": {
+      "name": "workspace_glob",
+      "description": "在会话工作区内按 glob 模式查找文件，例如 **/*.java 或 src/**/*.ts。path 为搜索起点目录，可省略则从工作区根开始。不要用 find/ls 代替本工具。\nPath contract: paths are relative to the session workspace unless they start with skills/ (skills/<name>/... is the global skill library). Never use host absolute paths.",
+      "parameters": {
+        "properties": {
+          "path": {
+            "description": "搜索起点目录；缺省为工作区根",
+            "type": "string"
+          },
+          "pattern": {
+            "description": "glob 模式，例如 **/*.md",
+            "type": "string"
+          }
+        },
+        "required": [
+          "pattern"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "workspace_grep": {
+    "type": "function",
+    "function": {
+      "name": "workspace_grep",
+      "description": "在会话工作区内搜索关键字或正则。path 可为文件或目录，缺省为工作区根。不要用 shell grep/rg 代替本工具。\nPath contract: paths are relative to the session workspace unless they start with skills/ (skills/<name>/... is the global skill library). Never use host absolute paths.",
+      "parameters": {
+        "properties": {
+          "case_sensitive": {
+            "description": "是否区分大小写，默认 false",
+            "type": "boolean"
+          },
+          "path": {
+            "description": "搜索起点（文件或目录）；缺省为工作区根",
+            "type": "string"
+          },
+          "pattern": {
+            "description": "关键字或正则表达式",
+            "type": "string"
+          },
+          "regex": {
+            "description": "是否按正则匹配，默认 false",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "pattern"
+        ],
+        "type": "object"
+      }
+    }
+  }
+}

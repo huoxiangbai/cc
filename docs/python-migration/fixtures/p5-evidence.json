@@ -1,0 +1,171 @@
+{
+  "phase": "P5",
+  "date": "2026-10-04",
+  "isolation_root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p5-qq8pdiiy",
+  "browser_roots": [
+    "reactor-p5-mseel1br",
+    "reactor-p5-z5qh_3xa"
+  ],
+  "tests": {
+    "backend": {
+      "passed": 159,
+      "skipped": 55,
+      "warnings": 16
+    },
+    "integration": {
+      "passed": 46,
+      "failed": 0
+    },
+    "java_replay_frames": [
+      5,
+      2,
+      11
+    ],
+    "ui": {
+      "passed": 434,
+      "baseline_failed": 2,
+      "total": 436
+    },
+    "ui_build": "PASS",
+    "wheel_sdist": "PASS"
+  },
+  "boundary": {
+    "model_images": "tests-only TCP fixture; real provider U",
+    "tool_database_files": "actual original Tool/new MySQL/SQLite and files",
+    "production": "not accessed"
+  },
+  "files": [
+    {
+      "path": "fixtures/p5-artifacts/browser-3d-drag.jpg",
+      "size": 28796,
+      "sha256": "a76a85ad1bf237d215b4f45223212e66f1ed32107d854e48753503cd40b55949"
+    },
+    {
+      "path": "fixtures/p5-artifacts/browser-3d-loaded.jpg",
+      "size": 28513,
+      "sha256": "eda49cbdfc42cf3ea14f2efda716fc4ba08c1c22316911be36ff7d2705d6b888"
+    },
+    {
+      "path": "fixtures/p5-artifacts/browser-admin-model.jpg",
+      "size": 46038,
+      "sha256": "786031be056ec7632811b116e5fa81b8bdf41b8d981bc4b7158fbdd1bb45b2b6"
+    },
+    {
+      "path": "fixtures/p5-artifacts/browser-history.jpg",
+      "size": 18252,
+      "sha256": "1c8ce6f48073568abb0501b18dd07c240623b3cd6773ff338bcaf4fb62af3bf0"
+    },
+    {
+      "path": "fixtures/p5-artifacts/browser-iframe-action.jpg",
+      "size": 20997,
+      "sha256": "be34a913bcdb3ceac5cff627e40e7478dde0f17b12675c5950a036e0993c1b2d"
+    },
+    {
+      "path": "fixtures/p5-artifacts/browser-images.jpg",
+      "size": 16917,
+      "sha256": "fbe0be62427b58b6597e999c12ddf02a00e07e732c3af5fe75ab66f9edf50ac1"
+    },
+    {
+      "path": "fixtures/p5-artifacts/chart.png",
+      "size": 28482,
+      "sha256": "2fa79d8a4285b88432b679306d5bcf4c37d445f6310f88e638d92890d2b9b259"
+    },
+    {
+      "path": "fixtures/p5-artifacts/docgen-docx.png",
+      "size": 44862,
+      "sha256": "9ef2f6dd308bb90f87eb979ec2492b60a58e9b7da2be6ca24a815bc4ae68b92d"
+    },
+    {
+      "path": "fixtures/p5-artifacts/docgen-pdf-1.png",
+      "size": 17370,
+      "sha256": "afb8a211188f432aa751b81d1e3f48082440a15324d16ac67a64557d9e41e6dd"
+    },
+    {
+      "path": "fixtures/p5-artifacts/integration.xml",
+      "size": 6044,
+      "sha256": "d7abfbdc75c575a928c7a4f283a02655539ad794637d82c47b7e269b46839141"
+    },
+    {
+      "path": "fixtures/p5-artifacts/p5-docgen-evidence.json",
+      "size": 39628,
+      "sha256": "f95f2083b98ceffd71650ad199e7e816ae12122131d5204edd1c90f63693c16f"
+    },
+    {
+      "path": "fixtures/p5-artifacts/p5-docgen.docx",
+      "size": 6326866,
+      "sha256": "0290db915dce5bd5afc9c8f46682911d77ecea5e581ed2b178f9cfba25ab6250"
+    },
+    {
+      "path": "fixtures/p5-artifacts/p5-docgen.html",
+      "size": 5956,
+      "sha256": "7e08744c34580d1acccd0960dc3d5b62b3c209b31752146899b73cba0c28865d"
+    },
+    {
+      "path": "fixtures/p5-artifacts/p5-docgen.md",
+      "size": 132,
+      "sha256": "78e943c57d74dd29045ba57240d63c48e106975597d637407f070db2589614c5"
+    },
+    {
+      "path": "fixtures/p5-artifacts/p5-docgen.pdf",
+      "size": 19759,
+      "sha256": "22c5f40cf74af4d92761e4e4fedcc62be81341cdbf9408ebe76c67bd09068e83"
+    },
+    {
+      "path": "fixtures/p5-artifacts/p5-genui-events.json",
+      "size": 35318,
+      "sha256": "614f0e967c68ab64026ac07d82382d600a3c6bc2b1f1312b41aec845ccf0607e"
+    },
+    {
+      "path": "fixtures/p5-artifacts/p5-genui.docx",
+      "size": 6291433,
+      "sha256": "bb68e0554b97341b3ab75e09ae27acbc7a84ac30b73db11392fed9970dda0cd5"
+    },
+    {
+      "path": "fixtures/p5-artifacts/p5-genui.pdf",
+      "size": 15025,
+      "sha256": "e2a5b7973d9cd0fde26340da1c2b70653548610cd14c05b538e516ee15720d2a"
+    },
+    {
+      "path": "fixtures/p5-artifacts/p5-image-evidence.json",
+      "size": 7064,
+      "sha256": "7b3b8cc371ffa53f3f6f44af1e5551e3fcd6c2d809c8777eedd576d1ccbbdf19"
+    },
+    {
+      "path": "fixtures/p5-artifacts/qa-genui-docx.png",
+      "size": 42969,
+      "sha256": "0e36c2fdf0330c0f019961f0996e9da3e1735954afb84ebd8387c713c0a7e17c"
+    },
+    {
+      "path": "fixtures/p5-artifacts/qa-genui-pdf-1.png",
+      "size": 20379,
+      "sha256": "dc3a7b9f65e1a3ecc02e6f04de66bce944337fe8663b9d5e2661e0111a46fd75"
+    },
+    {
+      "path": "fixtures/p5-artifacts/sales-sheet-1.png",
+      "size": 8118,
+      "sha256": "8224c0fde6864c699dbb7f1897a351f47f0ae124de9cf548fb6e188e97d91fc4"
+    },
+    {
+      "path": "fixtures/p5-artifacts/sales.xlsx",
+      "size": 4878,
+      "sha256": "7f5f2954b35389aec5df32f53671d50741a57d5a2c56c5c1bd57de3e71f6d7ee"
+    },
+    {
+      "path": "fixtures/p5-artifacts/slides-page-1.png",
+      "size": 7661,
+      "sha256": "491f66629a3016b3f64fe763842d55340579232e31d8aaeb2966e135e28e1e72"
+    },
+    {
+      "path": "fixtures/p5-artifacts/slides-page-2.png",
+      "size": 14139,
+      "sha256": "eccb438cfd28f1b767218237e60775c160d370b9f96809e9616ed782245f2844"
+    },
+    {
+      "path": "fixtures/p5-artifacts/slides.pptx",
+      "size": 30038,
+      "sha256": "bfdb967ad6131c9b5531077e0989e5218bb07a8bf55cdafa05098082f1e99c05"
+    }
+  ],
+  "visual": "GenUI/docgen PDF+DOCX; PPTX both pages with per-process bundled CJK font directory; XLSX first sheet; chart PNG",
+  "cleanup": "Own browser tabs + viewport reset; own preview/helper/backend/Tool/model/new MySQL stopped; data and logs retained"
+}

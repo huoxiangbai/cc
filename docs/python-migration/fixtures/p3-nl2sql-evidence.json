@@ -1,0 +1,96 @@
+{
+  "model": "isolated HTTP fixture; original NL2SQLAgent generation logic",
+  "businessDB": "new separate MySQL database; actual SQL",
+  "requestId": "7d638cdb-8e20-4a9b-96f5-723f50270e86",
+  "frames": [
+    {
+      "eventType": "DEBUG",
+      "data": "7d638cdb-8e20-4a9b-96f5-723f50270e86"
+    },
+    {
+      "eventType": "THINK",
+      "data": "1.按分类汇总销售额。2.关联category与amount。3.计算SUM并排序。"
+    },
+    {
+      "eventType": "finished_stream",
+      "data": "finished_stream"
+    },
+    {
+      "eventType": "CHART_DATA",
+      "data": [
+        {
+          "question": "P3销售汇总",
+          "dataList": [
+            {
+              "category": "A",
+              "total": 30.0
+            },
+            {
+              "category": "B",
+              "total": 7.5
+            }
+          ],
+          "columnList": [
+            {
+              "col": "category",
+              "agg": null,
+              "order": "ASC",
+              "guid": "category",
+              "name": "分类",
+              "dataType": "STRING",
+              "colType": "IDENTIFIER"
+            },
+            {
+              "col": "SUM(`amount`)",
+              "agg": "SUM",
+              "order": null,
+              "guid": "total",
+              "name": "total",
+              "dataType": "DECIMAL",
+              "colType": "OTHER_FUNCTION"
+            }
+          ],
+          "filters": [],
+          "modelCode": null,
+          "modelName": null,
+          "loadSucceed": null,
+          "errorMessage": null,
+          "querySqlList": null,
+          "limit": 0,
+          "dimCols": [
+            "category"
+          ],
+          "measureCols": [
+            "total"
+          ],
+          "nl2sqlResult": "SELECT `category`, SUM(`amount`) AS `total` FROM sales GROUP BY `category` ORDER BY `category`",
+          "id": null
+        }
+      ]
+    },
+    {
+      "eventType": "READY",
+      "data": ""
+    }
+  ],
+  "files": [
+    {
+      "fileName": "query-1.csv",
+      "previewUrl": "http://127.0.0.1:56936/v1/file_tool/preview/7d638cdb-8e20-4a9b-96f5-723f50270e86/query-1.csv",
+      "sha256": "12c28dbc9101fe4910328e3eb48b1cd61012672cd9375525f315b13361ab0af8",
+      "bytes": 31
+    },
+    {
+      "fileName": "query-1-chart.json",
+      "previewUrl": "http://127.0.0.1:56936/v1/file_tool/preview/7d638cdb-8e20-4a9b-96f5-723f50270e86/query-1-chart.json",
+      "sha256": "deed868317842ddbe013ac2d3cf33c3a5c02187dafc4cc26c3364afa1c742e5e",
+      "bytes": 200
+    },
+    {
+      "fileName": "query-provenance.json",
+      "previewUrl": "http://127.0.0.1:56936/v1/file_tool/preview/7d638cdb-8e20-4a9b-96f5-723f50270e86/query-provenance.json",
+      "sha256": "3ed989b4ecf08251acc708414b6c80e83a3e4b835227ff7f2bcd9c65d1688878",
+      "bytes": 1000
+    }
+  ]
+}

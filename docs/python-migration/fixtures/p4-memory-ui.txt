@@ -1,0 +1,36 @@
+- button "打开侧边栏":
+- generic: Reactor
+- button "新建"
+- generic: P4_MEMORY 请记住隔离测试用户偏好中文报告
+- button "查看当前会话的文件":
+- log:
+  - generic: P4_MEMORY 请记住隔离测试用户偏好中文报告
+  - generic "Agent 执行过程":
+    - paragraph: 执行 memory
+    - 'button "memory {\"action\":\"add\",\"target\":\"user\",\"content\":\"P4 用户偏好中文报告\"} ok 0.1s"':
+      - generic: memory
+      - 'generic "{\"action\":\"add\",\"target\":\"user\",\"content\":\"P4 用户偏好中文报告\"}"'
+      - status "ok":
+      - generic: 0.1s
+    - button "展开工具详情":
+    - generic: 参数
+    - generic: "{ \"action\": \"add\", \"target\": \"user\", \"content\": \"P4 用户偏好中文报告\" }"
+    - generic: "{ \"success\": true, \"staged\": false, \"no_change\": false, \"message\": \"added\", \"used_chars\": 11, \"limit_chars\": 1375, \"tool\": \"memory\", \"ok\": true, \"owner_type\": \"VISITOR\", \"owner_id\": \"visitor_c758b80cf0de4ae2a257e72c7ea98f64\", \"store\": \"MyBatisCuratedMemoryStore\" }"
+  - paragraph: 记忆已实际持久化。
+  - button "复制":
+    - generic: 复制
+  - button "更多":
+    - generic: 更多
+  - generic: P4_CONTINUE 续轮确认记忆
+  - button "撤销并编辑":
+    - generic: 撤销并编辑
+  - generic "Agent 执行过程"
+  - paragraph: 已读取旧工作记忆，继续本轮。
+  - button "复制":
+    - generic: 复制
+  - button "更多":
+    - generic: 更多
+- textbox "希望 Reactor 为你做哪些任务呢？"
+- button "上传附件，可一次多选":
+- button "上下文 20 / 100k":
+- button "Submit" [disabled]:

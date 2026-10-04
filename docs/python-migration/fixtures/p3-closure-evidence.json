@@ -1,0 +1,383 @@
+{
+  "status": "P3 implementation and isolation acceptance closed; external integrations U; no production switch",
+  "unit": 118,
+  "integration": {
+    "sqlite": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz",
+    "mysql": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-axv77fa5",
+    "tests_per_run": 42,
+    "java_frames": [
+      5,
+      2,
+      11
+    ]
+  },
+  "browser": {
+    "root": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-6cwrb_px",
+    "model": "HTTP fixture only; original Tool/SQL/DataFrame/files real",
+    "owners": [
+      {
+        "resource_kind": "data_query",
+        "resource_key": "7ae99b38-5aed-4103-adf6-b68b086c9968",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": null
+      },
+      {
+        "resource_kind": "data_query",
+        "resource_key": "a8eb596a-1013-4c3f-8542-6770aeed1048",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": null
+      },
+      {
+        "resource_kind": "document_url",
+        "resource_key": "474f9d1c42cc0a71a99a54f2b49c04e83f320788bb787490c0b511ac02c973c2",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": "318a7088-fe11-4f2b-8a95-9ff216ee2911"
+      },
+      {
+        "resource_kind": "document_url",
+        "resource_key": "ed7a2ef14afc17fceae6b513543fa06f3e551b2bfcf432aced91eb2a15b96579",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": "318a7088-fe11-4f2b-8a95-9ff216ee2911"
+      },
+      {
+        "resource_kind": "file_physical",
+        "resource_key": "7ae99b38-5aed-4103-adf6-b68b086c9968",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": null
+      },
+      {
+        "resource_kind": "file_physical",
+        "resource_key": "a8eb596a-1013-4c3f-8542-6770aeed1048",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": null
+      },
+      {
+        "resource_kind": "file_physical",
+        "resource_key": "session-1791033594587-984",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": null
+      },
+      {
+        "resource_kind": "file_scope",
+        "resource_key": "318a7088-fe11-4f2b-8a95-9ff216ee2911",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": null
+      },
+      {
+        "resource_kind": "file_scope",
+        "resource_key": "7ae99b38-5aed-4103-adf6-b68b086c9968",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": null
+      },
+      {
+        "resource_kind": "file_scope",
+        "resource_key": "a8eb596a-1013-4c3f-8542-6770aeed1048",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": null
+      },
+      {
+        "resource_kind": "file_scope",
+        "resource_key": "session-1791033594587-984",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": null
+      },
+      {
+        "resource_kind": "kb",
+        "resource_key": "11ba5dc16ef040f681e0065dc74d7921",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "parent_key": null
+      }
+    ],
+    "sessions": [
+      {
+        "session_id": "session-1791033594587-984",
+        "visitor_id": "visitor_165cb2e1252b4cde95a46390c1c7bab8",
+        "title": "P3_DATA 通过数据分析工具查询分类销售额并交付完整来源",
+        "status": 1,
+        "latest_request_id": "1791033675879-306"
+      }
+    ],
+    "KB": {
+      "t_kb_file": [
+        {
+          "id": 1,
+          "kb_id": "11ba5dc16ef040f681e0065dc74d7921",
+          "file_id": "ff35e33df59047bebfed0ceb2e6609d2",
+          "file_url": "http://127.0.0.1:49203/v1/file_tool/preview/318a7088-fe11-4f2b-8a95-9ff216ee2911/318a7088-fe11-4f2b-8a95-9ff216ee2911_ui-source.txt",
+          "title": "ui-source.txt",
+          "task_id": null,
+          "file_ext": ".txt",
+          "source_type": "file",
+          "task_status": "{\"global_status\": \"FAILED\", \"error_message\": \"\\u4e0d\\u652f\\u6301\\u7684\\u6587\\u672cembedding\\u6a21\\u578b: \"}",
+          "file_status": "FAILED",
+          "doc_count": 0,
+          "create_time": "2026-10-03 21:27:44.143272",
+          "modify_time": "2026-10-03 21:27:44.200952",
+          "deleted": 0,
+          "creator": null
+        }
+      ],
+      "t_knowledge_base": [
+        {
+          "id": 1,
+          "kb_id": "11ba5dc16ef040f681e0065dc74d7921",
+          "kb_name": "P3 SQLite 私有来源库",
+          "kb_desc": "仅新建隔离样本；外部入库服务未验证",
+          "chunk_type": "fixed_size",
+          "chunk_size": null,
+          "chunk_overlap_size": null,
+          "deleted": 0,
+          "create_time": "2026-10-03 21:24:56.883934",
+          "modify_time": "2026-10-03 21:24:56.883947",
+          "creator": null
+        }
+      ]
+    },
+    "crossVisitor": {
+      "browserKB": 403,
+      "browserDocument": 403,
+      "browserAnalysisFile": 403
+    },
+    "flow": [
+      "React DataAgent SQLite chart/table",
+      "ReAct data_analysis/get_data → NL2SQL → SQLite → real DataFrame",
+      "real report preview → refresh → recent session/history → same file preview",
+      "React KB create/upload → private original URL preview; ingestion explicitly FAILED without embedding config"
+    ]
+  },
+  "tool": {
+    "root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87",
+    "pass": 114,
+    "fail": 13,
+    "same_HEAD_failures": true
+  },
+  "UI": {
+    "pass": 434,
+    "fail": 2,
+    "same_HEAD_failures": true,
+    "build": "PASS in new copy"
+  },
+  "files": [
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/business.sqlite",
+      "copy": "p3-closure-artifacts/business.sqlite",
+      "bytes": 8192,
+      "sha256": "d5cd3f07c86c50d889537104dd93f9ad9fa286869b18a3f1b69edabc350f0488"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/p3-nl2sql-evidence.json",
+      "copy": "p3-closure-artifacts/p3-nl2sql-evidence.json",
+      "bytes": 2824,
+      "sha256": "4a1e3aa9ed1e6246066b66d7e93046117d009694e464b85fe6b65ab366a56774"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/p3-analysis-evidence.json",
+      "copy": "p3-closure-artifacts/p3-analysis-evidence.json",
+      "bytes": 32197,
+      "sha256": "3796982f2bc6704a943c04ff85f028fa1ffe2fda8e6fd0eec414fd02b9336eae"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/p3-codeact-evidence.json",
+      "copy": "p3-closure-artifacts/p3-codeact-evidence.json",
+      "bytes": 46922,
+      "sha256": "d71f7c25c2ee35f1b2915af4d2238c21828ae62ad10ebbef185642f6bb9d8ead"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/p3-closure-acl-evidence.json",
+      "copy": "p3-closure-artifacts/p3-closure-acl-evidence.json",
+      "bytes": 399,
+      "sha256": "74758b6eaaf70de59a299c9f4285e688c295943671be1434d04ebd2f50fecc15"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/integration.xml",
+      "copy": "p3-closure-artifacts/integration.xml",
+      "bytes": 5515,
+      "sha256": "bc56f73f3cfb5db9a84f8e72a37460895bc3f968af604010238734fd331d024f"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/restart/evidence.json",
+      "copy": "p3-closure-artifacts/restart/evidence.json",
+      "bytes": 476,
+      "sha256": "43e613f321c3789e3ada02f45851ec83b6bb15dcb42d823c86501ade6c473d4c"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/p3-codeact/codeact-sales.csv",
+      "copy": "p3-closure-artifacts/files/p3-codeact/codeact-sales.csv",
+      "bytes": 27,
+      "sha256": "24c6f59d2e2b5b273a09106127416e893f672207e013c977a0c7a047b91dc2b6"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/d4a1aa89-a58d-442a-a8f7-da662c4bd0bf/query-1.csv",
+      "copy": "p3-closure-artifacts/files/d4a1aa89-a58d-442a-a8f7-da662c4bd0bf/query-1.csv",
+      "bytes": 29,
+      "sha256": "2a96d072cd4e1a1c94f08a39ee5c2a3909750a6d2123faa481bb12fc690c0110"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/d4a1aa89-a58d-442a-a8f7-da662c4bd0bf/query-1-chart.json",
+      "copy": "p3-closure-artifacts/files/d4a1aa89-a58d-442a-a8f7-da662c4bd0bf/query-1-chart.json",
+      "bytes": 198,
+      "sha256": "a66e9316277a2a69a17a8d3264a7e10c493c2eab33aaf0162c999d428661c02a"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/d4a1aa89-a58d-442a-a8f7-da662c4bd0bf/query-provenance.json",
+      "copy": "p3-closure-artifacts/files/d4a1aa89-a58d-442a-a8f7-da662c4bd0bf/query-provenance.json",
+      "bytes": 1163,
+      "sha256": "880988aa94ce49385e7d707c911f7777274503e650252a3f45573fbfc8a6d6d6"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/p3-analysis/分类销售分析.md",
+      "copy": "p3-closure-artifacts/files/p3-analysis/分类销售分析.md",
+      "bytes": 191,
+      "sha256": "74aef02fd694c4a4b4257752142c9da0d871660ee97232ff174e699a0288d38f"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/p3-local-code/sales.csv",
+      "copy": "p3-closure-artifacts/files/p3-local-code/sales.csv",
+      "bytes": 30,
+      "sha256": "c123c5bbe06e5866e9203a2e0ceb2a3f4e691453bfa3ce351e5b23311ee702b3"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/c37de291-c212-4eaf-9082-c43c8781ede8/query-1.csv",
+      "copy": "p3-closure-artifacts/files/c37de291-c212-4eaf-9082-c43c8781ede8/query-1.csv",
+      "bytes": 29,
+      "sha256": "2a96d072cd4e1a1c94f08a39ee5c2a3909750a6d2123faa481bb12fc690c0110"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/c37de291-c212-4eaf-9082-c43c8781ede8/query-1-chart.json",
+      "copy": "p3-closure-artifacts/files/c37de291-c212-4eaf-9082-c43c8781ede8/query-1-chart.json",
+      "bytes": 198,
+      "sha256": "a66e9316277a2a69a17a8d3264a7e10c493c2eab33aaf0162c999d428661c02a"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/c37de291-c212-4eaf-9082-c43c8781ede8/query-provenance.json",
+      "copy": "p3-closure-artifacts/files/c37de291-c212-4eaf-9082-c43c8781ede8/query-provenance.json",
+      "bytes": 1163,
+      "sha256": "db80b604322747c9f9840201b317b9eebfcb357ea4b7a6796bacece595b84d8a"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/3b96a4b7-c642-49f4-bb52-6f0150ed6982/query-1.csv",
+      "copy": "p3-closure-artifacts/files/3b96a4b7-c642-49f4-bb52-6f0150ed6982/query-1.csv",
+      "bytes": 29,
+      "sha256": "2a96d072cd4e1a1c94f08a39ee5c2a3909750a6d2123faa481bb12fc690c0110"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/3b96a4b7-c642-49f4-bb52-6f0150ed6982/query-1-chart.json",
+      "copy": "p3-closure-artifacts/files/3b96a4b7-c642-49f4-bb52-6f0150ed6982/query-1-chart.json",
+      "bytes": 198,
+      "sha256": "a66e9316277a2a69a17a8d3264a7e10c493c2eab33aaf0162c999d428661c02a"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-mpvo90vz/files/3b96a4b7-c642-49f4-bb52-6f0150ed6982/query-provenance.json",
+      "copy": "p3-closure-artifacts/files/3b96a4b7-c642-49f4-bb52-6f0150ed6982/query-provenance.json",
+      "bytes": 1154,
+      "sha256": "b7f707c9a7f9f3054e8dc9b0ce9a70b3fe8964f07b7b1583efd94e7ba8c7bbc8"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/target/python-migration-p3/closure-unit.xml",
+      "copy": "p3-closure-artifacts/closure-unit.xml",
+      "bytes": 14035,
+      "sha256": "4b0976aed2bbf2d3621c81c0aa8b82beaaf681505bcd5984e605d0b3246f932b"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/target/python-migration-p3/closure-ui.json",
+      "copy": "p3-closure-artifacts/closure-ui.json",
+      "bytes": 148903,
+      "sha256": "51720a8a9ad63c38b059654a32fed412ee7d47cc8f66b843047dba640f87f480"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/target/python-migration-p3/failure-baseline.json",
+      "copy": "p3-closure-artifacts/failure-baseline.json",
+      "bytes": 5907,
+      "sha256": "e1bc7a80d8d4ca8aafa33504def7bc92559656fe2db77d2b9f7dd7232343b5ea"
+    },
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/results.json",
+      "copy": "p3-closure-artifacts/tool-results.json",
+      "bytes": 7910,
+      "sha256": "e2068d2987606732e7911b701f3f1f7ddbec60d02d72fd68c266d2292dc82ddb"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-6cwrb_px/files/318a7088-fe11-4f2b-8a95-9ff216ee2911/318a7088-fe11-4f2b-8a95-9ff216ee2911_ui-source.txt",
+      "copy": "p3-closure-artifacts/browser/ui-source.txt",
+      "bytes": 52,
+      "sha256": "0b96f6e58da34d5f1eaafea976b1d0db14855d96a02b4a61130af4883c6ab8aa"
+    },
+    {
+      "source": "/private/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-6cwrb_px/files/session-1791033594587-984/分类销售分析.md",
+      "copy": "p3-closure-artifacts/browser/分类销售分析.md",
+      "bytes": 191,
+      "sha256": "74aef02fd694c4a4b4257752142c9da0d871660ee97232ff174e699a0288d38f"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/docs/python-migration/fixtures/p3-closure-artifacts/test_code_interpreter_permissions-baseline_log.log",
+      "copy": "p3-closure-artifacts/test_code_interpreter_permissions-baseline_log.log",
+      "bytes": 16523,
+      "sha256": "d6d601cf8e9d2c051b95832fb9189c1329753ece174136dd051b014df04af4a1"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/docs/python-migration/fixtures/p3-closure-artifacts/test_code_interpreter_permissions-current_log.log",
+      "copy": "p3-closure-artifacts/test_code_interpreter_permissions-current_log.log",
+      "bytes": 16479,
+      "sha256": "0f94896e1d62e1380e72eff921791bb843cf520415e63f5626f469c096d8a954"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/docs/python-migration/fixtures/p3-closure-artifacts/test_code_interpreter_runtime_guard-baseline_log.log",
+      "copy": "p3-closure-artifacts/test_code_interpreter_runtime_guard-baseline_log.log",
+      "bytes": 4712,
+      "sha256": "f9e5d8f3173cd5209ed6a5dcc94f9111b78024e339d885324f9f2c639483ea60"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/docs/python-migration/fixtures/p3-closure-artifacts/test_code_interpreter_runtime_guard-current_log.log",
+      "copy": "p3-closure-artifacts/test_code_interpreter_runtime_guard-current_log.log",
+      "bytes": 4704,
+      "sha256": "ceb7f8e71d6582ae072f59d5532b00f1d40f384cfdb847688f2f897b4f5b22bb"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/docs/python-migration/fixtures/p3-closure-artifacts/test_e2b_sandbox_backend-baseline_log.log",
+      "copy": "p3-closure-artifacts/test_e2b_sandbox_backend-baseline_log.log",
+      "bytes": 23919,
+      "sha256": "5c2683eb336db9b5630282d8ea5951948cd7a2fa03519bc1a46059fd09f3f905"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/docs/python-migration/fixtures/p3-closure-artifacts/test_e2b_sandbox_backend-current_log.log",
+      "copy": "p3-closure-artifacts/test_e2b_sandbox_backend-current_log.log",
+      "bytes": 23911,
+      "sha256": "e9bd0a4822b0dcdc8be10cbd362b36eefbfceeccb120047594c6e7620e858411"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/docs/python-migration/fixtures/p3-closure-artifacts/test_mrag_api-baseline_log.log",
+      "copy": "p3-closure-artifacts/test_mrag_api-baseline_log.log",
+      "bytes": 6474,
+      "sha256": "ea0abd4343825e93dcd972bbc61d1ed5b5d0cfda4810c29f22c176cc9fa8b97c"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/docs/python-migration/fixtures/p3-closure-artifacts/test_mrag_api-current_log.log",
+      "copy": "p3-closure-artifacts/test_mrag_api-current_log.log",
+      "bytes": 6466,
+      "sha256": "b4e8876ae34c1cac597c36e1c7c99cc412493457530fdb1cf1827399d87f385a"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/docs/python-migration/fixtures/p3-closure-artifacts/test_mrag_document_processor-baseline_log.log",
+      "copy": "p3-closure-artifacts/test_mrag_document_processor-baseline_log.log",
+      "bytes": 3641,
+      "sha256": "892fb9744f2cd9de675f06e8e60273fcdb9a423638d9b426cebf7fbac37b084a"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/docs/python-migration/fixtures/p3-closure-artifacts/test_mrag_document_processor-current_log.log",
+      "copy": "p3-closure-artifacts/test_mrag_document_processor-current_log.log",
+      "bytes": 3633,
+      "sha256": "914c5ce555228d9d69d5216e816a676085d34cc8deaa4ca5af269b464094a4a4"
+    },
+    {
+      "source": "/Users/cuimingkai/Documents/claw-agent/ai-agent/docs/python-migration/fixtures/p3-closure-artifacts/ui-failure-baseline.json",
+      "copy": "p3-closure-artifacts/ui-failure-baseline.json",
+      "bytes": 351,
+      "sha256": "968df729f7bd468da470bfe60f7c1c4443f25f0f4604df9b265b5c06e38d9d63"
+    }
+  ],
+  "cleanup": {
+    "status": "own backend, Tool, model fixture, isolated MySQL, Vite and UI helper stopped; browser test tabs absent",
+    "isolated_logs_and_databases": "preserved",
+    "verification": "process listing contains no reactor-p3-6cwrb_px service; UI and harness exited 130 after intentional SIGINT; no other services stopped"
+  }
+}

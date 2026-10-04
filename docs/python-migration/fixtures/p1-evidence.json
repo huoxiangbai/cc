@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-03",
+  "stage": "P1",
+  "status": "implementation-and-isolated-verification-complete",
+  "integration": {
+    "isolation_root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p1-mwpe__4r",
+    "backend_url": "http://127.0.0.1:49581",
+    "tool_url": "http://127.0.0.1:49579",
+    "model": "fixed-upstream-test-only",
+    "mysql": "9.x local new datadir; Unix socket only",
+    "schema_tables": 33,
+    "java_replay": "PASS: actual Python-written MySQL rows",
+    "exit_code": 0
+  },
+  "tests": {
+    "p0_java": 102,
+    "p0_harness": 9,
+    "python_contracts": 28,
+    "tcp_mysql": 10,
+    "react_tests": 14,
+    "java_replay_frames": {
+      "generic": 5,
+      "genui": 2,
+      "rich": 11
+    }
+  },
+  "chain": {
+    "requestId": "request-real-p1",
+    "sessionId": "session-real-p1",
+    "runId": 1,
+    "llmIds": [
+      1,
+      2,
+      3
+    ],
+    "toolIds": [
+      1,
+      2
+    ],
+    "artifactIds": [
+      1
+    ],
+    "previewBytes": 74,
+    "downloadBytes": 74,
+    "sseKinds": [
+      "tool_thought",
+      "tool_call",
+      "file",
+      "tool_result",
+      "tool_thought",
+      "tool_call",
+      "tool_result",
+      "result"
+    ]
+  },
+  "model": "fixed-upstream-test-only; supplier unverified",
+  "old_data": "synthetic original Java schema fixtures only; real old user-data copy unverified",
+  "browser": {
+    "isolation_root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p1-gcon5v70",
+    "visitor": "P1隔离验收",
+    "session": "session-1790957085802-4275",
+    "flow": "naming, original React query, actual text_processor write/read, SSE, preview, refresh, history selection, file drawer preview observed",
+    "screenshot": "target/python-migration-p1/workbench-history.jpg",
+    "download": "HTTP bytes passed; browser download event capture timed out"
+  },
+  "limitations": [
+    "No supplier credentials or real old data copy provided",
+    "No default Java/production route switch",
+    "A2/A3 external protocol decisions unchanged",
+    "P2 not started",
+    "Original UI non-P1 admin/pending/capability endpoints return 404"
+  ],
+  "packaging": "sdist + wheel built; prompt, tool schema and GenUI catalog resources present",
+  "configuration_isolation": "Tool test host disables dotenv discovery and denies .env reads before importing original routers; source ancestors had no .env candidate",
+  "process_cleanup": "All P1-created preview/backend/tool/fixed-upstream/isolated MySQL processes stopped; data/logs retained"
+}

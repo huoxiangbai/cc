@@ -1,0 +1,7 @@
+{
+  "db": {"type": "sqlite", "path": "/absolute/authorized-test-copy/business.sqlite", "timeout": 60},
+  "modelList": [{"id": "sales-model", "type": "TABLE", "name": "销售数据", "content": "sales", "defaultRecallFields": "category", "analyzeSuggestFields": "category"}],
+  "forceRefresh": false,
+  "es": {"enable": false},
+  "qdrant": {"enable": false}
+}

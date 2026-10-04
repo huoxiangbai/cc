@@ -1,0 +1,258 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/admin-user/create"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/admin/admin-user/update-by-id"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/admin/admin-user/update-by-user-id"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/admin/admin-user/delete-by-id/{id}"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/admin/admin-user/delete-by-user-id/{userId}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/admin-user/query-by-id/{id}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/admin-user/query-by-user-id/{userId}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/admin-user/query-by-username/{username}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/admin-user/query-enabled"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/admin-user/query-by-status/{status}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/admin-user/query-list"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/admin-user/query-all"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/admin-user/login"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/admin-user/validate-login"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/ai-client-api/create"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/admin/ai-client-api/update-by-id"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/admin/ai-client-api/update-by-api-id"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/admin/ai-client-api/delete-by-id/{id}"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/admin/ai-client-api/delete-by-api-id/{apiId}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-api/query-by-id/{id}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-api/query-by-api-id/{apiId}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-api/query-enabled"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/ai-client-api/query-list"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-api/query-all"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/ai-client-model/test/{modelId}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/ai-client-model/test-by-id/{id}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/ai-client-model/create"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/admin/ai-client-model/update-by-id"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/admin/ai-client-model/update-by-model-id"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/admin/ai-client-model/delete-by-id/{id}"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/admin/ai-client-model/delete-by-model-id/{modelId}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-model/query-by-id/{id}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-model/query-by-model-id/{modelId}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-model/query-by-api-id/{apiId}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-model/query-by-model-type/{modelType}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/ai-client-model/query-list"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-model/query-all"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/ai-client-tool-mcp/create"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/admin/ai-client-tool-mcp/update-by-id"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/admin/ai-client-tool-mcp/update-by-mcp-id"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/admin/ai-client-tool-mcp/delete-by-id/{id}"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/admin/ai-client-tool-mcp/delete-by-mcp-id/{mcpId}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-tool-mcp/query-by-id/{id}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-tool-mcp/query-by-mcp-id/{mcpId}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-tool-mcp/query-all"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-tool-mcp/query-by-status/{status}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-tool-mcp/query-by-transport-type/{transportType}"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/ai-client-tool-mcp/query-enabled"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/ai-client-tool-mcp/query-list"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/skills/list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/skills/parse-package"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/skills/upload"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/skills/create"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/skills/import-url"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/admin/skills/{name}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/skills/reload"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/sub-agent-definitions/query-list"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/sub-agent-definitions/tool-catalog"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/admin/sub-agent-definitions/{agentKey}"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/sub-agent-definitions/create"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/admin/sub-agent-definitions/update"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/admin/sub-agent-definitions/{agentKey}"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/admin/sub-agent-definitions/delete"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/admin/sub-agent-definitions/reload"
+  }
+]

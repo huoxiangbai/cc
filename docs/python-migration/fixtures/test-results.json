@@ -1,0 +1,159 @@
+{
+  "classes" : [ {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 6,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.ActiveAgentRunRegistryTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 12,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.LlmRequestRetryTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 3,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.LlmModelFallbackTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 3,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.tasklist.SendMessageMailboxTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 2,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.DeferredMcpCatalogTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 2,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.canvas.GenUiExportServiceTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 3,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.canvas.GenUiSchemaTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 10,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.planmode.PlanModeToolsTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 2,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.subagent.SubAgentConcurrencyHardeningTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 2,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.subagent.SubAgentResumeHardeningTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 9,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.stream.BackgroundStreamSettleTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 6,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.AgentResponseHandlerReplayContractTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 2,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.SseEmitterAgentSessionStreamTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 7,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.ConversationHistoryControllerTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 7,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.VisitorIdentityFilterTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 4,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.ConversationSessionOwnershipApplicationServiceTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 1,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.application.agent.planmode.PlanApprovalResumeApplicationServiceTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 1,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.application.agent.subagent.SubAgentDefinitionAdminApplicationServiceTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ "deployedPlanSolveMainToolListIncludesTaskOutputAndSendMessage: missing application-dev.yml; deployment validation U" ],
+    "failures" : 0,
+    "tests" : 11,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.spring.ai.AgentToolCollectionFactoryTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 1,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.ReactorMapperNamespaceBindingTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 2,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.ToolLlmObservationRuntimeTest"
+  }, {
+    "details" : [ ],
+    "excluded" : [ ],
+    "failures" : 0,
+    "tests" : 6,
+    "ignored" : 0,
+    "class" : "org.wwz.ai.test.domain.ToolArtifactBindingRuntimeTest"
+  } ],
+  "failures" : 0,
+  "tests" : 102
+}

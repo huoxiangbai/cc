@@ -1,0 +1,8 @@
+{
+  "provider": "auto",
+  "grok": {"api_key": "", "model": "grok-4"},
+  "gpt": {"api_key": "", "model": "gpt-4.1-mini"},
+  "exa": {"api_key": ""},
+  "tavily": {"api_key": ""},
+  "brave": {"api_key": ""}
+}

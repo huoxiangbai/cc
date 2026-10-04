@@ -1,0 +1,791 @@
+{
+  "components": [
+    {
+      "kind": "AspectBox",
+      "description": "Fixed aspect frame",
+      "props": {
+        "maxWidth": "number",
+        "ratio": "16:9|4:3|1:1|3:2"
+      }
+    },
+    {
+      "kind": "Skeleton",
+      "description": "Loading placeholder",
+      "props": {
+        "variant": "text|card|avatar",
+        "lines": "number"
+      }
+    },
+    {
+      "kind": "Stat",
+      "description": "KPI stat",
+      "props": {
+        "delta": "string",
+        "value": "string",
+        "label": "string",
+        "trend": "up|down|neutral"
+      }
+    },
+    {
+      "kind": "Progress",
+      "description": "Progress bar",
+      "props": {
+        "value": "0-100",
+        "label": "string",
+        "color": "primary|success|warning|error"
+      }
+    },
+    {
+      "kind": "Avatar",
+      "description": "Avatar",
+      "props": {
+        "size": "sm|md|lg",
+        "name": "string",
+        "src": "url"
+      }
+    },
+    {
+      "kind": "Image",
+      "description": "Image",
+      "props": {
+        "alt": "string",
+        "fit": "cover|contain|fill",
+        "src": "url",
+        "caption": "string"
+      }
+    },
+    {
+      "kind": "Video",
+      "description": "Video player",
+      "props": {
+        "src": "url",
+        "autoPlay": "boolean",
+        "loop": "boolean",
+        "poster": "url",
+        "controls": "boolean"
+      }
+    },
+    {
+      "kind": "Model3D",
+      "description": "GLB/GLTF 3D model viewer (OrbitControls). Requires reachable src URL.",
+      "props": {
+        "caption": "string",
+        "wireframe": "boolean",
+        "src": "glb/gltf url",
+        "height": "number",
+        "background": "css color",
+        "autoRotate": "boolean",
+        "rotateSpeed": "number"
+      }
+    },
+    {
+      "kind": "LiveCamera",
+      "description": "Live camera preview",
+      "props": {
+        "facingMode": "user|environment",
+        "mirrored": "boolean"
+      }
+    },
+    {
+      "kind": "Icon",
+      "description": "Lucide icon or emoji",
+      "props": {
+        "size": "number",
+        "iconSet": "auto|lucide|emoji",
+        "name": "string"
+      }
+    },
+    {
+      "kind": "Table",
+      "description": "Table; children TableRow",
+      "props": {
+        "compact": "boolean",
+        "headers": "string[]",
+        "striped": "boolean"
+      }
+    },
+    {
+      "kind": "TableRow",
+      "description": "Table row; children TableCell",
+      "props": {
+        "highlight": "boolean"
+      }
+    },
+    {
+      "kind": "TableCell",
+      "description": "Table cell",
+      "props": {
+        "value": "string",
+        "align": "left|center|right",
+        "bold": "boolean"
+      }
+    },
+    {
+      "kind": "List",
+      "description": "List container",
+      "props": {
+        "ordered": "boolean",
+        "variant": "default|bordered|separated"
+      }
+    },
+    {
+      "kind": "ListItem",
+      "description": "List item",
+      "props": {
+        "value": "string",
+        "icon": "string"
+      }
+    },
+    {
+      "kind": "CodeBlock",
+      "description": "Code block",
+      "props": {
+        "language": "string",
+        "title": "string",
+        "code": "string"
+      }
+    },
+    {
+      "kind": "Chart",
+      "description": "Interactive chart (ECharts). Prefer over canvas_publish for pie/bar/line.",
+      "props": {
+        "chart": "line|bar|area|pie",
+        "showGrid": "boolean",
+        "series": "[{name,values}]",
+        "title": "string",
+        "height": "number",
+        "stacked": "boolean",
+        "showLegend": "boolean",
+        "categories": "string[]"
+      }
+    },
+    {
+      "kind": "ParametricLab",
+      "description": "Interactive teaching lab: drag sliders → formulas + SVG scene update live. Use for math demos (Pythagoras, circle, functions). Prefer over static Chart for pedagogy.",
+      "props": {
+        "scene": "right_triangle|circle|rectangle|linear|quadratic|unit_circle|number_line|coordinate|custom_svg|none",
+        "description": "string",
+        "outputs": "[{id,label,expr,format,unit}] expr uses param ids + sqrt/sin/cos/pi",
+        "title": "string",
+        "formulaNote": "string shown as equation badge",
+        "showFormulas": "boolean",
+        "params": "[{id,label,value,min,max,step,unit}]",
+        "height": "number",
+        "svg": "optional SVG markup with {{id}} placeholders when scene=custom_svg"
+      }
+    },
+    {
+      "kind": "PythagorasLab",
+      "description": "Shortcut for ParametricLab scene=right_triangle (勾股定理 a²+b²=c²). Drag a/b → triangle + c update.",
+      "props": {
+        "description": "string",
+        "params": "optional override [{id:a|b,...}]",
+        "outputs": "optional override",
+        "title": "string",
+        "height": "number"
+      }
+    },
+    {
+      "kind": "GeometryLab",
+      "description": "Alias of ParametricLab for geometry teaching demos",
+      "props": {
+        "title": "string",
+        "outputs": "array",
+        "scene": "right_triangle|circle|rectangle|unit_circle",
+        "params": "array"
+      }
+    },
+    {
+      "kind": "InteractiveLab",
+      "description": "Alias of ParametricLab for general interactive formula demos",
+      "props": {
+        "params": "array",
+        "svg": "string",
+        "outputs": "array",
+        "scene": "string",
+        "title": "string"
+      }
+    },
+    {
+      "kind": "ConceptDemo",
+      "description": "Animated concept walkthrough: auto-play steps with play/pause/scrub. Use for knowledge demos (request flow, layering, tree, formula transform, compare). Prefer over static Stepper/Timeline when user should SEE the idea unfold.",
+      "props": {
+        "title": "string",
+        "description": "string",
+        "scene": "flow|stack|tree|formula|compare|sequence",
+        "steps": "[{title,caption,duration,ms,highlight[],badge,formula}]",
+        "nodes": "[{id,label}] for flow/stack/tree/sequence",
+        "edges": "[{id,from,to,label}] for flow/tree/sequence",
+        "formulas": "string[] tokens for scene=formula",
+        "left": "string[] for scene=compare",
+        "right": "string[] for scene=compare",
+        "autoPlay": "boolean default true",
+        "loop": "boolean default true",
+        "height": "number"
+      }
+    },
+    {
+      "kind": "AnimStepLab",
+      "description": "Alias of ConceptDemo for step-by-step concept animation",
+      "props": {
+        "title": "string",
+        "steps": "array",
+        "scene": "flow|stack|tree|formula|compare|sequence"
+      }
+    },
+    {
+      "kind": "KnowledgeDemo",
+      "description": "Alias of ConceptDemo for knowledge/concept animation demos",
+      "props": {
+        "title": "string",
+        "steps": "array",
+        "edges": "array",
+        "scene": "string",
+        "nodes": "array"
+      }
+    },
+    {
+      "kind": "BindScope",
+      "description": "Reactive scope: sliders update sibling nodes. Children props may use {{expr}} or $id (e.g. Chart, NumberLine).",
+      "props": {
+        "outputs": "optional derived [{id,expr}] e.g. {id:c, expr:sqrt(a*a+b*b)}",
+        "showControls": "boolean default true",
+        "params": "[{id,label,value,min,max,step}]"
+      }
+    },
+    {
+      "kind": "ReactiveScope",
+      "description": "Alias of BindScope",
+      "props": {
+        "params": "array",
+        "outputs": "array"
+      }
+    },
+    {
+      "kind": "Quiz",
+      "description": "Multiple-choice quiz with local reveal (no chat). Use after ConceptDemo/ParametricLab.",
+      "props": {
+        "prompt": "string question",
+        "answer": "id or id[]",
+        "explanation": "string shown after submit",
+        "multi": "boolean",
+        "options": "string[] or [{id,label}]"
+      }
+    },
+    {
+      "kind": "WorkedExample",
+      "description": "Step-by-step worked example; user reveals each step then final answer.",
+      "props": {
+        "problem": "string",
+        "title": "string",
+        "steps": "[{title,body,answer}]",
+        "answer": "final answer"
+      }
+    },
+    {
+      "kind": "BeforeAfter",
+      "description": "Drag-to-compare two images or text panels.",
+      "props": {
+        "before": "url or text",
+        "afterLabel": "string",
+        "after": "url or text",
+        "beforeLabel": "string"
+      }
+    },
+    {
+      "kind": "CompareSlider",
+      "description": "Alias of BeforeAfter",
+      "props": {
+        "after": "string",
+        "before": "string"
+      }
+    },
+    {
+      "kind": "NumberLine",
+      "description": "Number line. Bind value/points via BindScope {{x}}.",
+      "props": {
+        "value": "number or {{x}}",
+        "points": "[{x,label}]",
+        "min": "number",
+        "max": "number",
+        "title": "string"
+      }
+    },
+    {
+      "kind": "CoordinateGrid",
+      "description": "Coordinate plane with points/vectors/fn. Bind via BindScope.",
+      "props": {
+        "fn": "y expr in x",
+        "points": "[{x,y,label}]",
+        "title": "string",
+        "xmin": "number",
+        "xmax": "number",
+        "vectors": "[{x,y}]"
+      }
+    },
+    {
+      "kind": "Card",
+      "description": "Card container",
+      "props": {
+        "title": "string",
+        "subtitle": "string",
+        "padding": "sm|md|lg",
+        "variant": "default|elevated|outlined"
+      }
+    },
+    {
+      "kind": "WeatherCard",
+      "description": "Weather card",
+      "props": {
+        "condition": "string",
+        "forecast": "array",
+        "icon": "string",
+        "temperature": "string",
+        "location": "string"
+      }
+    },
+    {
+      "kind": "DataCard",
+      "description": "Data summary card",
+      "props": {
+        "title": "string",
+        "value": "string",
+        "icon": "string",
+        "description": "string"
+      }
+    },
+    {
+      "kind": "MetricCard",
+      "description": "KPI metric card",
+      "props": {
+        "value": "string",
+        "delta": "string",
+        "trend": "up|down|neutral",
+        "title": "string",
+        "period": "string"
+      }
+    },
+    {
+      "kind": "ProfileCard",
+      "description": "Profile card",
+      "props": {
+        "stats": "array",
+        "avatarUrl": "url",
+        "role": "string",
+        "bio": "string",
+        "name": "string"
+      }
+    },
+    {
+      "kind": "MediaCard",
+      "description": "Media card",
+      "props": {
+        "imageUrl": "url",
+        "title": "string",
+        "description": "string"
+      }
+    },
+    {
+      "kind": "AlertCard",
+      "description": "Alert card",
+      "props": {
+        "title": "string",
+        "message": "string",
+        "variant": "info|success|warning|error"
+      }
+    },
+    {
+      "kind": "TimelineCard",
+      "description": "Timeline card",
+      "props": {
+        "title": "string",
+        "items": "array of {time,title,description}"
+      }
+    },
+    {
+      "kind": "SlideDeck",
+      "description": "Slide deck; children Slide",
+      "props": {
+        "title": "string"
+      }
+    },
+    {
+      "kind": "Slide",
+      "description": "Slide page",
+      "props": {
+        "eyebrow": "string",
+        "title": "string",
+        "subtitle": "string"
+      }
+    },
+    {
+      "kind": "KpiBoard",
+      "description": "KPI board grid",
+      "props": {
+        "title": "string"
+      }
+    },
+    {
+      "kind": "FeatureGrid",
+      "description": "Feature grid",
+      "props": {
+        "title": "string",
+        "columns": "number"
+      }
+    },
+    {
+      "kind": "Stepper",
+      "description": "Stepper",
+      "props": {
+        "active": "number",
+        "steps": "string[]"
+      }
+    },
+    {
+      "kind": "QuoteCard",
+      "description": "Quote card",
+      "props": {
+        "quote": "string",
+        "author": "string",
+        "role": "string"
+      }
+    },
+    {
+      "kind": "ImageGallery",
+      "description": "Image gallery",
+      "props": {
+        "images": "array of {src,alt}"
+      }
+    },
+    {
+      "kind": "KeyValueList",
+      "description": "Key-value list",
+      "props": {
+        "items": "array of {key,value}"
+      }
+    },
+    {
+      "kind": "SectionHeader",
+      "description": "Section header",
+      "props": {
+        "eyebrow": "string",
+        "title": "string",
+        "subtitle": "string"
+      }
+    },
+    {
+      "kind": "Button",
+      "description": "Clickable button; set action to send_message/open_url/submit_form",
+      "props": {
+        "actionId": "string legacy",
+        "label": "string",
+        "variant": "default|primary",
+        "action": "{type,payload}"
+      }
+    },
+    {
+      "kind": "InteractiveButton",
+      "description": "Primary interactive button with action",
+      "props": {
+        "label": "string",
+        "disabled": "boolean",
+        "action": "{type,payload}"
+      }
+    },
+    {
+      "kind": "ToggleButton",
+      "description": "Toggle button with action",
+      "props": {
+        "label": "string",
+        "pressed": "boolean",
+        "action": "{type,payload}"
+      }
+    },
+    {
+      "kind": "LinkButton",
+      "description": "Link or action button",
+      "props": {
+        "href": "url",
+        "label": "string",
+        "action": "{type,payload}"
+      }
+    },
+    {
+      "kind": "Input",
+      "description": "Text input (interactive inside Form with name)",
+      "props": {
+        "value": "string",
+        "name": "string",
+        "label": "string",
+        "placeholder": "string"
+      }
+    },
+    {
+      "kind": "Select",
+      "description": "Select (interactive inside Form with name)",
+      "props": {
+        "value": "string",
+        "name": "string",
+        "label": "string",
+        "options": "string[]"
+      }
+    },
+    {
+      "kind": "Chip",
+      "description": "Chip",
+      "props": {
+        "label": "string",
+        "selected": "boolean"
+      }
+    },
+    {
+      "kind": "ChipGroup",
+      "description": "Chip group; children Chip",
+      "props": {
+        "label": "string"
+      }
+    },
+    {
+      "kind": "Form",
+      "description": "Form scope; named fields + Button action submit_form",
+      "props": {
+        "formId": "string",
+        "title": "string",
+        "submitLabel": "string"
+      }
+    },
+    {
+      "kind": "NumberInput",
+      "description": "Number input (interactive inside Form with name)",
+      "props": {
+        "value": "number",
+        "label": "string",
+        "min": "number",
+        "max": "number",
+        "name": "string"
+      }
+    },
+    {
+      "kind": "Switch",
+      "description": "Switch (interactive inside Form with name)",
+      "props": {
+        "label": "string",
+        "name": "string",
+        "checked": "boolean"
+      }
+    },
+    {
+      "kind": "Slider",
+      "description": "Slider (interactive inside Form with name)",
+      "props": {
+        "value": "number",
+        "label": "string",
+        "min": "number",
+        "max": "number",
+        "name": "string"
+      }
+    },
+    {
+      "kind": "FileInput",
+      "description": "File path input (interactive inside Form with name)",
+      "props": {
+        "label": "string",
+        "name": "string",
+        "accept": "string"
+      }
+    },
+    {
+      "kind": "Textarea",
+      "description": "Textarea (interactive inside Form with name)",
+      "props": {
+        "value": "string",
+        "rows": "number",
+        "name": "string",
+        "label": "string"
+      }
+    },
+    {
+      "kind": "HostedCanvasFrame",
+      "description": "Hosted canvas frame",
+      "props": {
+        "height": "number",
+        "canvasId": "string"
+      }
+    },
+    {
+      "kind": "HtmlFrame",
+      "description": "Sandboxed HTML frame",
+      "props": {
+        "html": "string",
+        "height": "number",
+        "title": "string"
+      }
+    },
+    {
+      "kind": "ThreeJsFrame",
+      "description": "Procedural or sandboxed scripted Three.js scene. Use geometry props for simple 3D and sceneScript for custom scenes.",
+      "props": {
+        "wireframe": "boolean",
+        "color": "hex color",
+        "height": "number",
+        "sceneScript": "JavaScript scene body in sandbox; globals: THREE, OrbitControls, GLTFLoader, container, canvas, onResize, frameOptions",
+        "autoRotate": "boolean",
+        "background": "css color",
+        "accentColor": "hex color",
+        "geometry": "box|sphere|icosahedron|octahedron|dodecahedron|tetrahedron|torusKnot",
+        "particles": "number",
+        "orbiters": "number",
+        "title": "string"
+      }
+    },
+    {
+      "kind": "JsonDebug",
+      "description": "JSON debug viewer",
+      "props": {
+        "title": "string",
+        "value": "object|string"
+      }
+    }
+  ],
+  "get_genui_guide": {
+    "purpose": "Ship polished, scannable gen UI with clear hierarchy — not noisy decoration.",
+    "wire_format_and_syntax": [
+      "Envelope: {\"schemaVersion\":\"1\",\"root\":{...}} or bare root {kind,props,children}.",
+      "Node keys: kind, optional props, optional children, optional nodeId.",
+      "All component fields live under props. children holds only nested nodes.",
+      "kind must match list_ui_components exactly (PascalCase).",
+      "emit_ui_tree args: {tree, optional canvas_id}. Prefer tree as nested JSON object.",
+      "emit_ui_patch: {patches:[{op,path,value?}], optional seq, canvas_id}. Paths are RFC6901 into the tree.",
+      "Interactive (in-UI first): props.action = {type, payload}. Types: patch_ui|submit_form|open_url|navigate|send_message.",
+      "Default: keep interaction inside GenUI. Prefer patch_ui for local UI updates (tabs, toggles, counters, visibility).",
+      "patch_ui payload: {patches:[{op,path,value?}]} — applied client-side on the current tree; no chat turn.",
+      "submit_form: wrap fields in Form; each field needs props.name; values stay in-UI (not sent as chat).",
+      "send_message payload: {content:string} — ONLY when the Agent must reply; injects a normal user chat turn.",
+      "Bare actionId string alone does NOT send chat; use explicit type send_message when needed."
+    ],
+    "workflow_order": [
+      "1. Confirm GenUI is appropriate (charts, KPI, multi-card, dashboards — not plain Q&A).",
+      "2. Call list_ui_components for exact kinds/props.",
+      "3. Build a minimal valid tree using wire_format_and_syntax.",
+      "4. emit_ui_tree; use emit_ui_patch for small server-side follow-ups (re-renders the same final GenUI).",
+      "5. For clickable controls, set Button props.action to patch_ui (local) or send_message (needs Agent).",
+      "6. NEVER use canvas_publish for a simple pie/bar/line chart — Chart kind renders interactive ECharts."
+    ],
+    "canvas_routing": [
+      "Prose / Q&A / bullets → markdown (no tools).",
+      "Charts / KPI / dashboards / multi-card / data grids → emit_ui_tree.",
+      "Teaching / formula demos with drag sliders (Pythagoras, circle, functions) → ParametricLab or PythagorasLab (NOT a static chart).",
+      "Concept / knowledge animation (playable steps, flow, layering, formula transform) → ConceptDemo or AnimStepLab.",
+      "Structured 3D (geometry/color/particles) → emit_ui_tree ThreeJsFrame.",
+      "Existing glb/gltf URL → emit_ui_tree Model3D (src required).",
+      "Custom Three.js scene or complex 3D assembly → emit_ui_tree ThreeJsFrame with props.sceneScript. The script is a JavaScript body executed in an isolated sandbox iframe; window.THREE, window.OrbitControls, window.GLTFLoader, window.container, window.canvas, window.onResize and window.frameOptions are available.",
+      "Free-form WebGL HTML → canvas_publish (window.THREE preloaded on bare pages).",
+      "Hosted webpage / landing / printable HTML report / page-scale layout -> canvas_publish after workspace_write.",
+      "If markdown is enough, stay in markdown; offer GenUI only when visual layout earns it."
+    ],
+    "teaching_labs": [
+      "ParametricLab: client-side interactive lab. User drags sliders; formulas + scene update live (no send_message).",
+      "scene: right_triangle | circle | rectangle | linear | quadratic | unit_circle | custom_svg | none.",
+      "params: [{id,label,value,min,max,step,unit}]. outputs: [{id,label,expr,format}] with expr like sqrt(a*a+b*b).",
+      "Expr allows + - * / ^ ( ) and sqrt,abs,sin,cos,tan,min,max,pow,log,ln,exp,hypot,pi,e.",
+      "PythagorasLab: shortcut for 勾股定理 — defaults a,b sliders + c=sqrt(a²+b²) + live triangle.",
+      "Example tree root: {kind:'PythagorasLab', props:{title:'勾股定理'}}.",
+      "custom_svg: set scene:'custom_svg' and svg:'<svg>...</svg>' with {{a}} placeholders for live numbers."
+    ],
+    "concept_animation": [
+      "ConceptDemo / AnimStepLab / KnowledgeDemo: narrative animation with play/pause/prev/next/scrub (no chat).",
+      "scene: flow | stack | tree | formula | compare | sequence. Omit steps to use built-in demo for that scene.",
+      "steps: [{title, caption, duration(ms), highlight:[nodeOrEdgeId], badge}]. highlight drives emphasis + packet motion on edges.",
+      "flow/sequence: provide nodes+edges. stack: nodes as layers. tree: nodes+edges. formula: formulas string[]. compare: left/right string[].",
+      "Example: {kind:'ConceptDemo', props:{title:'HTTP 请求路径', scene:'flow'}}.",
+      "Example formula: {kind:'ConceptDemo', props:{scene:'formula', title:'勾股恒等式', formulas:['a²+b²','→','c²'], steps:[{title:'平方和',caption:'…',highlight:['f0']},…]}}.",
+      "Use ConceptDemo when the user should WATCH a concept unfold; use ParametricLab when they should DRAG parameters."
+    ],
+    "bind_and_practice": [
+      "BindScope: params sliders + children props with {{expr}} or $id update live (no send_message).",
+      "Example: {kind:'BindScope', props:{params:[{id:'a',value:3,min:1,max:10}]}, children:[{kind:'NumberLine', props:{value:'{{a}}',min:-10,max:10}}]}.",
+      "outputs: [{id:'c', expr:'sqrt(a*a+b*b)'}] adds derived ids usable in {{c}}.",
+      "Quiz after a demo: {kind:'Quiz', props:{prompt:'c 等于？', options:['3','4','5'], answer:'c'}} (option id defaults a/b/c).",
+      "WorkedExample: reveal steps then final answer. BeforeAfter: drag compare two images/texts.",
+      "NumberLine / CoordinateGrid: standalone or inside BindScope. ParametricLab scene=number_line|coordinate also works."
+    ],
+    "three_js_script": [
+      "sceneScript is a JavaScript body, not an HTML document and not a <script> wrapper.",
+      "The isolated iframe exposes window.THREE, window.OrbitControls, window.GLTFLoader, window.container, window.canvas, window.onResize, window.frameOptions and window.importThreeAddon.",
+      "Create the renderer with new THREE.WebGLRenderer({canvas, antialias:true}) or append renderer.domElement to container; the script owns the scene, camera, lights and animation loop.",
+      "Register onResize(() => ...) to update renderer size and camera aspect when the chat panel changes width.",
+      "Use new GLTFLoader().load(url, ...) for glb/gltf models. Model and texture URLs must be browser-reachable and allow CORS from the sandbox; prefer GLB with embedded textures.",
+      "For additional Three.js addons, use importThreeAddon('loaders/OBJLoader.js') or another path under three/addons/."
+    ],
+    "layout_structure": [
+      "Use domain components such as Card, FeatureGrid, KpiBoard, Table and Chart to structure visual output.",
+      "Keep nesting shallow (≤3–4 levels) and prefer a small number of meaningful components.",
+      "Use the normal assistant message for prose, headings, Markdown and feedback text."
+    ],
+    "anti_patterns": [
+      "Invalid kind / snake_case kinds.",
+      "Props beside kind instead of under props.",
+      "Do not put HTML markup in ThreeJsFrame.sceneScript; use HtmlFrame or canvas_publish for HTML documents.",
+      "Emoji on every line.",
+      "Flat 10+ peer nodes without a domain container such as Card."
+    ],
+    "subset_note": "Reactor currently validates a high-frequency kind subset only. Call list_ui_components; unsupported kinds will fail validation."
+  },
+  "get_html_canvas_guide": {
+    "purpose": "Create a complete, credible webpage. Visual language follows the content, audience, product, and brand—not a house style from this guide.",
+    "when_to_call": [
+      "Use for substantial, branded, interactive, or appearance-sensitive HTML pages.",
+      "Skip when the page has not first been written to the active workspace.",
+      "This guide is for canvas_publish. GenUI HtmlFrame is a separate path.",
+      "Charts / KPI / dashboards → use emit_ui_tree (Chart component), NOT canvas_publish."
+    ],
+    "design_method": [
+      "Infer the page job first: audience, primary action, information order, tone.",
+      "Choose one coherent visual direction. Default to light surface unless dark is requested.",
+      "Establish reading order before decoration: one dominant idea per viewport.",
+      "Use the reference template only as structure; replace layout when the brief differs."
+    ],
+    "visual_quality": [
+      "Layout: small spacing scale, consistent alignment, deliberate container widths.",
+      "Typography: contrast between display, heading, body, metadata; ~45–75 chars/line.",
+      "Color: semantic roles from the brief; check contrast.",
+      "Content: specific labels and realistic values; no filler or placeholders.",
+      "Motion: only when it explains state; page must remain useful with JS off.",
+      "Do NOT hand-draw fake pie charts with SVG stroke-dasharray — use emit_ui_tree Chart."
+    ],
+    "responsive_accessibility": [
+      "Semantic HTML and single-column mobile first; enhance at sm/md/lg only as needed.",
+      "Verify 320px mobile, overflow, focus, keyboard, labels, hit areas.",
+      "One h1, ordered headings, landmarks, native buttons/links, useful alt text."
+    ],
+    "preview_runtime": {
+      "javascript": "The preview URL serves the existing file. Include scripts in that file when needed and keep the page useful when scripts are unavailable.",
+      "injected": "No preview shell, CSS, or script assets are injected. The workspace file must include its own complete HTML structure and any required styles, scripts, fonts, and media.",
+      "three_js": "Use preloaded window.THREE for free-form WebGL in canvas_publish. Prefer emit_ui_tree ThreeJsFrame for structured or sandboxed scripted scenes and Model3D for glb/gltf URLs. Do not add another Three.js script unless you need a different version.",
+      "html_css_svg": "Inline <style>, class/style attributes, and SVG/chart primitives are supported when written into the workspace file.",
+      "document_shape": "Write a complete HTML document. A fragment may render as HTML, but it has no injected host styles or helper assets."
+    },
+    "available_shell_tokens": {
+      "note": "Not injected by the preview host; define any compatibility primitives in the workspace file if needed.",
+      "font": "Inter, system-ui, -apple-system, sans-serif.",
+      "utilities": {
+        "wa-gradient-warm": "Orange-to-pink gradient with white text.",
+        "wa-card": "Neutral bordered surface with 12px radius, padding, soft shadow.",
+        "wa-gradient": "Sky-to-indigo gradient with white text.",
+        "wa-gradient-fresh": "Emerald-to-sky gradient with white text."
+      }
+    },
+    "reactor_delivery": {
+      "delivery": "Write the complete HTML file via workspace_write first, then call canvas_publish with its required html_path. The path must already exist under the active session workspace.",
+      "mode": "P0 is internally fixed to html. canvas_publish reuses the existing file-service preview/download routes and does not upload or register the file again."
+    },
+    "quality_gate": [
+      "First viewport communicates what this is, why it matters, and what to do next.",
+      "Hierarchy remains clear; no decorative device repeated by habit.",
+      "Copy is complete and free of placeholders or implementation commentary.",
+      "No clipping, horizontal overflow, broken assets, or unreadable contrast.",
+      "The result fits this brief rather than a reusable AI template."
+    ],
+    "reference_template": "<main class=\"min-h-screen bg-white text-zinc-950\">\n  <div class=\"mx-auto max-w-6xl px-5 py-12 sm:px-8 lg:py-20\">\n    <header class=\"max-w-3xl\">\n      <p class=\"text-sm font-medium tracking-wide text-zinc-500\">Context label</p>\n      <h1 class=\"mt-3 text-4xl font-semibold tracking-tight sm:text-6xl\">\n        One clear promise, expressed in the product's own voice\n      </h1>\n      <p class=\"mt-5 max-w-2xl text-base leading-7 text-zinc-600 sm:text-lg\">\n        A concise explanation that gives the reader enough context to act.\n      </p>\n    </header>\n    <section aria-labelledby=\"details\" class=\"mt-12 border-t border-black/10 pt-8\">\n      <h2 id=\"details\" class=\"text-xl font-semibold tracking-tight\">What matters</h2>\n      <div class=\"mt-6 grid gap-8 md:grid-cols-3\">\n        <article>\n          <h3 class=\"font-medium\">Clear hierarchy</h3>\n          <p class=\"mt-2 text-sm leading-6 text-zinc-600\">\n            Make the reading order obvious without decorating every block.\n          </p>\n        </article>\n        <article>\n          <h3 class=\"font-medium\">Useful content</h3>\n          <p class=\"mt-2 text-sm leading-6 text-zinc-600\">\n            Replace this example with specific, credible user-facing copy.\n          </p>\n        </article>\n        <article>\n          <h3 class=\"font-medium\">Responsive by default</h3>\n          <p class=\"mt-2 text-sm leading-6 text-zinc-600\">\n            Let the layout collapse naturally before adding extra breakpoints.\n          </p>\n        </article>\n      </div>\n    </section>\n  </div>\n</main>\n"
+  }
+}

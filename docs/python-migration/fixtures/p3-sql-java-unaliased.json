@@ -1,0 +1,26 @@
+[
+  {
+    "sql": "SELECT COUNT(*),SUM(amount) FROM `sales-model`",
+    "columns": [
+      {
+        "agg": null,
+        "col": "COUNT(*)",
+        "colType": "OTHER_FUNCTION",
+        "dataType": null,
+        "guid": "count(*)",
+        "name": "count(*)",
+        "order": null
+      },
+      {
+        "agg": null,
+        "col": "SUM(`amount`)",
+        "colType": "OTHER_FUNCTION",
+        "dataType": null,
+        "guid": "sum(`amount`)",
+        "name": "sum(`amount`)",
+        "order": null
+      }
+    ],
+    "filters": []
+  }
+]

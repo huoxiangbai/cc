@@ -1,0 +1,1 @@
+{"dataset":{"source":[{"category":"A","total":30},{"category":"B","total":7.5}]},"xAxis":{"type":"category"},"yAxis":{"type":"value"},"series":[{"type":"bar","encode":{"x":"category","y":"total"}}]}

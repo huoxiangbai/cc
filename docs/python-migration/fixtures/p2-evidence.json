@@ -1,0 +1,61 @@
+{
+  "phase": "p2",
+  "isolation_root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p1-8dwz_4qh",
+  "backend_url": "http://127.0.0.1:51416",
+  "tool_url": "http://127.0.0.1:51414",
+  "model": "fixed-upstream-test-only",
+  "mysql": "9.x local new datadir; Unix socket only",
+  "schema_tables": 33,
+  "java_replay": "PASS: actual Python-written MySQL rows",
+  "exit_code": 0,
+  "date": "2026-10-03 Asia/Shanghai",
+  "deterministicTests": 59,
+  "integrationTests": 25,
+  "integrationComposition": {
+    "P1": 10,
+    "P2": 14,
+    "restart": 1
+  },
+  "originalUITests": {
+    "files": 6,
+    "passed": 26
+  },
+  "javaReplayFrames": [
+    5,
+    2,
+    11
+  ],
+  "restart": {
+    "newDatabase": "reactor_p2_restart_84124f4e",
+    "processKills": 2,
+    "originalRunPreserved": true,
+    "toolSideEffects": 1,
+    "replayedRequests": 0,
+    "orphanRun": "FAILED/PROCESS_RESTART",
+    "orphanBackground": "failed",
+    "orphanClaim": "FAILED",
+    "completedClaim": "ANSWERED",
+    "rootReturnedBeforeCrash": "SUCCESS preserved; child failed; receipt failed; no tool replay"
+  },
+  "uiFacts": "p2-ui/evidence.json",
+  "supplierIntegration": "UNVERIFIED",
+  "legacyDataCopy": "UNVERIFIED",
+  "protocol": "Original data-only SSE; no named event/id/DONE",
+  "failedRuns": [
+    {
+      "root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p1-prvaqk48",
+      "result": "24 passed, 1 failed",
+      "cause": "claim loser returned REPEATABLE READ stale RESUME_PENDING snapshot",
+      "repair": "post-CAS SELECT FOR UPDATE observes current status",
+      "finalResult": "25 passed"
+    }
+  ],
+  "workflowSha256": "f1eca5939f829e26e6ea45c66a07c92d8bb9536d16a8fffb33b23bbbe667248e",
+  "startupSmoke": {
+    "root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p1-92wpj3c3",
+    "uiCopyHelper": "PASS: original UI naming page loaded; dependency font HTTP200",
+    "dotenvCopied": false
+  },
+  "cleanup": "PASS: harness-owned services stopped; logs/data retained",
+  "wheelSha256": "32a8ec36fff558c35606acbe284a6f9a67d484e4f862abdc30d98135922e5dd7"
+}

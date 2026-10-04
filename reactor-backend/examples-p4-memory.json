@@ -1,0 +1,8 @@
+{
+  "providers": ["builtin"],
+  "flush_enabled": true,
+  "flush_min_turns": 6,
+  "review_enabled": false,
+  "review_interval": 10,
+  "openviking_endpoint": ""
+}

@@ -1,0 +1,2326 @@
+[
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.AiAgentController",
+    "evidence": "java-reflection-mapping",
+    "method": "health",
+    "parameters": [],
+    "paths": [
+      "/web/health"
+    ],
+    "produces": [
+      "text/event-stream"
+    ],
+    "returnType": "org.springframework.http.ResponseEntity<java.lang.String>",
+    "verbs": []
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.AiAgentController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAgentStreamIncr",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.domain.agent.reactor.model.req.GptQueryReq"
+      }
+    ],
+    "paths": [
+      "/web/api/v1/gpt/queryAgentStreamIncr"
+    ],
+    "produces": [
+      "text/event-stream"
+    ],
+    "returnType": "org.springframework.web.servlet.mvc.method.annotation.SseEmitter",
+    "verbs": []
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "createAdminUser",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AdminUserRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/create"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "deleteAdminUserById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"id\", required=true)"
+        ],
+        "type": "java.lang.Long"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/delete-by-id/{id}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "DELETE"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "deleteAdminUserByUserId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"userId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/delete-by-user-id/{userId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "DELETE"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "loginAdminUser",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AdminUserLoginRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/login"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.api.dto.AdminUserResponseDTO>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAdminUserById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"id\", required=true)"
+        ],
+        "type": "java.lang.Long"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/query-by-id/{id}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.api.dto.AdminUserResponseDTO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAdminUserByUserId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"userId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/query-by-user-id/{userId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.api.dto.AdminUserResponseDTO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAdminUserByUsername",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"username\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/query-by-username/{username}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.api.dto.AdminUserResponseDTO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAdminUserList",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AdminUserQueryRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/query-list"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AdminUserResponseDTO>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAdminUsersByStatus",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"status\", required=true)"
+        ],
+        "type": "java.lang.Integer"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/query-by-status/{status}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AdminUserResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAllAdminUsers",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/admin-user/query-all"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AdminUserResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryEnabledAdminUsers",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/admin-user/query-enabled"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AdminUserResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "updateAdminUserById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AdminUserRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/update-by-id"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "PUT"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "updateAdminUserByUserId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AdminUserRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/update-by-user-id"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "PUT"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AdminUserAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "validateAdminUserLogin",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AdminUserLoginRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/admin-user/validate-login"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientApiAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "createAiClientApi",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientApiRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-api/create"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientApiAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "deleteAiClientApiByApiId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"apiId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-api/delete-by-api-id/{apiId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "DELETE"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientApiAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "deleteAiClientApiById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"id\", required=true)"
+        ],
+        "type": "java.lang.Long"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-api/delete-by-id/{id}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "DELETE"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientApiAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientApiByApiId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"apiId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-api/query-by-api-id/{apiId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.api.dto.AiClientApiResponseDTO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientApiAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientApiById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"id\", required=true)"
+        ],
+        "type": "java.lang.Long"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-api/query-by-id/{id}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.api.dto.AiClientApiResponseDTO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientApiAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientApiList",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientApiQueryRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-api/query-list"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientApiResponseDTO>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientApiAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAllAiClientApis",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/ai-client-api/query-all"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientApiResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientApiAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryEnabledAiClientApis",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/ai-client-api/query-enabled"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientApiResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientApiAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "updateAiClientApiByApiId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientApiRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-api/update-by-api-id"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "PUT"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientApiAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "updateAiClientApiById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientApiRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-api/update-by-id"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "PUT"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "createAiClientModel",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientModelRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/create"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "deleteAiClientModelById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"id\", required=true)"
+        ],
+        "type": "java.lang.Long"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/delete-by-id/{id}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "DELETE"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "deleteAiClientModelByModelId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"modelId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/delete-by-model-id/{modelId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "DELETE"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientModelById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"id\", required=true)"
+        ],
+        "type": "java.lang.Long"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/query-by-id/{id}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.api.dto.AiClientModelResponseDTO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientModelByModelId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"modelId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/query-by-model-id/{modelId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.api.dto.AiClientModelResponseDTO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientModelList",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientModelQueryRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/query-list"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientModelResponseDTO>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientModelsByApiId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"apiId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/query-by-api-id/{apiId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientModelResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientModelsByModelType",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"modelType\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/query-by-model-type/{modelType}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientModelResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAllAiClientModels",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/ai-client-model/query-all"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientModelResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryEnabledAiClientModels",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/ai-client-model/query-enabled"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientModelResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "testConnection",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"modelId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/test/{modelId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "testConnectionById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"id\", required=true)"
+        ],
+        "type": "java.lang.Long"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/test-by-id/{id}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "updateAiClientModelById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientModelRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/update-by-id"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "PUT"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientModelAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "updateAiClientModelByModelId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientModelRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-model/update-by-model-id"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "PUT"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "createAiClientToolMcp",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientToolMcpRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/create"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "deleteAiClientToolMcpById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"id\", required=true)"
+        ],
+        "type": "java.lang.Long"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/delete-by-id/{id}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "DELETE"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "deleteAiClientToolMcpByMcpId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"mcpId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/delete-by-mcp-id/{mcpId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "DELETE"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientToolMcpById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"id\", required=true)"
+        ],
+        "type": "java.lang.Long"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/query-by-id/{id}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.api.dto.AiClientToolMcpResponseDTO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientToolMcpByMcpId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"mcpId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/query-by-mcp-id/{mcpId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.api.dto.AiClientToolMcpResponseDTO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientToolMcpList",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientToolMcpQueryRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/query-list"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientToolMcpResponseDTO>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientToolMcpsByStatus",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"status\", required=true)"
+        ],
+        "type": "java.lang.Integer"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/query-by-status/{status}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientToolMcpResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAiClientToolMcpsByTransportType",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"transportType\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/query-by-transport-type/{transportType}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientToolMcpResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryAllAiClientToolMcps",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/query-all"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientToolMcpResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryEnabledAiClientToolMcps",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/query-enabled"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.api.dto.AiClientToolMcpResponseDTO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "updateAiClientToolMcpById",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientToolMcpRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/update-by-id"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "PUT"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.AiClientToolMcpAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "updateAiClientToolMcpByMcpId",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.api.dto.AiClientToolMcpRequestDTO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/ai-client-tool-mcp/update-by-mcp-id"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "PUT"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.FeaturedConversationAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "create",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.admin.vo.FeaturedConversationAdminUpsertReqVO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/featured-conversations/create"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.FeaturedConversationAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "offline",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"featuredId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      },
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"\", value=\"operator\", required=true, defaultValue=\"\\n\\t\\t\\n\\t\\t\\n\\ue000\\ue001\\ue002\\n\\t\\t\\t\\t\\n\")"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/featured-conversations/offline/{featuredId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.FeaturedConversationAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "online",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"featuredId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      },
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"\", value=\"operator\", required=true, defaultValue=\"\\n\\t\\t\\n\\t\\t\\n\\ue000\\ue001\\ue002\\n\\t\\t\\t\\t\\n\")"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/featured-conversations/online/{featuredId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.FeaturedConversationAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryList",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.admin.vo.FeaturedConversationAdminQueryReqVO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/featured-conversations/query-list"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.trigger.http.agent.vo.PageRespVO<org.wwz.ai.trigger.http.admin.vo.FeaturedConversationAdminRespVO>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.FeaturedConversationAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "update",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.admin.vo.FeaturedConversationAdminUpsertReqVO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/featured-conversations/update"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "PUT"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SkillAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "create",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.admin.SkillAdminController$CreateSkillBody"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/skills/create"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SkillAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "delete",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"name\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/skills/{name}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "DELETE"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SkillAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "importUrl",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.admin.SkillAdminController$ImportUrlBody"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/skills/import-url"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SkillAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "list",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/skills/list"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<java.util.Map<java.lang.String, java.lang.Object>>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [
+      "multipart/form-data"
+    ],
+    "controller": "org.wwz.ai.trigger.http.admin.SkillAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "parsePackage",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestPart(name=\"\", value=\"file\", required=true)"
+        ],
+        "type": "org.springframework.web.multipart.MultipartFile"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/skills/parse-package"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SkillAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "reload",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/skills/reload"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [
+      "multipart/form-data"
+    ],
+    "controller": "org.wwz.ai.trigger.http.admin.SkillAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "upload",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestPart(name=\"\", value=\"file\", required=true)"
+        ],
+        "type": "org.springframework.web.multipart.MultipartFile"
+      },
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"\", value=\"replace\", required=true, defaultValue=\"false\")"
+        ],
+        "type": "boolean"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/skills/upload"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SubAgentDefinitionAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "create",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.admin.vo.SubAgentDefinitionUpsertReqVO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/sub-agent-definitions/create"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SubAgentDefinitionAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "delete",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"agentKey\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/sub-agent-definitions/{agentKey}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "DELETE"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SubAgentDefinitionAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "deleteByQuery",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"\", value=\"agentKey\", required=true, defaultValue=\"\\n\\t\\t\\n\\t\\t\\n\\ue000\\ue001\\ue002\\n\\t\\t\\t\\t\\n\")"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/sub-agent-definitions/delete"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "DELETE"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SubAgentDefinitionAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "get",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"agentKey\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/sub-agent-definitions/{agentKey}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.trigger.http.admin.vo.SubAgentDefinitionRespVO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SubAgentDefinitionAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "queryList",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/sub-agent-definitions/query-list"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.trigger.http.admin.vo.SubAgentDefinitionRespVO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SubAgentDefinitionAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "reload",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/sub-agent-definitions/reload"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Integer>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SubAgentDefinitionAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "toolCatalog",
+    "parameters": [],
+    "paths": [
+      "/api/v1/admin/sub-agent-definitions/tool-catalog"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<java.lang.String>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.admin.SubAgentDefinitionAdminController",
+    "evidence": "java-reflection-mapping",
+    "method": "update",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.admin.vo.SubAgentDefinitionUpsertReqVO"
+      }
+    ],
+    "paths": [
+      "/api/v1/admin/sub-agent-definitions/update"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "PUT"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentAskUserController",
+    "evidence": "java-reflection-mapping",
+    "method": "answer",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.AskUserAnswerReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/ask-user/answer"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentAskUserController",
+    "evidence": "java-reflection-mapping",
+    "method": "cancel",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.AskUserAnswerReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/ask-user/cancel"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentAskUserController",
+    "evidence": "java-reflection-mapping",
+    "method": "pending",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"\", value=\"sessionId\", required=true, defaultValue=\"\\n\\t\\t\\n\\t\\t\\n\\ue000\\ue001\\ue002\\n\\t\\t\\t\\t\\n\")"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/agent/ask-user/pending"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<java.util.Map<java.lang.String, java.lang.Object>>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentAskUserController",
+    "evidence": "java-reflection-mapping",
+    "method": "resume",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.AskUserResumeReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/ask-user/resume"
+    ],
+    "produces": [
+      "text/event-stream"
+    ],
+    "returnType": "org.springframework.web.servlet.mvc.method.annotation.SseEmitter",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentConversationHistoryController",
+    "evidence": "java-reflection-mapping",
+    "method": "detail",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"sessionId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/agent/conversation/sessions/{sessionId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.trigger.http.agent.vo.ConversationHistoryDetailRespVO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentConversationHistoryController",
+    "evidence": "java-reflection-mapping",
+    "method": "list",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"limit\", value=\"\", required=true, defaultValue=\"20\")"
+        ],
+        "type": "java.lang.Integer"
+      }
+    ],
+    "paths": [
+      "/api/agent/conversation/sessions"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.trigger.http.agent.vo.ConversationSessionRespVO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentFeaturedConversationController",
+    "evidence": "java-reflection-mapping",
+    "method": "detail",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"featuredId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/agent/featured-conversations/{featuredId}"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.trigger.http.agent.vo.FeaturedConversationDetailRespVO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentFeaturedConversationController",
+    "evidence": "java-reflection-mapping",
+    "method": "home",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"limit\", value=\"\", required=true, defaultValue=\"6\")"
+        ],
+        "type": "java.lang.Integer"
+      }
+    ],
+    "paths": [
+      "/api/agent/featured-conversations/home"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<org.wwz.ai.trigger.http.agent.vo.FeaturedConversationCardRespVO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentFeaturedConversationController",
+    "evidence": "java-reflection-mapping",
+    "method": "list",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"pageNo\", value=\"\", required=true, defaultValue=\"1\")"
+        ],
+        "type": "java.lang.Integer"
+      },
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"pageSize\", value=\"\", required=true, defaultValue=\"20\")"
+        ],
+        "type": "java.lang.Integer"
+      }
+    ],
+    "paths": [
+      "/api/agent/featured-conversations"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.trigger.http.agent.vo.PageRespVO<org.wwz.ai.trigger.http.agent.vo.FeaturedConversationCardRespVO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [
+      "multipart/form-data"
+    ],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentFileController",
+    "evidence": "java-reflection-mapping",
+    "method": "upload",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"\", value=\"sessionId\", required=true, defaultValue=\"\\n\\t\\t\\n\\t\\t\\n\\ue000\\ue001\\ue002\\n\\t\\t\\t\\t\\n\")"
+        ],
+        "type": "java.lang.String"
+      },
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"\", value=\"file\", required=true, defaultValue=\"\\n\\t\\t\\n\\t\\t\\n\\ue000\\ue001\\ue002\\n\\t\\t\\t\\t\\n\")"
+        ],
+        "type": "org.springframework.web.multipart.MultipartFile"
+      }
+    ],
+    "paths": [
+      "/api/agent/file/upload"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.trigger.http.agent.vo.AgentFileUploadRespVO>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentGenUiExportController",
+    "evidence": "java-reflection-mapping",
+    "method": "exportDocx",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "java.util.Map<java.lang.String, java.lang.Object>"
+      }
+    ],
+    "paths": [
+      "/api/agent/genui/export/docx"
+    ],
+    "produces": [],
+    "returnType": "org.springframework.http.ResponseEntity<?>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentGenUiExportController",
+    "evidence": "java-reflection-mapping",
+    "method": "exportPdf",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "java.util.Map<java.lang.String, java.lang.Object>"
+      }
+    ],
+    "paths": [
+      "/api/agent/genui/export/pdf"
+    ],
+    "produces": [],
+    "returnType": "org.springframework.http.ResponseEntity<?>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentImageGenerationController",
+    "evidence": "java-reflection-mapping",
+    "method": "generate",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.WorkspaceImageGenerationReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/image-generation/generate"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.trigger.http.agent.vo.WorkspaceImageGenerationRespVO>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentImageGenerationController",
+    "evidence": "java-reflection-mapping",
+    "method": "history",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"pageNo\", value=\"\", required=true, defaultValue=\"1\")"
+        ],
+        "type": "int"
+      },
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"pageSize\", value=\"\", required=true, defaultValue=\"10\")"
+        ],
+        "type": "int"
+      }
+    ],
+    "paths": [
+      "/api/agent/image-generation/history"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.trigger.http.agent.vo.PageRespVO<org.wwz.ai.trigger.http.agent.vo.WorkspaceImageHistoryBatchRespVO>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentPlanApprovalController",
+    "evidence": "java-reflection-mapping",
+    "method": "approve",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.PlanApprovalReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/plan-approval/approve"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentPlanApprovalController",
+    "evidence": "java-reflection-mapping",
+    "method": "cancel",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.PlanApprovalReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/plan-approval/cancel"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentPlanApprovalController",
+    "evidence": "java-reflection-mapping",
+    "method": "pending",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"\", value=\"sessionId\", required=true, defaultValue=\"\\n\\t\\t\\n\\t\\t\\n\\ue000\\ue001\\ue002\\n\\t\\t\\t\\t\\n\")"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/agent/plan-approval/pending"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.List<java.util.Map<java.lang.String, java.lang.Object>>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentPlanApprovalController",
+    "evidence": "java-reflection-mapping",
+    "method": "reject",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.PlanApprovalReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/plan-approval/reject"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentPlanApprovalController",
+    "evidence": "java-reflection-mapping",
+    "method": "resume",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.PlanApprovalResumeReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/plan-approval/resume"
+    ],
+    "produces": [
+      "text/event-stream"
+    ],
+    "returnType": "org.springframework.web.servlet.mvc.method.annotation.SseEmitter",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentRunController",
+    "evidence": "java-reflection-mapping",
+    "method": "follow",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.AgentRunFollowReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/run/follow"
+    ],
+    "produces": [
+      "text/event-stream"
+    ],
+    "returnType": "org.springframework.web.servlet.mvc.method.annotation.SseEmitter",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentRunController",
+    "evidence": "java-reflection-mapping",
+    "method": "inject",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.AgentRunInjectReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/run/inject"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentRunController",
+    "evidence": "java-reflection-mapping",
+    "method": "stop",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.AgentRunStopReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/run/stop"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentSessionCapabilityController",
+    "evidence": "java-reflection-mapping",
+    "method": "capabilities",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"sessionId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/api/agent/session/{sessionId}/capabilities"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentSessionCapabilityController",
+    "evidence": "java-reflection-mapping",
+    "method": "update",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"sessionId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      },
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.AgentSessionCapabilityController$CapabilityToggleBody"
+      }
+    ],
+    "paths": [
+      "/api/agent/session/{sessionId}/capabilities"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<java.lang.Boolean>",
+    "verbs": [
+      "PUT"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentVisitorController",
+    "evidence": "java-reflection-mapping",
+    "method": "bootstrap",
+    "parameters": [],
+    "paths": [
+      "/api/agent/visitor/bootstrap"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.trigger.http.agent.vo.VisitorBootstrapRespVO>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentVisitorController",
+    "evidence": "java-reflection-mapping",
+    "method": "naming",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.trigger.http.agent.vo.VisitorNamingReqVO"
+      }
+    ],
+    "paths": [
+      "/api/agent/visitor/naming"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.api.response.Response<org.wwz.ai.trigger.http.agent.vo.VisitorBootstrapRespVO>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.agent.AgentWorkspaceController",
+    "evidence": "java-reflection-mapping",
+    "method": "downloadArchive",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.PathVariable(name=\"\", value=\"sessionId\", required=true)"
+        ],
+        "type": "java.lang.String"
+      },
+      {
+        "annotations": [],
+        "type": "jakarta.servlet.http.HttpServletResponse"
+      }
+    ],
+    "paths": [
+      "/api/agent/workspace/{sessionId}/archive"
+    ],
+    "produces": [],
+    "returnType": "void",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.dataagent.DataAgentController",
+    "evidence": "java-reflection-mapping",
+    "method": "allModels",
+    "parameters": [],
+    "paths": [
+      "/data/allModels"
+    ],
+    "produces": [],
+    "returnType": "java.util.Map<java.lang.String, java.lang.Object>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.dataagent.DataAgentController",
+    "evidence": "java-reflection-mapping",
+    "method": "apiChatQuery",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.domain.agent.reactor.model.req.DataAgentChatReq"
+      }
+    ],
+    "paths": [
+      "/data/apiChatQuery"
+    ],
+    "produces": [],
+    "returnType": "java.util.List<org.wwz.ai.domain.agent.reactor.data.dto.ChatQueryData>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.dataagent.DataAgentController",
+    "evidence": "java-reflection-mapping",
+    "method": "chatQuery",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.domain.agent.reactor.model.req.DataAgentChatReq"
+      }
+    ],
+    "paths": [
+      "/data/chatQuery"
+    ],
+    "produces": [
+      "text/event-stream"
+    ],
+    "returnType": "org.springframework.web.servlet.mvc.method.annotation.SseEmitter",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.dataagent.DataAgentController",
+    "evidence": "java-reflection-mapping",
+    "method": "esRecall",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.domain.agent.reactor.data.dto.ColumnEsRecallReq"
+      }
+    ],
+    "paths": [
+      "/data/esRecall"
+    ],
+    "produces": [],
+    "returnType": "java.util.List<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.dataagent.DataAgentController",
+    "evidence": "java-reflection-mapping",
+    "method": "getNl2SqlReq",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.domain.agent.reactor.model.req.DataAgentChatReq"
+      }
+    ],
+    "paths": [
+      "/data/getNl2SqlReq"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.domain.agent.reactor.data.dto.NL2SQLReq",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.dataagent.DataAgentController",
+    "evidence": "java-reflection-mapping",
+    "method": "previewData",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestParam(name=\"\", value=\"modelCode\", required=true, defaultValue=\"\\n\\t\\t\\n\\t\\t\\n\\ue000\\ue001\\ue002\\n\\t\\t\\t\\t\\n\")"
+        ],
+        "type": "java.lang.String"
+      }
+    ],
+    "paths": [
+      "/data/previewData"
+    ],
+    "produces": [],
+    "returnType": "java.util.Map<java.lang.String, java.lang.Object>",
+    "verbs": [
+      "GET"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.dataagent.DataAgentController",
+    "evidence": "java-reflection-mapping",
+    "method": "testQuery",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.domain.agent.reactor.model.req.DataAgentChatReq"
+      }
+    ],
+    "paths": [
+      "/data/testQuery"
+    ],
+    "produces": [],
+    "returnType": "java.lang.Object",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.dataagent.DataAgentController",
+    "evidence": "java-reflection-mapping",
+    "method": "vectorRecall",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "com.alibaba.fastjson.JSONObject"
+      }
+    ],
+    "paths": [
+      "/data/queryModelInfo"
+    ],
+    "produces": [],
+    "returnType": "org.wwz.ai.domain.agent.reactor.data.dto.NL2SQLReq",
+    "verbs": [
+      "POST"
+    ]
+  },
+  {
+    "consumes": [],
+    "controller": "org.wwz.ai.trigger.http.dataagent.DataAgentController",
+    "evidence": "java-reflection-mapping",
+    "method": "vectorRecall",
+    "parameters": [
+      {
+        "annotations": [
+          "@org.springframework.web.bind.annotation.RequestBody(required=true)"
+        ],
+        "type": "org.wwz.ai.domain.agent.reactor.data.dto.ColumnVectorRecallReq"
+      }
+    ],
+    "paths": [
+      "/data/vectorRecall"
+    ],
+    "produces": [],
+    "returnType": "java.util.List<java.util.Map<java.lang.String, java.lang.Object>>",
+    "verbs": [
+      "POST"
+    ]
+  }
+]

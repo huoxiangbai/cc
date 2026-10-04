@@ -1,0 +1,146 @@
+[
+  {
+    "file": "test_social_tools.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_social_tools/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_social_tools/result.xml"
+  },
+  {
+    "file": "test_deepsearch_engine_selection.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_deepsearch_engine_selection/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_deepsearch_engine_selection/result.xml"
+  },
+  {
+    "file": "test_deepsearch_llm_config.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_deepsearch_llm_config/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_deepsearch_llm_config/result.xml"
+  },
+  {
+    "file": "test_web_fetcher.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_web_fetcher/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_web_fetcher/result.xml"
+  },
+  {
+    "file": "test_web_fetch_api.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_web_fetch_api/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_web_fetch_api/result.xml"
+  },
+  {
+    "file": "test_code_interpreter_api.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_code_interpreter_api/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_code_interpreter_api/result.xml"
+  },
+  {
+    "file": "test_code_interpreter_outputs.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_code_interpreter_outputs/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_code_interpreter_outputs/result.xml"
+  },
+  {
+    "file": "test_code_interpreter_permissions.py",
+    "exit_code": 1,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_code_interpreter_permissions/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_code_interpreter_permissions/result.xml"
+  },
+  {
+    "file": "test_code_interpreter_runtime_guard.py",
+    "exit_code": 1,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_code_interpreter_runtime_guard/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_code_interpreter_runtime_guard/result.xml"
+  },
+  {
+    "file": "test_python_sandbox_executor.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_python_sandbox_executor/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_python_sandbox_executor/result.xml"
+  },
+  {
+    "file": "test_sandbox_backend_config.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_sandbox_backend_config/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_sandbox_backend_config/result.xml"
+  },
+  {
+    "file": "test_e2b_sandbox_backend.py",
+    "exit_code": 1,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_e2b_sandbox_backend/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_e2b_sandbox_backend/result.xml"
+  },
+  {
+    "file": "test_mrag_api.py",
+    "exit_code": 1,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_api/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_api/result.xml"
+  },
+  {
+    "file": "test_mrag_history_routes.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_history_routes/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_history_routes/result.xml"
+  },
+  {
+    "file": "test_mrag_history_persistence.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_history_persistence/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_history_persistence/result.xml"
+  },
+  {
+    "file": "test_mrag_document_routes.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_document_routes/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_document_routes/result.xml"
+  },
+  {
+    "file": "test_mrag_document_processor.py",
+    "exit_code": 1,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_document_processor/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_document_processor/result.xml"
+  },
+  {
+    "file": "test_mrag_kb_doc_store.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_kb_doc_store/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_kb_doc_store/result.xml"
+  },
+  {
+    "file": "test_mrag_splitter.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_splitter/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_splitter/result.xml"
+  },
+  {
+    "file": "test_mrag_query_processor.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_query_processor/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_mrag_query_processor/result.xml"
+  },
+  {
+    "file": "test_sop_workspace.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_sop_workspace/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_sop_workspace/result.xml"
+  },
+  {
+    "file": "test_plan_sop.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_plan_sop/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_plan_sop/result.xml"
+  },
+  {
+    "file": "test_data_clean.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_data_clean/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_data_clean/result.xml"
+  },
+  {
+    "file": "test_analysis_data_guard.py",
+    "exit_code": 0,
+    "log": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_analysis_data_guard/test.log",
+    "junit": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-negctw87/test_analysis_data_guard/result.xml"
+  }
+]

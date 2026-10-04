@@ -1,0 +1,167 @@
+{
+  "image_generation_tool": {
+    "function": {
+      "description": "本工具用于文生图和图生图。用户要求基于当前轮上传图片修改、换风格、扩图时应优先调用它；未显式传 fileNames 时系统可自动复用当前轮上传图片，输出图片会自动保存为当前会话产物。",
+      "name": "image_generation_tool",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "description": "生成模式，images 表示文生图，edits 表示图生图。用户明确要求忽略上传图片时传 images。",
+            "type": "string",
+            "enum": [
+              "images",
+              "edits"
+            ]
+          },
+          "size": {
+            "description": "输出尺寸，例如 1024x1024、1536x1024。",
+            "type": "string"
+          },
+          "prompt": {
+            "description": "图片生成或编辑指令，需要明确主体、风格、构图、质感及修改要求。",
+            "type": "string"
+          },
+          "maskFileNames": {
+            "description": "可选的涂抹参考图列表，与 fileNames 一一对应。",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fileNames": {
+            "description": "图生图参考图片列表，可来自当前会话已有图片；未显式传入时系统可自动复用当前轮上传图片。",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "n": {
+            "description": "期望生成的图片数量。",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "prompt"
+        ]
+      }
+    },
+    "type": "function"
+  },
+  "emit_ui_tree": {
+    "function": {
+      "description": "Emit a validated gen UI tree (schemaVersion 1) that renders inline in chat and in the side panel with real React components (Chart=ECharts, ThreeJsFrame=procedural or sandboxed scripted 3D, Model3D=glb/gltf). PREFERRED path for charts, KPI tiles, dashboards, multi-card layouts, data tables, simple or scripted 3D, and teaching labs (ParametricLab / PythagorasLab: drag sliders; ConceptDemo / AnimStepLab: playable concept step animation). Do NOT use canvas_publish for simple charts/3D shapes — use Chart / ThreeJsFrame instead. Before non-trivial trees: get_genui_guide then list_ui_components. Args: {tree, optional canvas_id}. tree may be object or JSON string. Prefer emit_ui_patch for small updates. Interactive actions: set props.action to {type, payload} with snake_case type — e.g. {type:'send_message', payload:{content:'Summarize this'}}, {type:'open_url', payload:{url:'https://…'}}, {type:'submit_form', payload:{formId:'f1'}} (collects named Form fields). Legacy bare actionId string is treated as send_message content. Form fields need name + enclosing Form; Button/InteractiveButton fire actions on click.Prioritize building interactive components to allow users active participation and operation.Add lightweight 2D animation elements to visualize logic and lower comprehension cost.",
+      "name": "emit_ui_tree",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "tree": {
+            "description": "GenUI tree envelope or bare root node (object preferred; JSON string accepted)."
+          },
+          "canvas_id": {
+            "description": "Optional canvas id for continuity.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tree"
+        ]
+      }
+    },
+    "type": "function"
+  },
+  "emit_ui_patch": {
+    "function": {
+      "description": "Apply incremental JSON-Patch updates (add/replace/remove) to an already-emitted gen UI tree. Args: {patches, optional seq, optional canvas_id}. Prefer over re-emitting full tree.",
+      "name": "emit_ui_patch",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "patches": {
+            "minItems": 1,
+            "description": "JSON-Patch ops targeting /root/... paths.",
+            "type": "array"
+          },
+          "canvas_id": {
+            "type": "string"
+          },
+          "seq": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "patches"
+        ]
+      }
+    },
+    "type": "function"
+  },
+  "canvas_publish": {
+    "function": {
+      "description": "Publish an existing HTML file from the active workspace into the preview panel. Use ONLY when the user explicitly wants HTML / a webpage / printable report, or page-scale layout that cannot be expressed by GenUI components. Charts / KPI / dashboards / multi-card UI -> prefer emit_ui_tree (not this tool). First write the page with workspace_write, then pass its html_path. html_path is required; this tool does not accept inline HTML or upload/register files.",
+      "name": "canvas_publish",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "Canvas title shown to the user.",
+            "type": "string"
+          },
+          "html_path": {
+            "description": "Required path to an existing HTML file under the active workspace.",
+            "type": "string"
+          },
+          "open_in_panel": {
+            "description": "Whether to notify the UI to open the preview panel. Default true.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "html_path"
+        ]
+      }
+    },
+    "type": "function"
+  },
+  "get_genui_guide": {
+    "function": {
+      "description": "Return the GenUI guide: wire format, workflow_order, layout, anti-patterns. Call before non-trivial emit_ui_tree (dashboards, multi-card UIs). Then call list_ui_components. Read-only.",
+      "name": "get_genui_guide",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "type": "function"
+  },
+  "get_html_canvas_guide": {
+    "function": {
+      "description": "Return the on-demand professional HTML guide for canvas_publish: design method, visual quality, accessibility, preview runtime for an existing workspace HTML file, and Reactor delivery (workspace html_path only), and a structural template. Charts/KPI/dashboards → emit_ui_tree instead. Use for substantial or appearance-sensitive webpages after writing the HTML to workspace. Read-only, no side effects.",
+      "name": "get_html_canvas_guide",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "type": "function"
+  },
+  "list_ui_components": {
+    "function": {
+      "description": "Return the gen UI component catalog (kinds + prop hints) for the current subset. Call get_genui_guide first for layout, then this tool before non-trivial emit_ui_tree. Read-only.",
+      "name": "list_ui_components",
+      "parameters": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    "type": "function"
+  }
+}

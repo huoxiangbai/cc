@@ -1,0 +1,111 @@
+{
+  "phase": "P3",
+  "date": "2026-10-03",
+  "backend_unit_tests": 101,
+  "integration_tests": 36,
+  "integration_root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu",
+  "java_replay_frames": [
+    5,
+    2,
+    11
+  ],
+  "java_sql_golden_cases": 3,
+  "original_tool_tests": {
+    "total": 127,
+    "passed": 114,
+    "failed": 13,
+    "root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-tool-tests-yzgfw6ub"
+  },
+  "ui_roots": [
+    "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-ky5md696",
+    "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-_vxekfri"
+  ],
+  "ui_screenshots": [
+    "p3-ui-code.png",
+    "p3-ui-refresh.png",
+    "p3-ui-kb.png",
+    "p3-ui-sop-error.png"
+  ],
+  "model": "isolated HTTP fixture only; actual original Tool and independent business MySQL",
+  "external_live": "public Python documentation WebFetch only; other provider credential/service integrations U",
+  "pending_protocol_decisions": [
+    "Tool private file/KB ACL gateway",
+    "optional H2 JDBC transitional adapter"
+  ],
+  "artifacts": [
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu/files/7d638cdb-8e20-4a9b-96f5-723f50270e86/query-1-chart.json",
+      "saved": "docs/python-migration/fixtures/p3-artifacts/7d638cdb-8e20-4a9b-96f5-723f50270e86/query-1-chart.json",
+      "sha256": "deed868317842ddbe013ac2d3cf33c3a5c02187dafc4cc26c3364afa1c742e5e",
+      "bytes": 200
+    },
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu/files/7d638cdb-8e20-4a9b-96f5-723f50270e86/query-1.csv",
+      "saved": "docs/python-migration/fixtures/p3-artifacts/7d638cdb-8e20-4a9b-96f5-723f50270e86/query-1.csv",
+      "sha256": "12c28dbc9101fe4910328e3eb48b1cd61012672cd9375525f315b13361ab0af8",
+      "bytes": 31
+    },
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu/files/7d638cdb-8e20-4a9b-96f5-723f50270e86/query-provenance.json",
+      "saved": "docs/python-migration/fixtures/p3-artifacts/7d638cdb-8e20-4a9b-96f5-723f50270e86/query-provenance.json",
+      "sha256": "3ed989b4ecf08251acc708414b6c80e83a3e4b835227ff7f2bcd9c65d1688878",
+      "bytes": 1000
+    },
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu/files/bda1da7d-8dc0-4e06-b579-41585d2595c1/query-1-chart.json",
+      "saved": "docs/python-migration/fixtures/p3-artifacts/bda1da7d-8dc0-4e06-b579-41585d2595c1/query-1-chart.json",
+      "sha256": "deed868317842ddbe013ac2d3cf33c3a5c02187dafc4cc26c3364afa1c742e5e",
+      "bytes": 200
+    },
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu/files/bda1da7d-8dc0-4e06-b579-41585d2595c1/query-1.csv",
+      "saved": "docs/python-migration/fixtures/p3-artifacts/bda1da7d-8dc0-4e06-b579-41585d2595c1/query-1.csv",
+      "sha256": "12c28dbc9101fe4910328e3eb48b1cd61012672cd9375525f315b13361ab0af8",
+      "bytes": 31
+    },
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu/files/bda1da7d-8dc0-4e06-b579-41585d2595c1/query-provenance.json",
+      "saved": "docs/python-migration/fixtures/p3-artifacts/bda1da7d-8dc0-4e06-b579-41585d2595c1/query-provenance.json",
+      "sha256": "b2ec339fb7f7bb9f5218963d4aa20ae19eb4c3b00061ebcf250815bb597c7797",
+      "bytes": 1016
+    },
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu/files/p3-analysis/分类销售分析.md",
+      "saved": "docs/python-migration/fixtures/p3-artifacts/p3-analysis/分类销售分析.md",
+      "sha256": "6bf6de3416d618e9103c05cdf6ab3dff00d2a3228cdae4c30e87bcf9723bb97f",
+      "bytes": 171
+    },
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu/files/p3-codeact/codeact-sales.csv",
+      "saved": "docs/python-migration/fixtures/p3-artifacts/p3-codeact/codeact-sales.csv",
+      "sha256": "24c6f59d2e2b5b273a09106127416e893f672207e013c977a0c7a047b91dc2b6",
+      "bytes": 27
+    },
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu/files/p3-codeact/computesales.py",
+      "saved": "docs/python-migration/fixtures/p3-artifacts/p3-codeact/computesales.py",
+      "sha256": "132655d2b35cb952e5c4d9e0fad4ac7be8504994d8c08eb7d04d33a30b220830",
+      "bytes": 173
+    },
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu/files/p3-codeact/代码分析.md",
+      "saved": "docs/python-migration/fixtures/p3-artifacts/p3-codeact/代码分析.md",
+      "sha256": "479c858af1235acf8239fa902cfbd7ed8dd0226c2d3edac43c2844b5fa92b677",
+      "bytes": 5
+    },
+    {
+      "source": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-5bcl0tfu/files/p3-local-code/sales.csv",
+      "saved": "docs/python-migration/fixtures/p3-artifacts/p3-local-code/sales.csv",
+      "sha256": "c123c5bbe06e5866e9203a2e0ceb2a3f4e691453bfa3ce351e5b23311ee702b3",
+      "bytes": 30
+    }
+  ],
+  "integration_result": "36 passed in 24.90s; Java replay 5+2+11 PASS",
+  "cleanup": "Agent-created backend/Tool/model fixture/new MySQL/Vite/browser tab stopped; logs/datadir/artifacts preserved",
+  "final_checks": [
+    "uv lock --check --offline",
+    "git diff --check",
+    "P3 local document links",
+    "11 copied artifacts size/SHA256"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "db": {"type": "mysql", "url": "mysql+pymysql://test_reader@127.0.0.1:3307/authorized_test_copy", "timeout": 60},
+  "qdrant": {"enable": false, "url": "http://127.0.0.1:6333"},
+  "es": {"enable": false, "url": "http://127.0.0.1:9200"}
+}

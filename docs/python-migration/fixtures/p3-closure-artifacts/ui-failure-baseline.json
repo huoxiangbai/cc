@@ -1,0 +1,10 @@
+{
+  "current_pass": 434,
+  "current_fail": 2,
+  "baseline_root": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p3-ui-baseline-530msjd1",
+  "same_failures": true,
+  "failures": [
+    "GeneralInput 输入工具条不再展示输出格式入口",
+    "WorkspaceMRag utils 解析持久化状态时会回退默认值并清理尾部斜杠"
+  ]
+}

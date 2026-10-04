@@ -1,0 +1,125 @@
+{
+  "classes" : [ {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.ActiveAgentRunRegistryTest",
+    "tests" : 6,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.LlmRequestRetryTest",
+    "tests" : 12,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.LlmModelFallbackTest",
+    "tests" : 3,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.tasklist.SendMessageMailboxTest",
+    "tests" : 3,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.DeferredMcpCatalogTest",
+    "tests" : 2,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.canvas.GenUiExportServiceTest",
+    "tests" : 2,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.canvas.GenUiSchemaTest",
+    "tests" : 3,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.planmode.PlanModeToolsTest",
+    "tests" : 10,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.subagent.SubAgentConcurrencyHardeningTest",
+    "tests" : 2,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.subagent.SubAgentResumeHardeningTest",
+    "tests" : 2,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.stream.BackgroundStreamSettleTest",
+    "tests" : 9,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.AgentResponseHandlerReplayContractTest",
+    "tests" : 6,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.SseEmitterAgentSessionStreamTest",
+    "tests" : 2,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.ConversationHistoryControllerTest",
+    "tests" : 7,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.VisitorIdentityFilterTest",
+    "tests" : 7,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.ConversationSessionOwnershipApplicationServiceTest",
+    "tests" : 4,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.application.agent.planmode.PlanApprovalResumeApplicationServiceTest",
+    "tests" : 1,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.application.agent.subagent.SubAgentDefinitionAdminApplicationServiceTest",
+    "tests" : 1,
+    "ignored" : 0
+  }, {
+    "details" : [ "deployedPlanSolveMainToolListIncludesTaskOutputAndSendMessage(org.wwz.ai.test.spring.ai.AgentToolCollectionFactoryTest): class path resource [application-dev.yml] cannot be opened because it does not exist" ],
+    "failures" : 1,
+    "class" : "org.wwz.ai.test.spring.ai.AgentToolCollectionFactoryTest",
+    "tests" : 12,
+    "ignored" : 0
+  }, {
+    "details" : [ ],
+    "failures" : 0,
+    "class" : "org.wwz.ai.test.domain.ReactorMapperNamespaceBindingTest",
+    "tests" : 1,
+    "ignored" : 0
+  } ],
+  "failures" : 1,
+  "tests" : 95
+}

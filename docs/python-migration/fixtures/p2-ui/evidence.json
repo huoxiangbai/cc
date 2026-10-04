@@ -1,0 +1,124 @@
+{
+  "isolationRoot": "/var/folders/15/rh2lsj816qn5q7p7djht06bc0000gn/T/reactor-p1-5tzg79ec",
+  "originalUISource": "ui/ (copied without .env, source unchanged)",
+  "model": "isolated HTTP fixture, supplier unverified",
+  "flows": [
+    {
+      "sessionId": "session-1791012905281-2527",
+      "dialogue_run": [
+        {
+          "id": 6,
+          "request_id": "1791012917074-1714",
+          "status": 5,
+          "entry_agent": "react"
+        },
+        {
+          "id": 7,
+          "request_id": "resume_996e9e0dbd544f89832e0a07618eb351",
+          "status": 1,
+          "entry_agent": "react"
+        }
+      ],
+      "user_question": [
+        {
+          "question_id": "q_f9f0f4d0f5e54029bfb86842f3a36cfe",
+          "source_request_id": "1791012917074-1714",
+          "resume_request_id": "resume_996e9e0dbd544f89832e0a07618eb351",
+          "status": "ANSWERED",
+          "answers_json": "{\"选择报告方向？\": \"分析\"}"
+        }
+      ],
+      "plan_approval": [],
+      "background_task": [],
+      "files": [
+        {
+          "relativePath": "回答报告.md",
+          "bytes": 53,
+          "sha256": "ece71f9460d8c49094d371a4422154032208af4f5a75debff2ebc337b2cd5cbd"
+        }
+      ]
+    },
+    {
+      "sessionId": "session-1791013006740-1858",
+      "dialogue_run": [
+        {
+          "id": 8,
+          "request_id": "1791013017134-6211",
+          "status": 5,
+          "entry_agent": "plan_solve"
+        },
+        {
+          "id": 9,
+          "request_id": "resume_2e7d2b56a2e0422ba756796426337f0e",
+          "status": 5,
+          "entry_agent": "plan_solve"
+        },
+        {
+          "id": 10,
+          "request_id": "resume_03c26e3fac2a4ace8805ceead6cb41f8",
+          "status": 1,
+          "entry_agent": "plan_solve"
+        }
+      ],
+      "user_question": [],
+      "plan_approval": [
+        {
+          "approval_id": "approval_dc4c0a206d60435cbd756d79f59c859f",
+          "source_request_id": "1791013017134-6211",
+          "resume_request_id": "resume_2e7d2b56a2e0422ba756796426337f0e",
+          "status": "ANSWERED",
+          "decision_json": "{\"approved\": false, \"feedback\": \"加入来源核实与用户确认\", \"editedPlanContent\": null}"
+        },
+        {
+          "approval_id": "approval_fc7977a806ae4a01aa1eb940dff18dea",
+          "source_request_id": "resume_2e7d2b56a2e0422ba756796426337f0e",
+          "resume_request_id": "resume_03c26e3fac2a4ace8805ceead6cb41f8",
+          "status": "ANSWERED",
+          "decision_json": "{\"approved\": true, \"feedback\": null, \"editedPlanContent\": \"# 用户编辑验收计划\\n核实来源后生成真实报告\"}"
+        }
+      ],
+      "background_task": [],
+      "files": [
+        {
+          "relativePath": "计划报告.md",
+          "bytes": 60,
+          "sha256": "f7b8dc53d4d9a8c708efb9885a210527686e19f44a6d711699df4b2af59bb956"
+        },
+        {
+          "relativePath": ".reactor/plan.md",
+          "bytes": 60,
+          "sha256": "f7b8dc53d4d9a8c708efb9885a210527686e19f44a6d711699df4b2af59bb956"
+        }
+      ]
+    },
+    {
+      "sessionId": "session-1791013349877-5728",
+      "dialogue_run": [
+        {
+          "id": 11,
+          "request_id": "1791013350337-7968",
+          "status": 1,
+          "entry_agent": "react"
+        }
+      ],
+      "user_question": [],
+      "plan_approval": [],
+      "background_task": [
+        {
+          "task_id": "a79aca5c1b0b456cafeb3249dcc99df7",
+          "agent_id": "fa0ce4e60dd14ba1",
+          "agent_type": "general-purpose",
+          "status": "completed",
+          "output": "子 Agent 已完成真实文件写入"
+        }
+      ],
+      "files": [
+        {
+          "relativePath": "worker-browserbackground.md",
+          "bytes": 32,
+          "sha256": "32998c6005d0692f1ecc9446354d43e14d5205fdc089413ac8a835dbe5912cf9"
+        }
+      ]
+    }
+  ]
+}
